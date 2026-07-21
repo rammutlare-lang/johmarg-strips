@@ -1,0 +1,13 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="vwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4238"/><stop offset="1" stop-color="#1c1712"/></linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#vwall)"/>
+<ellipse cx="400" cy="180" rx="110" ry="140" fill="#cfe6ee" opacity="0.5"/>
+<ellipse cx="400" cy="180" rx="110" ry="140" fill="none" stroke="#f5b400" stroke-width="8"/>
+<rect x="200" y="340" width="400" height="120" rx="10" fill="#3a2f22"/>
+<rect x="200" y="335" width="400" height="10" fill="#f5b400"/>
+<ellipse cx="300" cy="340" rx="60" ry="18" fill="#e8e2d4"/>
+<ellipse cx="500" cy="340" rx="60" ry="18" fill="#e8e2d4"/>
+<rect x="0" y="460" width="800" height="140" fill="#222"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#a9d3ec"/><stop offset="1" stop-color="#e7f2f8"/>
+</linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#hsky)"/>
+<rect y="420" width="800" height="180" fill="#8a9a6a"/>
+<rect x="150" y="220" width="500" height="220" fill="#e8e2d4"/>
+<polygon points="120,220 400,110 680,220" fill="#3a3a3a"/>
+<rect x="330" y="300" width="140" height="140" fill="#2a2a2a"/>
+<rect x="330" y="290" width="140" height="10" fill="#f5b400"/>
+<rect x="180" y="280" width="80" height="80" fill="#5c8fa8" opacity="0.7"/>
+<rect x="540" y="280" width="80" height="80" fill="#5c8fa8" opacity="0.7"/>
+<rect x="150" y="430" width="500" height="10" fill="#f5b400"/>
+</svg>

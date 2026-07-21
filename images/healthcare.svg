@@ -1,0 +1,20 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="hfloor" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#eef2f4"/><stop offset="1" stop-color="#c7d1d6"/>
+</linearGradient>
+</defs>
+<rect width="800" height="320" fill="#dfe7ea"/>
+<polygon points="400,150 60,320 740,320" fill="url(#hfloor)"/>
+<polygon points="400,150 60,320 60,600 400,600" fill="#f4f7f8"/>
+<polygon points="400,150 740,320 740,600 400,600" fill="#e2e9eb"/>
+<rect x="130" y="360" width="180" height="90" rx="8" fill="#ffffff" stroke="#c7d1d6" stroke-width="3"/>
+<rect x="130" y="345" width="180" height="20" rx="6" fill="#dfe7ea"/>
+<rect x="150" y="400" width="10" height="40" fill="#c7d1d6"/>
+<rect x="470" y="360" width="180" height="90" rx="8" fill="#ffffff" stroke="#c7d1d6" stroke-width="3"/>
+<rect x="470" y="345" width="180" height="20" rx="6" fill="#dfe7ea"/>
+<circle cx="400" cy="90" r="26" fill="#e05a5a"/>
+<rect x="392" y="72" width="16" height="36" fill="#fff"/>
+<rect x="382" y="82" width="36" height="16" fill="#fff"/>
+<rect x="0" y="580" width="800" height="20" fill="#f5b400" opacity="0.7"/>
+</svg>

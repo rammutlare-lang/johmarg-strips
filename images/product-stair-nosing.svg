@@ -1,0 +1,11 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="sn-stone" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3a3a"/><stop offset="1" stop-color="#111"/></linearGradient>
+<linearGradient id="sn-silver" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f4f4"/><stop offset="0.5" stop-color="#c9c9c9"/><stop offset="1" stop-color="#7a7a7a"/></linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#sn-stone)"/>
+<rect x="0" y="360" width="800" height="240" fill="#222"/>
+<path d="M0 360 L0 300 Q400 250 800 300 L800 360 Z" fill="url(#sn-silver)"/>
+<rect x="0" y="290" width="800" height="14" fill="#fff" opacity="0.5"/>
+<rect x="0" y="0" width="800" height="290" fill="#2c2c2c"/>
+</svg>

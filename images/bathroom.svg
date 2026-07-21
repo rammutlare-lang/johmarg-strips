@@ -1,0 +1,25 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="tilewall" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#5a5a5a"/><stop offset="1" stop-color="#2c2c2c"/>
+</linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#tilewall)"/>
+<g stroke="#1c1c1c" stroke-width="2" opacity="0.4">
+<line x1="0" y1="100" x2="800" y2="100"/><line x1="0" y1="200" x2="800" y2="200"/>
+<line x1="0" y1="300" x2="800" y2="300"/><line x1="0" y1="400" x2="800" y2="400"/>
+<line x1="100" y1="0" x2="100" y2="600"/><line x1="200" y1="0" x2="200" y2="600"/>
+<line x1="300" y1="0" x2="300" y2="600"/><line x1="400" y1="0" x2="400" y2="600"/>
+<line x1="500" y1="0" x2="500" y2="600"/><line x1="600" y1="0" x2="600" y2="600"/>
+<line x1="700" y1="0" x2="700" y2="600"/>
+</g>
+<rect x="0" y="440" width="800" height="160" fill="#3a3a3a"/>
+<rect x="500" y="60" width="260" height="420" fill="#9fb7bf" opacity="0.35"/>
+<rect x="500" y="60" width="10" height="420" fill="#f5b400"/>
+<rect x="756" y="60" width="10" height="420" fill="#f5b400"/>
+<rect x="500" y="60" width="266" height="8" fill="#f5b400"/>
+<circle cx="200" cy="380" r="70" fill="#d9d9d9" opacity="0.5"/>
+<rect x="170" y="440" width="60" height="12" fill="#111"/>
+<rect x="0" y="0" width="800" height="60" fill="#1c1c1c"/>
+<circle cx="400" cy="30" r="10" fill="#f5cf52"/>
+</svg>

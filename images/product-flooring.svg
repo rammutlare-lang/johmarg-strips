@@ -1,0 +1,15 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="600" fill="#2a2a2a"/>
+<rect x="0" y="0" width="400" height="600" fill="#5c4630"/>
+<g stroke="#3a2c1c" stroke-width="3" opacity="0.5">
+<line x1="0" y1="80" x2="400" y2="80"/><line x1="0" y1="180" x2="400" y2="180"/><line x1="0" y1="280" x2="400" y2="280"/>
+<line x1="0" y1="380" x2="400" y2="380"/><line x1="0" y1="480" x2="400" y2="480"/>
+</g>
+<rect x="400" y="0" width="400" height="600" fill="#555"/>
+<g stroke="#3a3a3a" stroke-width="2" opacity="0.5">
+<line x1="400" y1="0" x2="400" y2="600"/><line x1="500" y1="0" x2="500" y2="600"/><line x1="600" y1="0" x2="600" y2="600"/><line x1="700" y1="0" x2="700" y2="600"/>
+<line x1="400" y1="150" x2="800" y2="150"/><line x1="400" y1="300" x2="800" y2="300"/><line x1="400" y1="450" x2="800" y2="450"/>
+</g>
+<rect x="380" y="0" width="40" height="600" fill="#f5b400"/>
+<rect x="380" y="0" width="8" height="600" fill="#fff" opacity="0.4"/>
+</svg>
