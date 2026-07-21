@@ -261,6 +261,14 @@ section{padding:70px 0;}
 @media(max-width:992px){.products-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.products-grid{grid-template-columns:1fr;}}
 
+.products-grid-compact{grid-template-columns:repeat(4,1fr);gap:20px;}
+@media(max-width:992px){.products-grid-compact{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.products-grid-compact{grid-template-columns:1fr;}}
+.products-grid-compact .card-img{height:130px;}
+.products-grid-compact .card-body{padding:16px;}
+.products-grid-compact .card-body h3{font-size:.92rem;margin-bottom:6px;letter-spacing:.3px;}
+.products-grid-compact .card-body p{font-size:.8rem;margin-bottom:0;}
+
 /* ---------------- Product Detail / Spec Cards ---------------- */
 .specs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
 @media(max-width:900px){.specs-grid{grid-template-columns:1fr;}}
