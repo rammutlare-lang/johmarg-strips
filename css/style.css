@@ -184,6 +184,20 @@ h1,h2,h3,h4{margin:0;font-family:'Segoe UI',Arial,Helvetica,sans-serif;font-weig
 .home-hero-strip > div{background-size:cover;background-position:center;position:relative;}
 .home-hero-strip > div::after{content:"";position:absolute;inset:0;}
 .home-hero-strip .panel-1::after{background:linear-gradient(90deg, rgba(10,10,10,.94) 30%, rgba(10,10,10,.55) 75%, rgba(10,10,10,.15));}
+
+/* Home hero slideshow — auto-advancing background photos behind the hero text */
+.home-hero-strip .hero-slide{
+  position:absolute;inset:0;background-size:cover;background-position:center;
+  opacity:0;transition:opacity 1.2s ease;z-index:1;
+}
+.home-hero-strip .hero-slide::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg, rgba(10,10,10,.92) 30%, rgba(10,10,10,.55) 70%, rgba(10,10,10,.2));
+}
+.home-hero-strip .hero-slide.is-active{opacity:1;z-index:2;}
+@media(prefers-reduced-motion:reduce){
+  .home-hero-strip .hero-slide{transition:none;}
+}
 .home-hero-text{position:absolute;top:0;left:0;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:600px;padding:0 24px;z-index:3;}
 .home-hero-text .eyebrow{color:var(--gold);font-weight:700;letter-spacing:2px;font-size:.85rem;margin-bottom:10px;}
 .home-hero-text h1{font-size:2.8rem;line-height:1.15;margin-bottom:16px;}

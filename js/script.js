@@ -8,6 +8,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Home hero slideshow — cycles background photos every 3s, continuously
+  var heroSlides = document.querySelectorAll('.home-hero-strip .hero-slide');
+  if (heroSlides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var heroIndex = 0;
+    setInterval(function () {
+      heroSlides[heroIndex].classList.remove('is-active');
+      heroIndex = (heroIndex + 1) % heroSlides.length;
+      heroSlides[heroIndex].classList.add('is-active');
+    }, 3000);
+  }
+
   // Gallery filter
   var filterBtns = document.querySelectorAll('.filter-btn');
   var galleryItems = document.querySelectorAll('.gallery-item');
