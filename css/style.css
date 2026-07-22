@@ -595,11 +595,8 @@ footer{background:var(--black);color:#bbb;padding-top:60px;}
 }
 
 /* ---------------- Shop ---------------- */
-.nav-shop-link{
-  color:#ffff00!important;font-weight:800!important;
-  text-shadow:0 0 1px rgba(0,0,0,.6),0 1px 1px rgba(0,0,0,.4);
-}
-.nav-shop-link:hover{color:#ffff00!important;text-decoration:underline;}
+.nav-shop-link{color:var(--gold)!important;font-weight:800!important;}
+.nav-shop-link:hover{color:var(--gold-dark)!important;}
 
 .shop-vat-banner{
   background:var(--gray-bg);border:1px solid var(--gray-line);border-left:4px solid var(--gold);
