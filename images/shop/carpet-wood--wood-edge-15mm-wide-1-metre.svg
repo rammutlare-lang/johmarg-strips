@@ -1,0 +1,22 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#6b4a2f"/>
+<stop offset="1" stop-color="#3a2818"/>
+</linearGradient>
+<linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#c99a5b" stop-opacity="0.95"/>
+<stop offset="1" stop-color="#c99a5b" stop-opacity="0.55"/>
+</linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#bgGrad)"/>
+<g transform="rotate(-8 400 220)">
+<rect x="20" y="180" width="760" height="70" rx="6" fill="url(#barGrad)"/>
+<rect x="20" y="180" width="760" height="14" fill="#ffffff" opacity="0.35"/>
+<rect x="20" y="236" width="760" height="10" fill="#000000" opacity="0.25"/>
+</g>
+<rect x="0" y="430" width="800" height="170" fill="#000000" opacity="0.38"/>
+<text x="400" y="470" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#c99a5b" text-anchor="middle" opacity="0.9">CARPET &amp; WOOD</text>
+<text x="400" y="290" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle" opacity="0.92">Wood Edge - 15mm Wide -</text>
+<text x="400" y="324" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle" opacity="0.92">1 metre</text>
+</svg>
