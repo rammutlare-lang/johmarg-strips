@@ -48,6 +48,15 @@ document.addEventListener('DOMContentLoaded', function () {
     return 'R' + n.toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
+  // Clamp any user-typed quantity to a sane whole number between 1 and 999 —
+  // guards against negative/zero/non-numeric values reaching the cart total,
+  // regardless of whether the input was typed directly or set via the +/- steppers.
+  function clampQty(raw) {
+    var n = parseInt(raw, 10);
+    if (!isFinite(n)) n = 1;
+    return Math.min(999, Math.max(1, n));
+  }
+
   function loadCart() {
     try {
       return JSON.parse(localStorage.getItem(CART_KEY)) || [];
@@ -163,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var select = card.querySelector('.shop-variant-select');
       var idx = select ? parseInt(select.value, 10) : 0;
       var variant = prod.variants[idx];
-      var qty = parseInt(card.querySelector('.qty-input').value, 10) || 1;
+      var qty = clampQty(card.querySelector('.qty-input').value);
       addToCart(uid, prod, variant, qty);
       addBtn.textContent = 'ADDED ✓';
       setTimeout(function () { addBtn.textContent = 'ADD TO CART'; }, 1200);
@@ -179,11 +188,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ---------- Cart ----------
   function addToCart(uid, prod, variant, qty) {
+    qty = clampQty(qty);
     var cart = loadCart();
     var lineId = uid + '::' + variant.code;
     var existing = cart.filter(function (l) { return l.lineId === lineId; })[0];
     if (existing) {
-      existing.qty += qty;
+      existing.qty = clampQty(existing.qty + qty);
     } else {
       cart.push({
         lineId: lineId,
@@ -207,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (qty <= 0) {
       cart = cart.filter(function (l) { return l.lineId !== lineId; });
     } else {
-      line.qty = qty;
+      line.qty = Math.min(999, qty);
     }
     saveCart(cart);
     renderCart();
