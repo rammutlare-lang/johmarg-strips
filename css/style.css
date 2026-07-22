@@ -606,6 +606,33 @@ footer{background:var(--black);color:#bbb;padding-top:60px;}
 .shop-vat-banner i{color:var(--gold-text);}
 .shop-vat-banner b{color:var(--gold-text);}
 
+.offers-section{margin-bottom:40px;}
+.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:992px){.offers-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.offers-grid{grid-template-columns:1fr;}}
+.offer-card{
+  background:var(--white);border:1px solid var(--gray-line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:22px;display:flex;flex-direction:column;gap:8px;
+}
+.offer-code{
+  align-self:flex-start;font-family:monospace;font-size:.72rem;font-weight:800;letter-spacing:.5px;
+  background:var(--black);color:var(--gold);padding:4px 10px;border-radius:4px;
+}
+.offer-card h3{font-size:1rem;margin:4px 0 0;}
+.offer-card p{font-size:.85rem;color:var(--text-muted);margin:0 0 8px;line-height:1.5;flex:1;}
+.offer-btn{width:100%;justify-content:center;font-size:.78rem;}
+
+.cart-promo-row{display:flex;gap:8px;margin-bottom:6px;}
+.cart-promo-input{
+  flex:1;padding:9px 10px;border:1px solid var(--gray-line);border-radius:4px;
+  font-size:.82rem;font-family:inherit;text-transform:uppercase;
+}
+.cart-promo-row .btn{padding:9px 16px;font-size:.72rem;}
+.cart-promo-msg{font-size:.78rem;margin:0 0 12px;min-height:1em;}
+.cart-promo-msg.success{color:var(--pass,#3f7a4e);}
+.cart-promo-msg.error{color:#c0392b;}
+#cart-discount-row span{color:#3f7a4e;}
+
 .shop-toolbar{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-bottom:22px;}
 .shop-tabs{display:flex;gap:8px;flex-wrap:wrap;overflow-x:auto;padding-bottom:4px;}
 .shop-tab{

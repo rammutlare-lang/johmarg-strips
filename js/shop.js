@@ -18,6 +18,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // available; the card picks it up automatically.
   var PRODUCT_IMAGES = window.SHOP_PRODUCT_IMAGES || {};
 
+  // Checkout promo codes. Only flat, unconditional percentage-off deals belong
+  // here — trade/partner/project pricing isn't a fixed number and is handled
+  // via "Request a Quote" links instead (see the Special Offers section).
+  var PROMO_CODES = {
+    'WELCOME10': { percent: 10, label: '10% Off Your First Order' }
+  };
+  var PROMO_KEY = 'johmarg_promo_v1';
+
   var grid = document.getElementById('shop-grid');
   var categoryTabs = document.getElementById('shop-category-tabs');
   var searchInput = document.getElementById('shop-search');
@@ -49,6 +57,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   function saveCart(cart) {
     localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  }
+
+  function loadPromo() {
+    return localStorage.getItem(PROMO_KEY) || '';
+  }
+  function savePromo(code) {
+    if (code) localStorage.setItem(PROMO_KEY, code);
+    else localStorage.removeItem(PROMO_KEY);
   }
 
   // ---------- Render category tabs ----------
@@ -203,15 +219,37 @@ document.addEventListener('DOMContentLoaded', function () {
     renderCart();
   }
 
+  function computeTotals(cart) {
+    var subtotal = cart.reduce(function (sum, l) { return sum + l.qty * l.price; }, 0);
+    var promoCode = loadPromo();
+    var promo = PROMO_CODES[promoCode];
+    var discount = promo ? subtotal * (promo.percent / 100) : 0;
+    var discounted = subtotal - discount;
+    var vat = discounted * VAT_RATE;
+    var total = discounted + vat;
+    return { subtotal: subtotal, promoCode: promo ? promoCode : '', promo: promo, discount: discount, vat: vat, total: total };
+  }
+
   function renderCart() {
     var cart = loadCart();
     var count = cart.reduce(function (sum, l) { return sum + l.qty; }, 0);
-    var subtotal = cart.reduce(function (sum, l) { return sum + l.qty * l.price; }, 0);
-    var vat = subtotal * VAT_RATE;
-    var total = subtotal + vat;
+    var t = computeTotals(cart);
 
     if (cartCountEl) cartCountEl.textContent = count;
-    if (cartTotalEl) cartTotalEl.textContent = money(total);
+    if (cartTotalEl) cartTotalEl.textContent = money(t.total);
+
+    var promoInput = document.getElementById('promo-input');
+    var discountRow = document.getElementById('cart-discount-row');
+    var discountLabel = document.getElementById('cart-discount-label');
+    var discountEl = document.getElementById('cart-discount');
+    if (t.promo) {
+      if (discountRow) discountRow.style.display = 'flex';
+      if (discountLabel) discountLabel.textContent = 'Discount (' + t.promoCode + ')';
+      if (discountEl) discountEl.textContent = '-' + money(t.discount);
+      if (promoInput && !promoInput.value) promoInput.value = t.promoCode;
+    } else if (discountRow) {
+      discountRow.style.display = 'none';
+    }
 
     if (!cartLinesEl) return;
 
@@ -237,10 +275,61 @@ document.addEventListener('DOMContentLoaded', function () {
         '</div>';
     }).join('');
 
-    if (cartSubtotalEl) cartSubtotalEl.textContent = money(subtotal);
-    if (cartVatEl) cartVatEl.textContent = money(vat);
-    if (cartGrandTotalEl) cartGrandTotalEl.textContent = money(total);
+    if (cartSubtotalEl) cartSubtotalEl.textContent = money(t.subtotal);
+    if (cartVatEl) cartVatEl.textContent = money(t.vat);
+    if (cartGrandTotalEl) cartGrandTotalEl.textContent = money(t.total);
   }
+
+  // ---------- Promo code apply ----------
+  var promoApplyBtn = document.getElementById('promo-apply-btn');
+  var promoMsgEl = document.getElementById('promo-msg');
+  function applyPromoCode(rawCode) {
+    var code = (rawCode || '').trim().toUpperCase();
+    if (!promoMsgEl) return;
+    if (!code) {
+      savePromo('');
+      promoMsgEl.textContent = '';
+      promoMsgEl.className = 'cart-promo-msg';
+      renderCart();
+      return;
+    }
+    if (PROMO_CODES[code]) {
+      savePromo(code);
+      promoMsgEl.textContent = 'Promo applied: ' + PROMO_CODES[code].label + ' (-' + PROMO_CODES[code].percent + '%)';
+      promoMsgEl.className = 'cart-promo-msg success';
+    } else {
+      savePromo('');
+      promoMsgEl.textContent = 'That code isn’t valid for online checkout. Trade, partner and project deals are handled via Request a Quote.';
+      promoMsgEl.className = 'cart-promo-msg error';
+    }
+    renderCart();
+  }
+  if (promoApplyBtn) {
+    promoApplyBtn.addEventListener('click', function () {
+      var input = document.getElementById('promo-input');
+      applyPromoCode(input ? input.value : '');
+    });
+  }
+  var promoInputEl = document.getElementById('promo-input');
+  if (promoInputEl) {
+    promoInputEl.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        applyPromoCode(promoInputEl.value);
+      }
+    });
+  }
+
+  // "APPLY IN CART" buttons on the Special Offers section
+  document.querySelectorAll('.offer-btn[data-action="shop"]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var code = btn.getAttribute('data-promo');
+      openCart();
+      applyPromoCode(code);
+      var input = document.getElementById('promo-input');
+      if (input) input.value = code;
+    });
+  });
 
   if (cartLinesEl) {
     cartLinesEl.addEventListener('click', function (e) {
@@ -289,8 +378,8 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      var subtotal = cart.reduce(function (sum, l) { return sum + l.qty * l.price; }, 0);
-      var total = Math.round(subtotal * (1 + VAT_RATE) * 100) / 100;
+      var t = computeTotals(cart);
+      var total = Math.round(t.total * 100) / 100;
       var orderRef = 'JS' + Date.now();
 
       var itemSummary = cart.map(function (l) { return l.qty + 'x ' + l.label; }).join(', ');
@@ -307,7 +396,8 @@ document.addEventListener('DOMContentLoaded', function () {
         m_payment_id: orderRef,
         amount: total.toFixed(2),
         item_name: 'Johmarg Strips order #' + orderRef,
-        item_description: itemSummary
+        item_description: itemSummary,
+        custom_str1: t.promoCode || ''
       };
 
       var form = document.createElement('form');
@@ -324,6 +414,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Order is on its way to PayFast — clear the cart so a return visit starts fresh.
       localStorage.removeItem(CART_KEY);
+      savePromo('');
       form.submit();
     });
   }

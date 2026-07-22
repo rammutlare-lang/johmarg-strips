@@ -21,7 +21,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
 <link rel="apple-touch-icon" href="images/favicon-180.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=6">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -121,11 +121,16 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
   <div class="container contact-cols" style="grid-template-columns:2.3fr 1fr;">
     <div class="form-card">
       <div class="section-head left"><h2 style="font-size:1.5rem;">REQUEST A QUOTE</h2><div class="rule"></div></div>
+      <div class="shop-vat-banner" id="promo-ref-banner" style="display:none;">
+        <i class="fa-solid fa-tag"></i>
+        <span>You're enquiring about: <b id="promo-ref-text"></b></span>
+      </div>
       <form data-ajax-form data-success-msg="Thank you for requesting a quotation from JOHMARG STRIPS! Your request has been received and our team is preparing your quotation. We will be in touch shortly with a response. Thank you for choosing JOHMARG STRIPS." action="https://formsubmit.co/johmargstrips@outlook.com" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_subject" value="New quote request from johmargstrips.co.za">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="Promo / Deal Reference" id="promo-ref-field" value="">
         <div class="form-row">
           <div class="form-group"><label>Full Name *</label><input type="text" name="Full Name" required placeholder="Enter your full name"></div>
           <div class="form-group"><label>Company / Organisation *</label><input type="text" name="Company" required placeholder="Enter company name"></div>
@@ -305,6 +310,6 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
   </div>
 </footer>
 
-<script src="js/script.js?v=5"></script>
+<script src="js/script.js?v=6"></script>
 </body>
 </html>

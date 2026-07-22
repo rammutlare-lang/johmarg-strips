@@ -19,6 +19,32 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 3000);
   }
 
+  // Quote page — carry a promo/deal code through from a Shop "Request a Quote" link
+  var promoRefBanner = document.getElementById('promo-ref-banner');
+  var promoRefField = document.getElementById('promo-ref-field');
+  if (promoRefBanner && promoRefField) {
+    var DEAL_NAMES = {
+      'PARTNER20': 'Retailer & Hardware Partner Deals',
+      'PROJECT15': 'Project Package Specials',
+      'FREESHIP': 'Free Delivery on Qualifying Orders',
+      'TRADEPRO': 'Contractor Trade Pricing',
+      'FREEQUOTE': 'Free Quote & Product Consultation',
+      'WELCOME10': '10% Off Your First Order'
+    };
+    var params = new URLSearchParams(window.location.search);
+    var promoCode = (params.get('promo') || '').toUpperCase();
+    if (promoCode && DEAL_NAMES[promoCode]) {
+      var dealName = DEAL_NAMES[promoCode];
+      document.getElementById('promo-ref-text').textContent = dealName + ' (' + promoCode + ')';
+      promoRefBanner.style.display = 'flex';
+      promoRefField.value = dealName + ' (' + promoCode + ')';
+      var desc = document.querySelector('textarea[name="Project Description"]');
+      if (desc && !desc.value) {
+        desc.value = 'Enquiry regarding: ' + dealName + ' (' + promoCode + ')\n\n';
+      }
+    }
+  }
+
   // Gallery filter
   var filterBtns = document.querySelectorAll('.filter-btn');
   var galleryItems = document.querySelectorAll('.gallery-item');

@@ -21,7 +21,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
 <link rel="apple-touch-icon" href="images/favicon-180.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=6">
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -113,6 +113,51 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
       <span>All prices shown are <b>excluding VAT</b>. VAT (15%) is calculated and added at checkout.</span>
     </div>
 
+    <div class="offers-section">
+      <div class="section-head left" style="margin-bottom:20px;">
+        <span class="eyebrow" style="color:var(--gold-text);font-weight:700;letter-spacing:2px;font-size:.8rem;">DEALS &amp; PRICING</span>
+        <h2 style="font-size:1.6rem;margin:8px 0 0;">SPECIAL <span class="accent" style="color:var(--gold-text);">OFFERS</span></h2>
+      </div>
+      <div class="offers-grid">
+        <div class="offer-card">
+          <span class="offer-code">WELCOME10</span>
+          <h3>10% Off Your First Order</h3>
+          <p>New customers enjoy 10% off selected tile strips and finishing profiles on their first order.</p>
+          <button type="button" class="btn btn-gold offer-btn" data-promo="WELCOME10" data-action="shop">APPLY IN CART <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <div class="offer-card">
+          <span class="offer-code">PARTNER20</span>
+          <h3>Retailer &amp; Hardware Partner Deals</h3>
+          <p>Special pricing and supply packages available for hardware stores and retail partners.</p>
+          <a href="quote?promo=PARTNER20" class="btn btn-outline-dark offer-btn">REQUEST A QUOTE <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="offer-card">
+          <span class="offer-code">PROJECT15</span>
+          <h3>Project Package Specials</h3>
+          <p>Request a complete project quotation and enjoy discounted package pricing on selected products.</p>
+          <a href="quote?promo=PROJECT15" class="btn btn-outline-dark offer-btn">REQUEST A QUOTE <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="offer-card">
+          <span class="offer-code">FREESHIP</span>
+          <h3>Free Delivery on Qualifying Orders</h3>
+          <p>Receive free delivery on qualifying orders within selected regions. Terms apply.</p>
+          <a href="quote?promo=FREESHIP" class="btn btn-outline-dark offer-btn">REQUEST A QUOTE <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="offer-card">
+          <span class="offer-code">TRADEPRO</span>
+          <h3>Contractor Trade Pricing</h3>
+          <p>Exclusive pricing and support for contractors, builders, and professional tile installers.</p>
+          <a href="quote?promo=TRADEPRO" class="btn btn-outline-dark offer-btn">REQUEST A QUOTE <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="offer-card">
+          <span class="offer-code">FREEQUOTE</span>
+          <h3>Free Quote &amp; Product Consultation</h3>
+          <p>Get expert advice and a no-obligation quotation for your residential or commercial project.</p>
+          <a href="quote?promo=FREEQUOTE" class="btn btn-outline-dark offer-btn">REQUEST A QUOTE <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
     <div class="shop-toolbar">
       <div class="shop-tabs" id="shop-category-tabs"></div>
       <input type="search" id="shop-search" class="shop-search" placeholder="Search products or codes...">
@@ -154,7 +199,13 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
   <div class="cart-lines" id="cart-lines"></div>
   <div class="cart-empty" id="cart-empty">Your cart is empty. Add a product to get started.</div>
   <div class="cart-drawer-footer" id="cart-footer" style="display:none;">
+    <div class="cart-promo-row">
+      <input type="text" id="promo-input" class="cart-promo-input" placeholder="Promo code">
+      <button type="button" class="btn btn-outline-dark" id="promo-apply-btn">APPLY</button>
+    </div>
+    <p class="cart-promo-msg" id="promo-msg"></p>
     <div class="cart-totals-row"><span>Subtotal (excl. VAT)</span><span id="cart-subtotal">R0.00</span></div>
+    <div class="cart-totals-row" id="cart-discount-row" style="display:none;"><span id="cart-discount-label">Discount</span><span id="cart-discount">-R0.00</span></div>
     <div class="cart-totals-row"><span>VAT (15%)</span><span id="cart-vat">R0.00</span></div>
     <div class="cart-totals-row grand"><span>Total (incl. VAT)</span><span id="cart-grand-total">R0.00</span></div>
     <button type="button" class="btn btn-gold cart-checkout-btn" id="cart-checkout-btn">CHECKOUT WITH PAYFAST <i class="fa-solid fa-lock"></i></button>
@@ -224,9 +275,9 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
   </div>
 </footer>
 
-<script src="js/script.js?v=5"></script>
+<script src="js/script.js?v=6"></script>
 <script src="js/shop-catalog.js?v=2"></script>
 <script src="js/shop-product-images.js?v=1"></script>
-<script src="js/shop.js?v=3"></script>
+<script src="js/shop.js?v=4"></script>
 </body>
 </html>
