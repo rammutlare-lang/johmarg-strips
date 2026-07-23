@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop | Johmarg Strips</title>
+<title>Shop Opening Soon | Johmarg Strips</title>
 <meta name="description" content="Shop the full Johmarg Strips range online — tile trims, stair nosing, flooring profiles, metal and PVC profiles, movement joints, spacers and more. Prices exclude VAT.">
 <link rel="canonical" href="https://www.johmargstrips.co.za/shop">
 <meta property="og:type" content="website">
@@ -22,6 +22,13 @@
 <link rel="apple-touch-icon" href="images/favicon-180.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="css/style.css?v=6">
+<style>
+/* Temporary shop closure — remove this block and the .shop-closed-mode wrapper below to reopen the shop */
+.shop-closed-banner{background:var(--gray-bg,#f4f4f4);border:1px solid rgba(0,0,0,.08);border-radius:10px;padding:48px 32px;text-align:center;margin:40px 0;}
+.shop-closed-banner i{font-size:2.2rem;color:var(--gold-text,#b8860b);margin-bottom:16px;}
+.shop-closed-banner h2{font-size:1.8rem;margin:0 0 12px;}
+.shop-closed-banner p{max-width:560px;margin:0 auto;font-size:1rem;line-height:1.6;}
+</style>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -108,6 +115,13 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
 
 <section>
   <div class="container">
+    <div class="shop-closed-banner">
+      <i class="fa-solid fa-clock"></i>
+      <h2>OUR ONLINE SHOP IS <span class="accent" style="color:var(--gold-text);">OPENING SOON</span></h2>
+      <p>We're currently working behind the scenes to bring you an even better shopping experience. Please check back shortly — in the meantime, feel free to <a href="quote">request a quote</a> or <a href="contact">contact us</a> directly.</p>
+    </div>
+
+    <div class="shop-closed-mode" style="display:none;">
     <div class="shop-vat-banner">
       <i class="fa-solid fa-circle-info"></i>
       <span>All prices shown are <b>excluding VAT</b>. VAT (15%) is calculated and added at checkout.</span>
@@ -164,6 +178,7 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
     </div>
 
     <div id="shop-grid"></div>
+    </div>
   </div>
 </section>
 
@@ -182,8 +197,8 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
 
 </main>
 
-<!-- Cart toggle -->
-<button type="button" class="cart-toggle-btn" id="cart-toggle">
+<!-- Cart toggle (hidden while shop is closed) -->
+<button type="button" class="cart-toggle-btn" id="cart-toggle" style="display:none;">
   <i class="fa-solid fa-cart-shopping"></i>
   <span class="badge" id="cart-count">0</span>
   <span id="cart-total-mini">R0.00</span>
