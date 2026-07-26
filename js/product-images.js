@@ -1,4 +1,4 @@
-window.SHOP_PRODUCT_IMAGES = {
+window.PRODUCT_IMAGES = {
   'Aluminium||Straight Edge Aluminium - 2.5 metre lengths': 'images/shop/aluminium--straight-edge-aluminium-2-5-metre-lengths.jpg',
   'Aluminium||Econo Straight Edge - 2.5 metre lengths': 'images/shop/aluminium--econo-straight-edge-2-5-metre-lengths.jpg',
   'Aluminium||Round Edge Aluminium - 2.5 metre lengths': 'images/shop/aluminium--round-edge-aluminium-2-5-metre-lengths.jpg',

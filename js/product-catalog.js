@@ -1,4 +1,4 @@
-window.SHOP_CATALOG = [
+window.PRODUCT_CATALOG = [
  {
   "category": "Aluminium",
   "products": [
@@ -13,7 +13,7 @@ window.SHOP_CATALOG = [
      {
       "label": "Straight Edge - 5mm",
       "code": "SEA5",
-      "price": 49.0
+      "price": 49
      },
      {
       "label": "Straight Edge - 6mm",
@@ -23,12 +23,12 @@ window.SHOP_CATALOG = [
      {
       "label": "Straight Edge - 8mm",
       "code": "SEA8",
-      "price": 49.0
+      "price": 49
      },
      {
       "label": "Straight Edge - 10mm",
       "code": "SEA10",
-      "price": 49.0
+      "price": 49
      },
      {
       "label": "Straight Edge - 12mm",
@@ -50,7 +50,8 @@ window.SHOP_CATALOG = [
       "code": "SEA225",
       "price": 103.55
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Econo Straight Edge - 2.5 metre lengths",
@@ -65,7 +66,8 @@ window.SHOP_CATALOG = [
       "code": "ESEA12",
       "price": 45.4
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Round Edge Aluminium - 2.5 metre lengths",
@@ -73,19 +75,20 @@ window.SHOP_CATALOG = [
      {
       "label": "Round Edge - 8mm",
       "code": "REA8",
-      "price": 49.0
+      "price": 49
      },
      {
       "label": "Round Edge - 10mm",
       "code": "REA10",
-      "price": 49.0
+      "price": 49
      },
      {
       "label": "Round Edge - 12mm",
       "code": "REA12",
       "price": 52.65
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "45 Ramp Aluminium - 2.5 metre lengths",
@@ -103,14 +106,15 @@ window.SHOP_CATALOG = [
      {
       "label": "Retro Fit Ramp Aluminium - 2.5 metre lengths",
       "code": "RARET",
-      "price": 189.0
+      "price": 189
      },
      {
       "label": "Large Transition Ramp - 3 metre lengths",
       "code": "TRA3L",
       "price": 338.1
      }
-    ]
+    ],
+    "cat": "Stair Nosing"
    },
    {
     "family": "Square Edge Aluminium",
@@ -140,7 +144,8 @@ window.SHOP_CATALOG = [
       "code": "QEA12",
       "price": 83.55
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Tile In Step Aluminium - 2.5 metre lengths",
@@ -155,7 +160,8 @@ window.SHOP_CATALOG = [
       "code": "TSA12",
       "price": 136.3
      }
-    ]
+    ],
+    "cat": "Stair Nosing"
    },
    {
     "family": "Tile In Corner Protector Aluminium - 2.5 metre lengths",
@@ -170,7 +176,8 @@ window.SHOP_CATALOG = [
       "code": "TICPA12",
       "price": 234.5
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Tile In Internal Corner Protector Aluminium - 12mm",
@@ -183,9 +190,10 @@ window.SHOP_CATALOG = [
      {
       "label": "Tile In Internal Corner Protec - 12mm - 3 metre",
       "code": "TIICA12*3",
-      "price": 89.0
+      "price": 89
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Carpet to Tile Aluminium",
@@ -200,7 +208,8 @@ window.SHOP_CATALOG = [
       "code": "CTT1",
       "price": 52.65
      }
-    ]
+    ],
+    "cat": "Metal Profiles"
    },
    {
     "family": "Cover Strip Aluminium",
@@ -220,7 +229,8 @@ window.SHOP_CATALOG = [
       "code": "CSA1",
       "price": 39.95
      }
-    ]
+    ],
+    "cat": "Metal Profiles"
    },
    {
     "family": "Retro Fit Stair nosing Aluminium",
@@ -265,7 +275,8 @@ window.SHOP_CATALOG = [
       "code": "TEE",
       "price": 59.95
      }
-    ]
+    ],
+    "cat": "Stair Nosing"
    },
    {
     "family": "Listello with legs Aluminium - 2.5 metre lengths",
@@ -285,7 +296,8 @@ window.SHOP_CATALOG = [
       "code": "LIS30",
       "price": 92.65
      }
-    ]
+    ],
+    "cat": "Metal Profiles"
    },
    {
     "family": "Formable Edge Aluminium - 2.5 metre lengths",
@@ -318,14 +330,15 @@ window.SHOP_CATALOG = [
      {
       "label": "Formable Edge - 17mm",
       "code": "FEA17",
-      "price": 89.0
+      "price": 89
      },
      {
       "label": "Formable Edge - 22.5mm",
       "code": "FEA225",
       "price": 98.1
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    }
   ]
  },
@@ -340,7 +353,8 @@ window.SHOP_CATALOG = [
       "code": "SEA5A",
       "price": 78.1
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Straight Edge - 6mm - 2.5 metre lengths",
@@ -360,7 +374,8 @@ window.SHOP_CATALOG = [
       "code": "SEA8SR",
       "price": 81.75
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Straight Edge - 8mm - 2.5 metre lengths",
@@ -385,7 +400,8 @@ window.SHOP_CATALOG = [
       "code": "SEA8BL",
       "price": 90.85
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Straight Edge - 10mm - 2.5 metre lengths",
@@ -465,7 +481,8 @@ window.SHOP_CATALOG = [
       "code": "SEA10BL",
       "price": 90.85
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Straight Edge - 12mm - 2.5 metre lengths",
@@ -550,7 +567,8 @@ window.SHOP_CATALOG = [
       "code": "SEA15A",
       "price": 99.95
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Round Edge - 10mm - 2.5 metre lengths",
@@ -575,7 +593,8 @@ window.SHOP_CATALOG = [
       "code": "REA10MBR",
       "price": 90.85
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Round Edge - 12mm - 2.5 metre lengths",
@@ -585,7 +604,8 @@ window.SHOP_CATALOG = [
       "code": "REA12A",
       "price": 94.5
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Square Edge Anodised / Powder Coated - 2.5 metre lengths",
@@ -620,7 +640,8 @@ window.SHOP_CATALOG = [
       "code": "QEA10BL",
       "price": 121.75
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Square Edge - 12mm - 2.5 metre lengths",
@@ -645,7 +666,8 @@ window.SHOP_CATALOG = [
       "code": "QEA12BL",
       "price": 130.85
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Cover Strip Anodised / Powder Coated",
@@ -665,7 +687,8 @@ window.SHOP_CATALOG = [
       "code": "CSA1B",
       "price": 58.1
      }
-    ]
+    ],
+    "cat": "Metal Profiles"
    },
    {
     "family": "Retro Fit Stair Nosing Anodised / Powder Coated",
@@ -688,7 +711,7 @@ window.SHOP_CATALOG = [
      {
       "label": "Retro Fit - Single with PVC - Anodised - Carpet Bronze - 2.5 metre",
       "code": "RETS2.5B",
-      "price": 289.0
+      "price": 289
      },
      {
       "label": "Retro Fit - Double with PVC - Anodised - Carpet Bronze - 3 metre",
@@ -700,7 +723,8 @@ window.SHOP_CATALOG = [
       "code": "RETD2.5B",
       "price": 418.1
      }
-    ]
+    ],
+    "cat": "Stair Nosing"
    },
    {
     "family": "Listello with legs - 10mm - Anod Polished Silver",
@@ -710,7 +734,8 @@ window.SHOP_CATALOG = [
       "code": "LIS10A",
       "price": 99.95
      }
-    ]
+    ],
+    "cat": "Metal Profiles"
    },
    {
     "family": "Listello with legs - 12mm - Anod Polished Silver",
@@ -720,7 +745,8 @@ window.SHOP_CATALOG = [
       "code": "LIS12A",
       "price": 163.55
      }
-    ]
+    ],
+    "cat": "Metal Profiles"
    },
    {
     "family": "Retro Listello - 10mm - 2.5 metre",
@@ -745,7 +771,8 @@ window.SHOP_CATALOG = [
       "code": "LESN10MT",
       "price": 72.65
      }
-    ]
+    ],
+    "cat": "Metal Profiles"
    },
    {
     "family": "Retro Listello - 12mm - 2.5 metre",
@@ -760,7 +787,8 @@ window.SHOP_CATALOG = [
       "code": "LESN12SHT",
       "price": 85.4
      }
-    ]
+    ],
+    "cat": "Metal Profiles"
    },
    {
     "family": "Retro Listello - 25mm - 2.5 metre",
@@ -768,9 +796,10 @@ window.SHOP_CATALOG = [
      {
       "label": "Retro Listello - 10mm x 25mm - Anod Polished Silver",
       "code": "LESN25A",
-      "price": 109.0
+      "price": 109
      }
-    ]
+    ],
+    "cat": "Metal Profiles"
    },
    {
     "family": "Mosaic Edges - Anodised / Powder Coated - 2.5 metre lengths",
@@ -790,7 +819,8 @@ window.SHOP_CATALOG = [
       "code": "QEL10A",
       "price": 141.75
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    }
   ]
  },
@@ -833,7 +863,7 @@ window.SHOP_CATALOG = [
      {
       "label": "Straight Edge - 15mm (Grade 430)",
       "code": "SES15P",
-      "price": 129.0
+      "price": 129
      },
      {
       "label": "Straight Edge - 15mm (Grade 304)",
@@ -860,7 +890,8 @@ window.SHOP_CATALOG = [
       "code": "SES225",
       "price": 225.4
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Formable Edge Stainless Steel - 2.5 metre lengths",
@@ -893,7 +924,7 @@ window.SHOP_CATALOG = [
      {
       "label": "Formable edge - 12mm (Grade 304)",
       "code": "FES12",
-      "price": 209.0
+      "price": 209
      },
      {
       "label": "Formable edge - 15mm (Grade 430)",
@@ -915,7 +946,8 @@ window.SHOP_CATALOG = [
       "code": "FES225",
       "price": 245.4
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Square Edge Stainless Steel - 2.5 metre lengths",
@@ -970,7 +1002,8 @@ window.SHOP_CATALOG = [
       "code": "QES225",
       "price": 259.95
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Round Edge Stainless Steel 2.5 metre lengths",
@@ -995,7 +1028,8 @@ window.SHOP_CATALOG = [
       "code": "RES12",
       "price": 241.75
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Tile In Corner Protector Stainless Steel - 2.5 metre lengths",
@@ -1033,14 +1067,15 @@ window.SHOP_CATALOG = [
      {
       "label": "30 x 30 x 10 (Grade 430)",
       "code": "STIC3010P",
-      "price": 309.0
+      "price": 309
      },
      {
       "label": "30 x 30 x 10 (Grade 304)",
       "code": "STIC30 10",
       "price": 430.85
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Retro Fit Corner Protector Stainless Steel - 2.5 metre lengths",
@@ -1065,7 +1100,8 @@ window.SHOP_CATALOG = [
       "code": "SRC30",
       "price": 263.55
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Listello Stainless Steel - 2.5 metre lengths",
@@ -1098,14 +1134,15 @@ window.SHOP_CATALOG = [
      {
       "label": "Listello - 30 x 12mm (Grade 430)",
       "code": "LISS3012P",
-      "price": 309.0
+      "price": 309
      },
      {
       "label": "Tile In Internal Corner Stainless Steel - 2.5 metre lengths (Grade 430)",
       "code": "SSIC2.5",
       "price": 363.55
      }
-    ]
+    ],
+    "cat": "Metal Profiles"
    }
   ]
  },
@@ -1140,7 +1177,8 @@ window.SHOP_CATALOG = [
       "code": "SEB225",
       "price": 472.65
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Square Edge Brass - 2 metre lengths",
@@ -1170,7 +1208,8 @@ window.SHOP_CATALOG = [
       "code": "QEB225",
       "price": 590.85
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Round Edge Brass - 2 metre lengths",
@@ -1185,7 +1224,8 @@ window.SHOP_CATALOG = [
       "code": "REB12",
       "price": 418.1
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Tile in Corner Protector Brass - 2 metre lengths",
@@ -1210,7 +1250,8 @@ window.SHOP_CATALOG = [
       "code": "BTIC5012",
       "price": 1325.4
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Retro Fit Corner Protector Brass - 2 metre lengths",
@@ -1225,7 +1266,8 @@ window.SHOP_CATALOG = [
       "code": "BRC50",
       "price": 1030.85
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Formable Edge Brass - 2 metre lengths",
@@ -1243,19 +1285,20 @@ window.SHOP_CATALOG = [
      {
       "label": "Formable Edge - 12mm",
       "code": "FEB12",
-      "price": 389.0
+      "price": 389
      },
      {
       "label": "Formable Edge - 15mm",
       "code": "FEB15",
-      "price": 409.0
+      "price": 409
      },
      {
       "label": "Formable Edge - 22.5mm",
       "code": "FEB225",
       "price": 481.75
      }
-    ]
+    ],
+    "cat": "Tile Trims & Edges"
    }
   ]
  },
@@ -1288,9 +1331,10 @@ window.SHOP_CATALOG = [
      {
       "label": "Internal Seal Strip",
       "code": "PVCIC",
-      "price": 29.0
+      "price": 29
      }
-    ]
+    ],
+    "cat": "PVC Profiles"
    },
    {
     "family": "Flexible Internal Seal Strip - 3 metre per packet",
@@ -1305,7 +1349,8 @@ window.SHOP_CATALOG = [
       "code": "PVCF12",
       "price": 23.55
      }
-    ]
+    ],
+    "cat": "PVC Profiles"
    }
   ]
  },
@@ -1340,7 +1385,8 @@ window.SHOP_CATALOG = [
       "code": "HDA22.5",
       "price": 727.2
      }
-    ]
+    ],
+    "cat": "Movement Joints"
    },
    {
     "family": "Stainless Steel - 2.5 metre lengths",
@@ -1370,7 +1416,8 @@ window.SHOP_CATALOG = [
       "code": "HDS22.5",
       "price": 781.75
      }
-    ]
+    ],
+    "cat": "Movement Joints"
    },
    {
     "family": "PVC Movement Joints - 2.5 metre lengths",
@@ -1390,7 +1437,8 @@ window.SHOP_CATALOG = [
       "code": "PVCMJ12",
       "price": 54.5
      }
-    ]
+    ],
+    "cat": "Movement Joints"
    },
    {
     "family": "PVC Compression Joints - 2.5 metre lengths",
@@ -1410,7 +1458,8 @@ window.SHOP_CATALOG = [
       "code": "PVCCJ12",
       "price": 54.5
      }
-    ]
+    ],
+    "cat": "Movement Joints"
    }
   ]
  },
@@ -1440,7 +1489,8 @@ window.SHOP_CATALOG = [
       "code": "NAP2.5PC",
       "price": 127.2
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Sure Lock (Naplock) - 1 metre",
@@ -1450,7 +1500,8 @@ window.SHOP_CATALOG = [
       "code": "NAP1",
       "price": 32.65
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Sure Line (Thrift line) - 2.5 metre",
@@ -1475,7 +1526,8 @@ window.SHOP_CATALOG = [
       "code": "THR2.5PC",
       "price": 145.4
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "One Sided Straight Edge (One Sided Twin Grip)",
@@ -1500,7 +1552,8 @@ window.SHOP_CATALOG = [
       "code": "TWIN2.5PC",
       "price": 218.1
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "One Sided Round Edge (Vari Strip) - 2.5 metre",
@@ -1525,7 +1578,8 @@ window.SHOP_CATALOG = [
       "code": "VAR2.5PC",
       "price": 199.95
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "One Sided Round Edge (Vari Strip) - 1 metre",
@@ -1540,7 +1594,8 @@ window.SHOP_CATALOG = [
       "code": "VAR1B",
       "price": 85.4
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Tread Cover - 2.5 metre",
@@ -1565,7 +1620,8 @@ window.SHOP_CATALOG = [
       "code": "TRE2.5PC",
       "price": 99.95
      }
-    ]
+    ],
+    "cat": "Stair Nosing"
    },
    {
     "family": "Tread Cover - 1 metre",
@@ -1580,7 +1636,8 @@ window.SHOP_CATALOG = [
       "code": "TRE1B",
       "price": 54.5
      }
-    ]
+    ],
+    "cat": "Stair Nosing"
    },
    {
     "family": "Tread Cover - 900mm",
@@ -1595,7 +1652,8 @@ window.SHOP_CATALOG = [
       "code": "TRE9B",
       "price": 43.55
      }
-    ]
+    ],
+    "cat": "Stair Nosing"
    },
    {
     "family": "Carpet Square Edge (Fast Edge)",
@@ -1620,7 +1678,8 @@ window.SHOP_CATALOG = [
       "code": "FEDGE2.5PC",
       "price": 181.75
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Carpet Tile Nosing",
@@ -1645,7 +1704,8 @@ window.SHOP_CATALOG = [
       "code": "CTN2.5PC",
       "price": 258.1
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Retro Edge 21 x 21 - 2.5 metre",
@@ -1670,7 +1730,8 @@ window.SHOP_CATALOG = [
       "code": "RET21PC",
       "price": 145.4
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Expansion Cover - 33mm Wide - 2.5 metre",
@@ -1700,7 +1761,8 @@ window.SHOP_CATALOG = [
       "code": "EXP2.5PC",
       "price": 114.5
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Expansion Cover - 33mm Wide - 1 metre",
@@ -1730,7 +1792,8 @@ window.SHOP_CATALOG = [
       "code": "EXP1PC",
       "price": 45.4
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Expansion Cover - 33mm Wide - 900mm",
@@ -1738,14 +1801,15 @@ window.SHOP_CATALOG = [
      {
       "label": "Expansion Cover - 33mm Wide - 900mm",
       "code": "EXP9",
-      "price": 29.0
+      "price": 29
      },
      {
       "label": "Anodised - Carpet Bronze colour - 900mm",
       "code": "EXP9B",
       "price": 43.55
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Ramp / Transition Cover - 44mm Wide - 2.5 metre",
@@ -1775,7 +1839,8 @@ window.SHOP_CATALOG = [
       "code": "TRA2.5PC",
       "price": 145.4
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Ramp / Transition Cover - 44mm Wide - 1 metre",
@@ -1805,7 +1870,8 @@ window.SHOP_CATALOG = [
       "code": "TRA1PC",
       "price": 58.1
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Ramp / Transition Cover - 44mm Wide - 900mm",
@@ -1820,7 +1886,8 @@ window.SHOP_CATALOG = [
       "code": "TRA9B",
       "price": 54.5
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Wood Edge - 15mm Wide - 2.5 metre",
@@ -1850,7 +1917,8 @@ window.SHOP_CATALOG = [
       "code": "WOOD2.5PC",
       "price": 118.1
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Wood Edge - 15mm Wide - 1 metre",
@@ -1863,24 +1931,25 @@ window.SHOP_CATALOG = [
      {
       "label": "Anodised - Carpet Bronze colour - 1 metre",
       "code": "WOOD1B",
-      "price": 49.0
+      "price": 49
      },
      {
       "label": "Anodised - Matt Silver - 1 metre",
       "code": "WOOD1MS",
-      "price": 49.0
+      "price": 49
      },
      {
       "label": "Anodised - Dark Bronze - 1 metre",
       "code": "WOOD1DB",
-      "price": 49.0
+      "price": 49
      },
      {
       "label": "Powder Coating - Black / White - 1 metre",
       "code": "WOOD1PC",
-      "price": 49.0
+      "price": 49
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Wood End - 2.5 metre",
@@ -1888,7 +1957,7 @@ window.SHOP_CATALOG = [
      {
       "label": "Wood End - 2.5 metre",
       "code": "WEND2.5",
-      "price": 109.0
+      "price": 109
      },
      {
       "label": "Anodised - Carpet Bronze colour - 2.5 metre",
@@ -1905,7 +1974,8 @@ window.SHOP_CATALOG = [
       "code": "WEND2.5PC",
       "price": 199.95
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Wood Nosing - 2.5 metre",
@@ -1930,7 +2000,8 @@ window.SHOP_CATALOG = [
       "code": "WNOSE2.5PC",
       "price": 192.65
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "LVT Expansion - 2.5 metre",
@@ -1970,7 +2041,8 @@ window.SHOP_CATALOG = [
       "code": "LVTEXP1PC",
       "price": 39.95
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "LVT Transition - 2.5 metre",
@@ -1993,7 +2065,7 @@ window.SHOP_CATALOG = [
      {
       "label": "Anodised - Matt Silver - 2.5 metre",
       "code": "LVTTRA2.5MS",
-      "price": 89.0
+      "price": 89
      },
      {
       "label": "Anodised - Matt Silver - 1 metre",
@@ -2010,7 +2082,8 @@ window.SHOP_CATALOG = [
       "code": "LVTTRA1PC",
       "price": 39.95
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "LVT Stair Nosing - 2.5 metre",
@@ -2023,7 +2096,7 @@ window.SHOP_CATALOG = [
      {
       "label": "Anodised - Matt Titanium colour - 2.5 metre",
       "code": "LVTSN2.5M",
-      "price": 169.0
+      "price": 169
      },
      {
       "label": "Anodised - Matt Titanium colour - 1 metre",
@@ -2048,9 +2121,10 @@ window.SHOP_CATALOG = [
      {
       "label": "Powder Coating - Black / White - 1 metre",
       "code": "LVTSN1PC",
-      "price": 49.0
+      "price": 49
      }
-    ]
+    ],
+    "cat": "Stair Nosing"
    },
    {
     "family": "Laminate Floor Wedges",
@@ -2060,7 +2134,8 @@ window.SHOP_CATALOG = [
       "code": "",
       "price": 45.4
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Underlay - 2mm x 1 metre x 80 Micron x 100% Virgin LDPE",
@@ -2070,7 +2145,8 @@ window.SHOP_CATALOG = [
       "code": "",
       "price": 15.95
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "100 metre Roll",
@@ -2080,7 +2156,8 @@ window.SHOP_CATALOG = [
       "code": "",
       "price": 1590.95
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "25 metre Roll",
@@ -2090,7 +2167,8 @@ window.SHOP_CATALOG = [
       "code": "",
       "price": 397.75
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "10 metre Roll",
@@ -2100,7 +2178,8 @@ window.SHOP_CATALOG = [
       "code": "",
       "price": 159.1
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "SpillGuard",
@@ -2110,7 +2189,8 @@ window.SHOP_CATALOG = [
       "code": "",
       "price": 1992.65
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Felt Floor Protectors",
@@ -2135,7 +2215,8 @@ window.SHOP_CATALOG = [
       "code": "",
       "price": 36.3
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Laminate Floor Chemicals",
@@ -2155,7 +2236,8 @@ window.SHOP_CATALOG = [
       "code": "",
       "price": 45.4
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    }
   ]
  },
@@ -2225,7 +2307,8 @@ window.SHOP_CATALOG = [
       "code": "SPA10N",
       "price": 10.95
      }
-    ]
+    ],
+    "cat": "Spacers"
    },
    {
     "family": "Self Levelling Tile Spacers",
@@ -2255,7 +2338,8 @@ window.SHOP_CATALOG = [
       "code": "SLT",
       "price": 627.2
      }
-    ]
+    ],
+    "cat": "Spacers"
    }
   ]
  },
@@ -2268,7 +2352,7 @@ window.SHOP_CATALOG = [
      {
       "label": "12.7 x 12.7 x 1.6 Angle - 3 metre length",
       "code": "ANG12",
-      "price": 69.0
+      "price": 69
      },
      {
       "label": "19 x 19 x 1.6 Angle - 3 metre length",
@@ -2278,7 +2362,7 @@ window.SHOP_CATALOG = [
      {
       "label": "25 x 25 x 1.6 Angle - 3 metre length",
       "code": "ANG25",
-      "price": 109.0
+      "price": 109
      },
      {
       "label": "38 x 38 x 2 Angle - 3 metre length",
@@ -2290,7 +2374,8 @@ window.SHOP_CATALOG = [
       "code": "ANG50",
       "price": 254.5
      }
-    ]
+    ],
+    "cat": "Angle & Flat Bar"
    },
    {
     "family": "U Channel",
@@ -2305,7 +2390,8 @@ window.SHOP_CATALOG = [
       "code": "UCH127",
       "price": 127.2
      }
-    ]
+    ],
+    "cat": "Angle & Flat Bar"
    },
    {
     "family": "Weather Bar / Flat Bar / Dividing Strip (Aluminium)",
@@ -2313,7 +2399,7 @@ window.SHOP_CATALOG = [
      {
       "label": "25 x 3 Flat Bar - 3 metre length",
       "code": "FLA25",
-      "price": 109.0
+      "price": 109
      },
      {
       "label": "38 x 3 Flat Bar - 3 metre length",
@@ -2325,7 +2411,8 @@ window.SHOP_CATALOG = [
       "code": "FLA50",
       "price": 181.75
      }
-    ]
+    ],
+    "cat": "Angle & Flat Bar"
    },
    {
     "family": "Retro Corner Protector / Angle (PVC)",
@@ -2350,7 +2437,8 @@ window.SHOP_CATALOG = [
       "code": "PVCCHA25",
       "price": 36.3
      }
-    ]
+    ],
+    "cat": "Angle & Flat Bar"
    },
    {
     "family": "Weather Bar / Flat Bar / Dividing Strip (PVC)",
@@ -2360,7 +2448,8 @@ window.SHOP_CATALOG = [
       "code": "",
       "price": 32.65
      }
-    ]
+    ],
+    "cat": "Angle & Flat Bar"
    },
    {
     "family": "Weather Bar / Flat Bar / Dividing Strip (Brass)",
@@ -2368,9 +2457,10 @@ window.SHOP_CATALOG = [
      {
       "label": "25 x 3 Flat Bar - 3 metre length",
       "code": "FLB25",
-      "price": 909.0
+      "price": 909
      }
-    ]
+    ],
+    "cat": "Angle & Flat Bar"
    },
    {
     "family": "Square Bar",
@@ -2380,7 +2470,8 @@ window.SHOP_CATALOG = [
       "code": "SQB10",
       "price": 763.65
      }
-    ]
+    ],
+    "cat": "Angle & Flat Bar"
    }
   ]
  },
@@ -2395,7 +2486,8 @@ window.SHOP_CATALOG = [
       "code": "CF22",
       "price": 14.7
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Capping Strip 16mm",
@@ -2405,7 +2497,8 @@ window.SHOP_CATALOG = [
       "code": "FE16",
       "price": 13.8
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Hospital Skirting",
@@ -2415,7 +2508,8 @@ window.SHOP_CATALOG = [
       "code": "FE5",
       "price": 38.5
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Capping Strip 18mm",
@@ -2425,7 +2519,8 @@ window.SHOP_CATALOG = [
       "code": "CS18",
       "price": 14.8
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Sit on Skirting 100mm",
@@ -2435,7 +2530,8 @@ window.SHOP_CATALOG = [
       "code": "CB100",
       "price": 32.1
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Sit on Skirting 70mm",
@@ -2445,7 +2541,8 @@ window.SHOP_CATALOG = [
       "code": "CB70",
       "price": 22.35
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    },
    {
     "family": "Stair Nosing",
@@ -2455,7 +2552,8 @@ window.SHOP_CATALOG = [
       "code": "SN100",
       "price": 37.2
      }
-    ]
+    ],
+    "cat": "Stair Nosing"
    },
    {
     "family": "Expansion Cover",
@@ -2465,7 +2563,8 @@ window.SHOP_CATALOG = [
       "code": "JC060",
       "price": 31.55
      }
-    ]
+    ],
+    "cat": "Flooring Profiles"
    }
   ]
  }

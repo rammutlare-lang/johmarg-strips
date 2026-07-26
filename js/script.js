@@ -45,6 +45,50 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Quote page — pull in the persistent Quote List built on the catalogue pages
+  // (see js/catalogue.js) and summarise it into the request form.
+  var QUOTE_KEY = 'johmarg_quote_v1';
+  var quoteListBanner = document.getElementById('quote-list-banner');
+  var quoteListField = document.getElementById('quote-list-field');
+  var CATEGORY_CHECKBOX_IDS = {
+    'Tile Trims & Edges': 'p1',
+    'Stair Nosing': 'p2',
+    'Flooring Profiles': 'p3',
+    'Metal Profiles': 'p4',
+    'PVC Profiles': 'p5',
+    'Movement Joints': 'p6',
+    'Spacers': 'p8',
+    'Angle & Flat Bar': 'p9'
+  };
+  function money(n) {
+    return 'R' + n.toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+  function renderQuoteListSummary() {
+    if (!quoteListBanner || !quoteListField) return;
+    var list = [];
+    try { list = JSON.parse(localStorage.getItem(QUOTE_KEY)) || []; } catch (e) { list = []; }
+    if (!list.length) {
+      quoteListBanner.style.display = 'none';
+      quoteListField.value = '';
+      return;
+    }
+    var lines = list.map(function (l) {
+      return l.qty + 'x ' + l.family + ' (' + l.label + ') — ' + money(l.price) + ' excl. VAT each';
+    });
+    quoteListField.value = lines.join('\n');
+    document.getElementById('quote-list-text').textContent = list.map(function (l) { return l.qty + 'x ' + l.family; }).join(', ');
+    quoteListBanner.style.display = 'flex';
+
+    var cats = {};
+    list.forEach(function (l) { cats[l.cat] = true; });
+    Object.keys(cats).forEach(function (cat) {
+      var id = CATEGORY_CHECKBOX_IDS[cat];
+      var checkbox = id && document.getElementById(id);
+      if (checkbox) checkbox.checked = true;
+    });
+  }
+  renderQuoteListSummary();
+
   // Gallery filter
   var filterBtns = document.querySelectorAll('.filter-btn');
   var galleryItems = document.querySelectorAll('.gallery-item');
@@ -120,6 +164,10 @@ document.addEventListener('DOMContentLoaded', function () {
           form.reset();
           var uploadLabel = form.querySelector('.upload-text');
           if (uploadLabel) uploadLabel.textContent = 'Drag & drop files here or click to browse';
+          if (form.id === 'quote-form') {
+            localStorage.removeItem(QUOTE_KEY);
+            if (quoteListBanner) quoteListBanner.style.display = 'none';
+          }
         })
         .catch(function () {
           showMessage('Sorry, something went wrong sending your request. Please call or WhatsApp us instead.', true);

@@ -83,7 +83,6 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
       </li>
       <li><a href="applications">APPLICATIONS</a></li>
       <li><a href="gallery">GALLERY</a></li>
-      <li><a href="shop" class="nav-shop-link">SHOP</a></li>
       <li><a href="contact">CONTACT US</a></li>
     </ul>
     <div class="nav-right">
@@ -125,12 +124,17 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
         <i class="fa-solid fa-tag"></i>
         <span>You're enquiring about: <b id="promo-ref-text"></b></span>
       </div>
-      <form data-ajax-form data-success-msg="Thank you for requesting a quotation from JOHMARG STRIPS! Your request has been received and our team is preparing your quotation. We will be in touch shortly with a response. Thank you for choosing JOHMARG STRIPS." action="https://formsubmit.co/johmargstrips@outlook.com" method="POST" enctype="multipart/form-data">
+      <div class="shop-vat-banner" id="quote-list-banner" style="display:none;">
+        <i class="fa-solid fa-clipboard-list"></i>
+        <span>You're requesting a quote for: <b id="quote-list-text"></b><br>Prices are from the amount shown and exclude VAT. Final quotations may vary depending on product specifications, quantities, and delivery requirements.</span>
+      </div>
+      <form id="quote-form" data-ajax-form data-success-msg="Thank you for requesting a quotation from JOHMARG STRIPS! Your request has been received and our team is preparing your quotation. We will be in touch shortly with a response. Thank you for choosing JOHMARG STRIPS." action="https://formsubmit.co/johmargstrips@outlook.com" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_subject" value="New quote request from johmargstrips.co.za">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <input type="hidden" name="Promo / Deal Reference" id="promo-ref-field" value="">
+        <input type="hidden" name="Requested Products" id="quote-list-field" value="">
         <div class="form-row">
           <div class="form-group"><label>Full Name *</label><input type="text" name="Full Name" required placeholder="Enter your full name"></div>
           <div class="form-group"><label>Company / Organisation *</label><input type="text" name="Company" required placeholder="Enter company name"></div>
@@ -176,6 +180,8 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
           <div class="checkbox-row"><input type="checkbox" name="Products of Interest" value="Metal Profiles" id="p4"><label for="p4">Metal Profiles</label></div>
           <div class="checkbox-row"><input type="checkbox" name="Products of Interest" value="PVC Profiles" id="p5"><label for="p5">PVC Profiles</label></div>
           <div class="checkbox-row"><input type="checkbox" name="Products of Interest" value="Movement Joints" id="p6"><label for="p6">Movement Joints</label></div>
+          <div class="checkbox-row"><input type="checkbox" name="Products of Interest" value="Spacers" id="p8"><label for="p8">Spacers</label></div>
+          <div class="checkbox-row"><input type="checkbox" name="Products of Interest" value="Angle &amp; Flat Bar" id="p9"><label for="p9">Angle &amp; Flat Bar</label></div>
           <div class="checkbox-row" style="grid-column:1/-1;">
             <input type="checkbox" name="Products of Interest" value="Other" id="p7"><label for="p7" style="white-space:nowrap;">Other (please specify)</label>
             <input type="text" name="Other Product" style="flex:1;padding:8px 10px;border:1px solid var(--gray-line);border-radius:4px;">
@@ -268,7 +274,6 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
         <li><a href="products">Products</a></li>
         <li><a href="applications">Applications</a></li>
         <li><a href="gallery">Gallery</a></li>
-        <li><a href="shop" class="nav-shop-link">Shop</a></li>
         <li><a href="contact">Contact Us</a></li>
       </ul>
     </div>
