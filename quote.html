@@ -136,16 +136,16 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
         <input type="hidden" name="Promo / Deal Reference" id="promo-ref-field" value="">
         <input type="hidden" name="Requested Products" id="quote-list-field" value="">
         <div class="form-row">
-          <div class="form-group"><label>Full Name *</label><input type="text" name="Full Name" required placeholder="Enter your full name"></div>
-          <div class="form-group"><label>Company / Organisation *</label><input type="text" name="Company" required placeholder="Enter company name"></div>
+          <div class="form-group"><label for="q-full-name">Full Name *</label><input type="text" id="q-full-name" name="Full Name" required placeholder="Enter your full name"></div>
+          <div class="form-group"><label for="q-company">Company / Organisation *</label><input type="text" id="q-company" name="Company" required placeholder="Enter company name"></div>
         </div>
         <div class="form-row">
-          <div class="form-group"><label>Email Address *</label><input type="email" name="Email" required placeholder="Enter your email"></div>
-          <div class="form-group"><label>Phone Number *</label><input type="tel" name="Phone" required placeholder="Enter your phone number"></div>
+          <div class="form-group"><label for="q-email">Email Address *</label><input type="email" id="q-email" name="Email" required placeholder="Enter your email"></div>
+          <div class="form-group"><label for="q-phone">Phone Number *</label><input type="tel" id="q-phone" name="Phone" required placeholder="Enter your phone number"></div>
         </div>
         <div class="form-group">
-          <label>Project Type *</label>
-          <select name="Project Type" required>
+          <label for="q-project-type">Project Type *</label>
+          <select id="q-project-type" name="Project Type" required>
             <option value="">Select project type</option>
             <option>New Build</option>
             <option>Renovation</option>
@@ -154,8 +154,8 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
           </select>
         </div>
         <div class="form-group">
-          <label>Application / Area *</label>
-          <select name="Application / Area" required>
+          <label for="q-application-area">Application / Area *</label>
+          <select id="q-application-area" name="Application / Area" required>
             <option value="">Select application / area</option>
             <option>Residential</option>
             <option>Commercial</option>
@@ -168,12 +168,12 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
           </select>
         </div>
         <div class="form-group">
-          <label>Project Description</label>
-          <textarea name="Project Description" rows="4" placeholder="Tell us more about your project..."></textarea>
+          <label for="q-description">Project Description</label>
+          <textarea id="q-description" name="Project Description" rows="4" placeholder="Tell us more about your project..."></textarea>
         </div>
 
-        <label style="font-size:.85rem;font-weight:700;display:block;margin-bottom:10px;">Products of Interest *</label>
-        <div class="checkbox-grid">
+        <label id="q-products-label" style="font-size:.85rem;font-weight:700;display:block;margin-bottom:10px;">Products of Interest *</label>
+        <div class="checkbox-grid" role="group" aria-labelledby="q-products-label">
           <div class="checkbox-row"><input type="checkbox" name="Products of Interest" value="Tile Trims &amp; Edges" id="p1"><label for="p1">Tile Trims &amp; Edges</label></div>
           <div class="checkbox-row"><input type="checkbox" name="Products of Interest" value="Stair Nosing" id="p2"><label for="p2">Stair Nosing</label></div>
           <div class="checkbox-row"><input type="checkbox" name="Products of Interest" value="Flooring Profiles" id="p3"><label for="p3">Flooring Profiles</label></div>
@@ -184,15 +184,15 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
           <div class="checkbox-row"><input type="checkbox" name="Products of Interest" value="Angle &amp; Flat Bar" id="p9"><label for="p9">Angle &amp; Flat Bar</label></div>
           <div class="checkbox-row" style="grid-column:1/-1;">
             <input type="checkbox" name="Products of Interest" value="Other" id="p7"><label for="p7" style="white-space:nowrap;">Other (please specify)</label>
-            <input type="text" name="Other Product" style="flex:1;padding:8px 10px;border:1px solid var(--gray-line);border-radius:4px;">
+            <input type="text" name="Other Product" aria-label="Other product details" style="flex:1;padding:8px 10px;border:1px solid var(--gray-line);border-radius:4px;">
           </div>
         </div>
 
         <div class="form-row">
-          <div class="form-group"><label>Estimated Project Size</label><input type="text" name="Estimated Project Size" placeholder="Enter approximate size (e.g. 100m²)"></div>
+          <div class="form-group"><label for="q-project-size">Estimated Project Size</label><input type="text" id="q-project-size" name="Estimated Project Size" placeholder="Enter approximate size (e.g. 100m²)"></div>
           <div class="form-group">
-            <label>Preferred Contact Method</label>
-            <div class="radio-row" style="margin-top:8px;">
+            <label id="q-contact-method-label">Preferred Contact Method</label>
+            <div class="radio-row" role="radiogroup" aria-labelledby="q-contact-method-label" style="margin-top:8px;">
               <div class="radio-item"><input type="radio" name="Preferred Contact Method" value="Email" id="cm1" checked><label for="cm1">Email</label></div>
               <div class="radio-item"><input type="radio" name="Preferred Contact Method" value="Phone" id="cm2"><label for="cm2">Phone</label></div>
               <div class="radio-item"><input type="radio" name="Preferred Contact Method" value="WhatsApp" id="cm3"><label for="cm3">WhatsApp</label></div>
@@ -201,12 +201,12 @@ src="https://www.facebook.com/tr?id=4276322049251608&ev=PageView&noscript=1"
         </div>
 
         <div class="form-group">
-          <label>Upload Drawings / Plans (Optional)</label>
+          <label for="q-drawings">Upload Drawings / Plans (Optional)</label>
           <div class="upload-box">
             <i class="fa-solid fa-cloud-arrow-up"></i>
             <span class="upload-text">Drag &amp; drop files here or click to browse</span>
             <small>PDF, DWG, JPG, PNG (Max 10MB)</small>
-            <input type="file" name="Drawings" class="upload-input" style="display:none;" multiple>
+            <input type="file" id="q-drawings" name="Drawings" class="upload-input" style="display:none;" multiple>
           </div>
         </div>
 
