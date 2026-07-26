@@ -39,10 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
     return 'R' + n.toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
-  function minPrice(variants) {
-    return variants.reduce(function (min, v) { return Math.min(min, v.price); }, variants[0].price);
-  }
-
   // Clamp any user-typed quantity to a sane whole number between 1 and 999.
   function clampQty(raw) {
     var n = parseInt(raw, 10);
@@ -131,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
           '  <h3>' + prod.family + '</h3>' +
           '  <p class="shop-card-desc">' + shortDescription(mat.category) + '</p>' +
           '  <label class="shop-variant-label">Size / Finish</label><select class="shop-variant-select">' + options + '</select>' +
-          '  <div class="shop-card-price"><span class="shop-price-amount">From ' + money(minPrice(prod.variants)) + '</span><span class="shop-price-excl">excl. VAT</span></div>' +
+          '  <div class="shop-card-price"><span class="shop-price-amount">From ' + money(prod.variants[0].price) + '</span><span class="shop-price-excl">excl. VAT</span></div>' +
           '  <div class="shop-card-row">' +
           '    <div class="shop-qty"><button type="button" class="qty-btn" data-dir="-1">−</button><input type="number" class="qty-input" value="1" min="1" max="999"><button type="button" class="qty-btn" data-dir="1">+</button></div>' +
           '    <button type="button" class="btn btn-gold shop-add-btn">ADD TO QUOTE</button>' +
@@ -150,6 +146,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     grid.innerHTML = sectionsHtml || '<p class="shop-no-results">No products match your search.</p>';
   }
+
+  grid.addEventListener('change', function (e) {
+    if (!e.target.classList.contains('shop-variant-select')) return;
+    var card = e.target.closest('.shop-card');
+    var uid = decodeURIComponent(card.getAttribute('data-uid'));
+    var prod = findProduct(uid);
+    var idx = parseInt(e.target.value, 10);
+    card.querySelector('.shop-price-amount').textContent = 'From ' + money(prod.variants[idx].price);
+  });
 
   grid.addEventListener('click', function (e) {
     var qtyBtn = e.target.closest('.qty-btn');
