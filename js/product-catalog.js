@@ -1389,6 +1389,37 @@ window.PRODUCT_CATALOG = [
     "cat": "Movement Joints"
    },
    {
+    "family": "Brass - 2.5 metre lengths",
+    "variants": [
+     {
+      "label": "Brass - 8mm",
+      "code": "HDB8",
+      "price": "POA"
+     },
+     {
+      "label": "Brass - 10mm",
+      "code": "HDB10",
+      "price": "POA"
+     },
+     {
+      "label": "Brass - 12mm",
+      "code": "HDB12",
+      "price": "POA"
+     },
+     {
+      "label": "Brass - 15mm",
+      "code": "HDB15",
+      "price": "POA"
+     },
+     {
+      "label": "Brass - 22.5mm",
+      "code": "HDB22.5",
+      "price": "POA"
+     }
+    ],
+    "cat": "Movement Joints"
+   },
+   {
     "family": "Stainless Steel - 2.5 metre lengths",
     "variants": [
      {

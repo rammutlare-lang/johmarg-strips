@@ -83,6 +83,7 @@ function renderPage(pageCat) {
         return '<option value="' + i + '">' + escapeHtml(v.label) + '</option>';
       }).join('');
       const photo = PRODUCT_IMAGES[uid];
+      const isFamilyPOA = prod.variants.every(function (v) { return typeof v.price !== 'number'; });
       cardsHtml += '' +
         '<div class="shop-card" data-uid="' + encodeURIComponent(uid) + '">' +
         (photo
@@ -93,11 +94,16 @@ function renderPage(pageCat) {
         '  <h3>' + escapeHtml(prod.family) + '</h3>' +
         '  <p class="shop-card-desc">' + escapeHtml(shortDescription(pageCat, mat.category)) + '</p>' +
         '  <label class="shop-variant-label">Size / Finish</label><select class="shop-variant-select">' + options + '</select>' +
-        '  <div class="shop-card-price"><span class="shop-price-amount">From ' + money(prod.variants[0].price) + '</span><span class="shop-price-excl">excl. VAT</span></div>' +
-        '  <div class="shop-card-row">' +
-        '    <div class="shop-qty"><button type="button" class="qty-btn" data-dir="-1">−</button><input type="number" class="qty-input" value="1" min="1" max="999"><button type="button" class="qty-btn" data-dir="1">+</button></div>' +
-        '    <button type="button" class="btn btn-gold shop-add-btn">ADD TO QUOTE</button>' +
-        '  </div>' +
+        (isFamilyPOA
+          ? '  <div class="shop-card-price"><span class="shop-price-amount" style="font-size:1.1rem;">Price on Application</span></div>' +
+            '  <div class="shop-card-row">' +
+            '    <a href="quote?product=' + encodeURIComponent(prod.family) + '" class="btn btn-gold" style="width:100%;justify-content:center;">REQUEST QUOTE</a>' +
+            '  </div>'
+          : '  <div class="shop-card-price"><span class="shop-price-amount">From ' + money(prod.variants[0].price) + '</span><span class="shop-price-excl">excl. VAT</span></div>' +
+            '  <div class="shop-card-row">' +
+            '    <div class="shop-qty"><button type="button" class="qty-btn" data-dir="-1">−</button><input type="number" class="qty-input" value="1" min="1" max="999"><button type="button" class="qty-btn" data-dir="1">+</button></div>' +
+            '    <button type="button" class="btn btn-gold shop-add-btn">ADD TO QUOTE</button>' +
+            '  </div>') +
         '  </div>' +
         '</div>';
     });

@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
           return '<option value="' + i + '">' + v.label + '</option>';
         }).join('');
         var photo = PRODUCT_IMAGES[uid];
+        var isFamilyPOA = prod.variants.every(function (v) { return typeof v.price !== 'number'; });
         cardsHtml += '' +
           '<div class="shop-card" data-uid="' + encodeURIComponent(uid) + '">' +
           (photo
@@ -127,11 +128,16 @@ document.addEventListener('DOMContentLoaded', function () {
           '  <h3>' + prod.family + '</h3>' +
           '  <p class="shop-card-desc">' + shortDescription(mat.category) + '</p>' +
           '  <label class="shop-variant-label">Size / Finish</label><select class="shop-variant-select">' + options + '</select>' +
-          '  <div class="shop-card-price"><span class="shop-price-amount">From ' + money(prod.variants[0].price) + '</span><span class="shop-price-excl">excl. VAT</span></div>' +
-          '  <div class="shop-card-row">' +
-          '    <div class="shop-qty"><button type="button" class="qty-btn" data-dir="-1">−</button><input type="number" class="qty-input" value="1" min="1" max="999"><button type="button" class="qty-btn" data-dir="1">+</button></div>' +
-          '    <button type="button" class="btn btn-gold shop-add-btn">ADD TO QUOTE</button>' +
-          '  </div>' +
+          (isFamilyPOA
+            ? '  <div class="shop-card-price"><span class="shop-price-amount" style="font-size:1.1rem;">Price on Application</span></div>' +
+              '  <div class="shop-card-row">' +
+              '    <a href="quote?product=' + encodeURIComponent(prod.family) + '" class="btn btn-gold" style="width:100%;justify-content:center;">REQUEST QUOTE</a>' +
+              '  </div>'
+            : '  <div class="shop-card-price"><span class="shop-price-amount">From ' + money(prod.variants[0].price) + '</span><span class="shop-price-excl">excl. VAT</span></div>' +
+              '  <div class="shop-card-row">' +
+              '    <div class="shop-qty"><button type="button" class="qty-btn" data-dir="-1">−</button><input type="number" class="qty-input" value="1" min="1" max="999"><button type="button" class="qty-btn" data-dir="1">+</button></div>' +
+              '    <button type="button" class="btn btn-gold shop-add-btn">ADD TO QUOTE</button>' +
+              '  </div>') +
           '  </div>' +
           '</div>';
       });
@@ -153,7 +159,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var uid = decodeURIComponent(card.getAttribute('data-uid'));
     var prod = findProduct(uid);
     var idx = parseInt(e.target.value, 10);
-    card.querySelector('.shop-price-amount').textContent = 'From ' + money(prod.variants[idx].price);
+    var price = prod.variants[idx].price;
+    if (typeof price === 'number') card.querySelector('.shop-price-amount').textContent = 'From ' + money(price);
   });
 
   grid.addEventListener('click', function (e) {

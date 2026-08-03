@@ -43,6 +43,19 @@ document.addEventListener('DOMContentLoaded', function () {
         desc.value = 'Enquiry regarding: ' + dealName + ' (' + promoCode + ')\n\n';
       }
     }
+
+    // Same banner, for a "Request Quote" link from a Price-on-Application
+    // product card (see js/products-page.js) — e.g. quote.html?product=Brass%20Movement%20Joint
+    var productName = params.get('product');
+    if (productName && !promoCode) {
+      document.getElementById('promo-ref-text').textContent = productName + ' (price on application)';
+      promoRefBanner.style.display = 'flex';
+      promoRefField.value = productName + ' — price on application';
+      var pdesc = document.querySelector('textarea[name="Project Description"]');
+      if (pdesc && !pdesc.value) {
+        pdesc.value = 'Enquiry regarding: ' + productName + ' (price on application)\n\n';
+      }
+    }
   }
 
   // Quote page — pull in the persistent Quote List built on the catalogue pages
