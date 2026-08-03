@@ -25,16 +25,6 @@ const PRODUCT_IMAGES = loadGlobal('product-images.js', 'PRODUCT_IMAGES');
 const LIB = loadGlobal('products-index.js', 'PRODUCT_INDEX_LIB');
 const ALL = LIB.build(PRODUCT_CATALOG, PRODUCT_IMAGES);
 
-const CAT_PAGE = {
-  'Tile Trims & Edges': 'tile-trims',
-  'Stair Nosing': 'stair-nosing',
-  'Flooring Profiles': 'flooring-profiles',
-  'Metal Profiles': 'metal-profiles',
-  'PVC Profiles': 'pvc-profiles',
-  'Movement Joints': 'movement-joints',
-  'Spacers': 'spacers',
-  'Angle & Flat Bar': 'angle-flat-bar'
-};
 const CAT_FALLBACK_IMAGE = {
   'Tile Trims & Edges': 'product-tile-trim.jpg',
   'Stair Nosing': 'product-stair-nosing.jpg',
@@ -195,7 +185,8 @@ function swatchDots(colours) {
 }
 
 function renderPage(p) {
-  const catSlug = CAT_PAGE[p.cat] || 'products';
+  const catFilterHref = 'products?cat=' + encodeURIComponent(p.cat);
+  const catFilterUrl = 'https://www.johmargstrips.co.za/' + catFilterHref;
   const image = p.image || 'images/' + (CAT_FALLBACK_IMAGE[p.cat] || 'products-hero.jpg');
   const imageAbs = image.startsWith('images/') ? '../' + image : image;
   const canonical = 'https://www.johmargstrips.co.za/products/' + p.slug;
@@ -269,7 +260,7 @@ function renderPage(p) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.johmargstrips.co.za/' },
       { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.johmargstrips.co.za/products' },
-      { '@type': 'ListItem', position: 3, name: p.cat, item: 'https://www.johmargstrips.co.za/' + catSlug },
+      { '@type': 'ListItem', position: 3, name: p.cat, item: catFilterUrl },
       { '@type': 'ListItem', position: 4, name: p.family, item: canonical }
     ]
   };
@@ -313,7 +304,7 @@ function renderPage(p) {
     '<main id="main"><section class="section-tight"><div class="container">\n' +
     '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a><span class="sep">/</span>' +
     '<a href="../products">Products</a><span class="sep">/</span>' +
-    '<a href="../' + catSlug + '">' + escapeHtml(p.cat) + '</a><span class="sep">/</span>' +
+    '<a href="../' + catFilterHref + '">' + escapeHtml(p.cat) + '</a><span class="sep">/</span>' +
     '<span class="current">' + escapeHtml(p.family) + '</span></nav>\n' +
     '<div class="pdp-layout">\n' +
     '<div><div class="pdp-gallery-main" style="background-image:url(\'' + imageAbs + '\');"></div>' +
