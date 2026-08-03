@@ -443,10 +443,10 @@ function poaCardHtml(p) {
     '<div class="pcard-swatches">' + swatches + '</div>' +
     (p.isPOA
       ? '<div class="pcard-price"><span class="amount" style="font-size:1.05rem;">Price on Application</span></div>' +
-        '<div class="pcard-actions"><a href="' + detailHref + '" class="btn btn-outline-dark">VIEW DETAILS</a><a href="quote?product=' + encodeURIComponent(p.family) + '" class="btn btn-dark" style="width:100%;justify-content:center;">REQUEST QUOTE</a></div>'
+        '<div class="pcard-actions"><a href="quote?product=' + encodeURIComponent(p.family) + '" class="btn btn-dark" style="width:100%;justify-content:center;">REQUEST QUOTE</a></div>'
       : '<div class="pcard-price"><span class="amount">From ' + money(p.minPrice) + '</span><span class="excl">excl. VAT</span></div>' +
         '<p style="font-size:.7rem;color:var(--text-muted);margin:0;">Prices exclude VAT.</p>' +
-        '<div class="pcard-actions"><a href="' + detailHref + '" class="btn btn-outline-dark">VIEW DETAILS</a></div>') +
+        '<div class="pcard-actions"><button type="button" class="btn btn-gold pcard-add-btn" data-slug="' + p.slug + '">ADD TO QUOTE</button></div>') +
     '</div></div>';
 }
 

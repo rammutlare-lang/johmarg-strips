@@ -222,17 +222,12 @@ document.addEventListener('DOMContentLoaded', function () {
         ? '    <div class="pcard-price"><span class="amount" style="font-size:1.05rem;">Price on Application</span></div>' +
           '    <p style="font-size:.7rem;color:var(--text-muted);margin:0;">Contact us for a tailored price.</p>' +
           '    <div class="pcard-actions">' +
-          '      <a href="' + detailHref + '" class="btn btn-outline-dark">VIEW DETAILS</a>' +
           '      <a href="quote?product=' + encodeURIComponent(p.family) + '" class="btn btn-dark" style="width:100%;justify-content:center;">REQUEST QUOTE</a>' +
           '    </div>'
         : '    <div class="pcard-price"><span class="amount">From ' + money(p.minPrice) + '</span><span class="excl">excl. VAT</span></div>' +
           '    <p style="font-size:.7rem;color:var(--text-muted);margin:0;">Prices exclude VAT.</p>' +
           '    <div class="pcard-actions">' +
-          '      <a href="' + detailHref + '" class="btn btn-outline-dark">VIEW DETAILS</a>' +
-          '      <div class="pcard-actions-row">' +
-          '        <button type="button" class="btn btn-gold pcard-add-btn" data-slug="' + p.slug + '">ADD TO QUOTE</button>' +
-          '        <button type="button" class="btn btn-dark pcard-quote-btn" data-slug="' + p.slug + '">REQUEST QUOTE</button>' +
-          '      </div>' +
+          '      <button type="button" class="btn btn-gold pcard-add-btn" data-slug="' + p.slug + '">ADD TO QUOTE</button>' +
           '    </div>') +
       '  </div>' +
       '</div>';
