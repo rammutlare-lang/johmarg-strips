@@ -225,7 +225,6 @@ document.addEventListener('DOMContentLoaded', function () {
           '      <a href="quote?product=' + encodeURIComponent(p.family) + '" class="btn btn-dark" style="width:100%;justify-content:center;">REQUEST QUOTE</a>' +
           '    </div>'
         : '    <div class="pcard-price"><span class="amount">From ' + money(p.minPrice) + '</span><span class="excl">excl. VAT</span></div>' +
-          '    <p style="font-size:.7rem;color:var(--text-muted);margin:0;">Prices exclude VAT.</p>' +
           '    <div class="pcard-actions">' +
           '      <button type="button" class="btn btn-gold pcard-add-btn" data-slug="' + p.slug + '">ADD TO QUOTE</button>' +
           '    </div>') +

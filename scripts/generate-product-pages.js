@@ -280,7 +280,7 @@ function renderPage(p) {
     '<meta name="twitter:description" content="' + escapeAttr(metaDesc) + '">\n' +
     '<link rel="icon" type="image/x-icon" href="../favicon.ico">\n' +
     '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">\n' +
-    '<link rel="stylesheet" href="../css/style.css?v=7">\n' +
+    '<link rel="stylesheet" href="../css/style.css?v=8">\n' +
     '<script type="application/ld+json">' + JSON.stringify(jsonLd) + '</script>\n' +
     '<script type="application/ld+json">' + JSON.stringify(breadcrumbLd) + '</script>\n' +
     '</head>\n<body>\n' +
@@ -316,8 +316,7 @@ function renderPage(p) {
     (p.isPOA
       ? '<div class="pdp-price-block"><span class="amount" style="font-size:1.4rem;">Price on Application</span></div>\n' +
         '<p style="font-size:.8rem;color:var(--text-muted);margin:0 0 4px;">Contact us for a tailored price.</p>\n'
-      : '<div class="pdp-price-block"><span class="amount">From ' + money(p.minPrice) + '</span></div>\n' +
-        '<p style="font-size:.8rem;color:var(--text-muted);margin:0 0 4px;">Prices exclude VAT.</p>\n') +
+      : '<div class="pdp-price-block"><span class="amount">From ' + money(p.minPrice) + '</span><span class="excl" style="font-size:.85rem;color:var(--text-muted);">excl. VAT</span></div>\n') +
     '<div class="pdp-stock"><i class="fa-solid fa-circle"></i> In Stock</div>\n' +
     '<p class="pdp-desc">' + escapeHtml(p.description) + '</p>\n' +
     '<div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;"><span style="font-size:.8rem;font-weight:700;">Available Finishes:</span>' + swatchDots(p.colours) + '</div>\n' +
@@ -436,7 +435,6 @@ function poaCardHtml(p) {
       ? '<div class="pcard-price"><span class="amount" style="font-size:1.05rem;">Price on Application</span></div>' +
         '<div class="pcard-actions"><a href="quote?product=' + encodeURIComponent(p.family) + '" class="btn btn-dark" style="width:100%;justify-content:center;">REQUEST QUOTE</a></div>'
       : '<div class="pcard-price"><span class="amount">From ' + money(p.minPrice) + '</span><span class="excl">excl. VAT</span></div>' +
-        '<p style="font-size:.7rem;color:var(--text-muted);margin:0;">Prices exclude VAT.</p>' +
         '<div class="pcard-actions"><button type="button" class="btn btn-gold pcard-add-btn" data-slug="' + p.slug + '">ADD TO QUOTE</button></div>') +
     '</div></div>';
 }
