@@ -33,7 +33,7 @@ function renderStub(r) {
     '<meta name="robots" content="noindex, follow">\n' +
     '<link rel="canonical" href="' + canonical + '">\n' +
     '<meta http-equiv="refresh" content="0; url=' + target + '">\n' +
-    '<link rel="stylesheet" href="css/style.css?v=8">\n' +
+    '<link rel="stylesheet" href="css/style.css?v=9">\n' +
     '<script>window.location.replace(' + JSON.stringify(target) + ');</script>\n' +
     '</head>\n<body>\n' +
     '<div style="min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;font-family:\'Segoe UI\',Arial,Helvetica,sans-serif;">\n' +

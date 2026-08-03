@@ -280,7 +280,7 @@ function renderPage(p) {
     '<meta name="twitter:description" content="' + escapeAttr(metaDesc) + '">\n' +
     '<link rel="icon" type="image/x-icon" href="../favicon.ico">\n' +
     '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">\n' +
-    '<link rel="stylesheet" href="../css/style.css?v=8">\n' +
+    '<link rel="stylesheet" href="../css/style.css?v=9">\n' +
     '<script type="application/ld+json">' + JSON.stringify(jsonLd) + '</script>\n' +
     '<script type="application/ld+json">' + JSON.stringify(breadcrumbLd) + '</script>\n' +
     '</head>\n<body>\n' +

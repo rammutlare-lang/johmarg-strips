@@ -654,13 +654,9 @@ body.cart-open .cart-overlay{opacity:1;pointer-events:auto;}
 .active-filter-chip button:hover{color:#c0392b;}
 
 /* ---------------- Product grid (faceted listing) ---------------- */
-/* Flexbox rather than CSS Grid so an incomplete last row (e.g. the final
-   page of results) stretches to fill the row instead of leaving empty
-   trailing columns. */
-.pgrid{display:flex;flex-wrap:wrap;gap:24px;}
-.pgrid > .pcard{flex:1 1 calc((100% - 48px) / 3);}
-@media(max-width:860px){.pgrid > .pcard{flex-basis:calc((100% - 24px) / 2);}}
-@media(max-width:560px){.pgrid > .pcard{flex-basis:100%;}}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:860px){.pgrid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.pgrid{grid-template-columns:1fr;}}
 .pcard{
   background:var(--white);border:1px solid var(--gray-line);border-radius:var(--radius);
   box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;
@@ -687,7 +683,7 @@ body.cart-open .cart-overlay{opacity:1;pointer-events:auto;}
 .pcard-price .excl{font-size:.7rem;color:var(--text-muted);}
 .pcard-actions{display:flex;flex-direction:column;gap:8px;margin-top:6px;}
 .pcard-actions .btn{width:100%;justify-content:center;font-size:.78rem;padding:12px;}
-.pgrid-empty{flex-basis:100%;text-align:center;color:var(--text-muted);padding:60px 0;}
+.pgrid-empty{grid-column:1/-1;text-align:center;color:var(--text-muted);padding:60px 0;}
 
 /* ---------------- Pagination ---------------- */
 .pagination{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:32px;flex-wrap:wrap;}
