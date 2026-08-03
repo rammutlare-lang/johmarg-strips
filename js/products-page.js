@@ -211,7 +211,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     return '' +
       '<div class="pcard" data-slug="' + p.slug + '">' +
-      '  <a class="pcard-img" href="' + detailHref + '" style="background-image:url(\'' + img + '\');" aria-label="View ' + escapeHtml(p.family) + '">' +
+      '  <a class="pcard-img" href="' + detailHref + '" aria-label="View ' + escapeHtml(p.family) + '">' +
+      '    <img src="' + img + '" alt="' + escapeHtml(p.family + ' — ' + p.material + ' ' + p.cat) + '" loading="lazy">' +
       '    <span class="pcard-stock"><i class="fa-solid fa-circle"></i> In Stock</span>' +
       '  </a>' +
       '  <div class="pcard-body">' +

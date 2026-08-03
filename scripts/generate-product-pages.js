@@ -221,7 +221,7 @@ function renderPage(p) {
     const rImg = r.image || 'images/' + (CAT_FALLBACK_IMAGE[r.cat] || 'products-hero.jpg');
     const rImgAbs = rImg.startsWith('images/') ? '../' + rImg : rImg;
     return '<div class="pcard" data-slug="' + r.slug + '">' +
-      '<a class="pcard-img" href="' + r.slug + '" style="background-image:url(\'' + rImgAbs + '\');" aria-label="View ' + escapeAttr(r.family) + '"></a>' +
+      '<a class="pcard-img" href="' + r.slug + '" aria-label="View ' + escapeAttr(r.family) + '"><img src="' + rImgAbs + '" alt="' + escapeAttr(r.family + ' — ' + r.material + ' ' + r.cat) + '" loading="lazy"></a>' +
       '<div class="pcard-body">' +
       '<h3><a href="' + r.slug + '">' + escapeHtml(r.family) + '</a></h3>' +
       '<div class="pcard-price"><span class="amount">' + (r.isPOA ? 'Price on Application' : 'From ' + money(r.minPrice)) + '</span>' + (r.isPOA ? '' : '<span class="excl">excl. VAT</span>') + '</div>' +
@@ -280,7 +280,7 @@ function renderPage(p) {
     '<meta name="twitter:description" content="' + escapeAttr(metaDesc) + '">\n' +
     '<link rel="icon" type="image/x-icon" href="../favicon.ico">\n' +
     '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">\n' +
-    '<link rel="stylesheet" href="../css/style.css?v=9">\n' +
+    '<link rel="stylesheet" href="../css/style.css?v=11">\n' +
     '<script type="application/ld+json">' + JSON.stringify(jsonLd) + '</script>\n' +
     '<script type="application/ld+json">' + JSON.stringify(breadcrumbLd) + '</script>\n' +
     '</head>\n<body>\n' +
@@ -307,7 +307,7 @@ function renderPage(p) {
     '<a href="../' + catFilterHref + '">' + escapeHtml(p.cat) + '</a><span class="sep">/</span>' +
     '<span class="current">' + escapeHtml(p.family) + '</span></nav>\n' +
     '<div class="pdp-layout">\n' +
-    '<div><div class="pdp-gallery-main" style="background-image:url(\'' + imageAbs + '\');"></div>' +
+    '<div><div class="pdp-gallery-main"><img src="' + imageAbs + '" alt="' + escapeAttr(p.family + ' — ' + p.material + ' ' + p.cat) + '" loading="eager" fetchpriority="high"></div>' +
     '<p class="pdp-gallery-note">Finish shown may vary slightly by colour option — see available finishes below.</p></div>\n' +
     '<div class="pdp-info">\n' +
     '<span class="pdp-cat">' + escapeHtml(p.cat) + ' &middot; ' + escapeHtml(p.material) + '</span>\n' +
@@ -425,7 +425,7 @@ function poaCardHtml(p) {
     return '<span class="swatch" style="background:' + (LIB.SWATCH_HEX[c] || '#ccc') + ';" title="' + escapeAttr(c) + '"></span>';
   }).join('');
   return '<div class="pcard" data-slug="' + p.slug + '">' +
-    '<a class="pcard-img" href="' + detailHref + '" style="background-image:url(\'' + img + '\');" aria-label="View ' + escapeAttr(p.family) + '"><span class="pcard-stock"><i class="fa-solid fa-circle"></i> In Stock</span></a>' +
+    '<a class="pcard-img" href="' + detailHref + '" aria-label="View ' + escapeAttr(p.family) + '"><img src="' + img + '" alt="' + escapeAttr(p.family + ' — ' + p.material + ' ' + p.cat) + '" loading="lazy"><span class="pcard-stock"><i class="fa-solid fa-circle"></i> In Stock</span></a>' +
     '<div class="pcard-body">' +
     '<h3><a href="' + detailHref + '">' + escapeHtml(p.family) + '</a></h3>' +
     '<p class="pcard-desc">' + escapeHtml(p.description) + '</p>' +
