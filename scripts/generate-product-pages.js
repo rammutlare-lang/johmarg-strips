@@ -322,7 +322,7 @@ function renderPage(p) {
     '<div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;"><span style="font-size:.8rem;font-weight:700;">Available Finishes:</span>' + swatchDots(p.colours) + '</div>\n' +
     '<div class="pdp-actions">' +
     (p.isPOA
-      ? '<a href="../quote?product=' + encodeURIComponent(p.family) + '" class="btn btn-gold">REQUEST QUOTE</a>'
+      ? '<a href="../quote?product=' + encodeURIComponent(p.family) + '" class="btn btn-dark">REQUEST QUOTE</a>'
       : '<button type="button" class="btn btn-gold" id="pdp-add-btn">ADD TO QUOTE</button>' +
         '<button type="button" class="btn btn-dark" id="pdp-quote-btn">REQUEST QUOTE</button>') +
     '<a href="../quote" class="btn btn-outline-dark"><i class="fa-solid fa-headset"></i> ASK AN EXPERT</a>' +
@@ -439,7 +439,7 @@ function poaCardHtml(p) {
     '</div></div>';
 }
 
-const PAGE_SIZE = 16;
+const PAGE_SIZE = 15; // matches js/products-page.js — multiple of 3 so rows come out even
 const firstPage = ALL.slice().sort(function (a, b) { return a.sortIndex - b.sortIndex; }).slice(0, PAGE_SIZE);
 const gridHtml = firstPage.map(poaCardHtml).join('');
 

@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var LIB = window.PRODUCT_INDEX_LIB;
   var ALL = LIB.build(window.PRODUCT_CATALOG || [], window.PRODUCT_IMAGES || {});
   var QUOTE_KEY = 'johmarg_quote_v1';
-  var PAGE_SIZE = 16;
+  var PAGE_SIZE = 15; // multiple of the 3-column grid so every full page's rows come out even
+  var COLS = 3;
 
   var CAT_FALLBACK_IMAGE = {
     'Tile Trims & Edges': 'images/product-tile-trim.jpg',
@@ -237,7 +238,23 @@ document.addEventListener('DOMContentLoaded', function () {
     var totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
     if (page > totalPages) page = totalPages;
     var start = (page - 1) * PAGE_SIZE;
-    var pageItems = filtered.slice(start, start + PAGE_SIZE);
+    var end = Math.min(start + PAGE_SIZE, filtered.length);
+
+    // Every page should render full rows of real products — PAGE_SIZE is a
+    // multiple of COLS so non-last pages always land on a row boundary. The
+    // last page can still fall short (e.g. 69 items / 15 per page = a final
+    // page of 9, which is fine, or 70 items = a final page of 10, which
+    // isn't). When that happens, pull the window back to the previous row
+    // boundary so it ends on a full last row — those extra items simply
+    // repeat from the page before rather than leaving a part-filled row.
+    if (page === totalPages) {
+      var shortBy = (end - start) % COLS;
+      if (shortBy !== 0) {
+        start = Math.max(0, start - (COLS - shortBy));
+      }
+    }
+
+    var pageItems = filtered.slice(start, end);
 
     grid.innerHTML = pageItems.length
       ? pageItems.map(cardHtml).join('')
@@ -245,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (countEl) {
       countEl.textContent = filtered.length
-        ? 'Showing ' + (start + 1) + '–' + Math.min(start + PAGE_SIZE, filtered.length) + ' of ' + filtered.length + ' results'
+        ? 'Showing ' + (start + 1) + '–' + end + ' of ' + filtered.length + ' results'
         : 'No results';
     }
 
