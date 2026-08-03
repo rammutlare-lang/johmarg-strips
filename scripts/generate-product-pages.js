@@ -306,11 +306,7 @@ function renderPage(p) {
     '</div></div></div></div>\n' +
     '<nav class="navbar"><div class="container"><a href="../" class="logo"><img src="../images/logo.png" alt="Johmarg Strips"></a>' +
     '<ul class="nav-links"><li><a href="../">HOME</a></li><li><a href="../about">ABOUT US</a></li>' +
-    '<li class="dropdown active"><a href="../products">PRODUCTS <i class="fa-solid fa-chevron-down" style="font-size:.6rem;"></i></a>' +
-    '<ul class="dropdown-menu"><li><a href="../tile-trims">Tile Trims &amp; Edges</a></li><li><a href="../stair-nosing">Stair Nosing</a></li>' +
-    '<li><a href="../flooring-profiles">Flooring Profiles</a></li><li><a href="../metal-profiles">Metal Profiles</a></li>' +
-    '<li><a href="../pvc-profiles">PVC Profiles</a></li><li><a href="../movement-joints">Movement Joints</a></li>' +
-    '<li><a href="../spacers">Spacers</a></li><li><a href="../angle-flat-bar">Angle &amp; Flat Bar</a></li></ul></li>' +
+    '<li class="active"><a href="../products">PRODUCTS</a></li>' +
     '<li><a href="../applications">APPLICATIONS</a></li><li><a href="../gallery">GALLERY</a></li><li><a href="../contact">CONTACT US</a></li></ul>' +
     '<div class="nav-right"><a href="../quote" class="btn btn-gold nav-cta">GET A QUOTE</a><button class="nav-toggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button></div>' +
     '</div></nav>\n' +
