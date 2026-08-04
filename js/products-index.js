@@ -173,7 +173,6 @@ window.PRODUCT_INDEX_LIB = (function () {
     'Retro Fit Stair Nosing Anodised / Powder Coated': true
   };
   var METAL_TO_FLOOR_FAMILIES = {
-    'Carpet to Tile Aluminium': true,
     'Cover Strip Aluminium': true,
     'Cover Strip Anodised / Powder Coated': true
   };
