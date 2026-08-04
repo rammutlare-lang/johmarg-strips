@@ -190,7 +190,7 @@ function renderPage(p) {
   const image = p.image || 'images/' + (CAT_FALLBACK_IMAGE[p.cat] || 'products-hero.jpg');
   const imageAbs = image.startsWith('images/') ? '../' + image : image;
   const canonical = 'https://www.johmargstrips.co.za/products/' + p.slug;
-  const title = p.family + ' | ' + p.material + ' ' + p.cat + ' | Johmarg Strips';
+  const title = p.family + ' | ' + p.material + ' ' + p.category + ' | Johmarg Strips';
   const metaDesc = (p.description + ' ' + (p.isPOA ? 'Price on application.' : 'From ' + money(p.minPrice) + ' excl. VAT.') + ' Sizes: ' + (p.sizes.length ? p.sizes.join(', ') : 'one size') + '.').slice(0, 300);
 
   const variantRows = p.variants.map(function (v) {
@@ -307,10 +307,10 @@ function renderPage(p) {
     '<a href="../' + catFilterHref + '">' + escapeHtml(p.category) + '</a><span class="sep">/</span>' +
     '<span class="current">' + escapeHtml(p.family) + '</span></nav>\n' +
     '<div class="pdp-layout">\n' +
-    '<div><div class="pdp-gallery-main"><img src="' + imageAbs + '" alt="' + escapeAttr(p.family + ' — ' + p.material + ' ' + p.cat) + '" loading="eager" fetchpriority="high"></div>' +
+    '<div><div class="pdp-gallery-main"><img src="' + imageAbs + '" alt="' + escapeAttr(p.family + ' — ' + p.material + ' ' + p.category) + '" loading="eager" fetchpriority="high"></div>' +
     '<p class="pdp-gallery-note">Finish shown may vary slightly by colour option — see available finishes below.</p></div>\n' +
     '<div class="pdp-info">\n' +
-    '<span class="pdp-cat">' + escapeHtml(p.cat) + ' &middot; ' + escapeHtml(p.material) + '</span>\n' +
+    '<span class="pdp-cat">' + escapeHtml(p.category) + ' &middot; ' + escapeHtml(p.material) + '</span>\n' +
     '<h1>' + escapeHtml(p.family) + '</h1>\n' +
     '<div class="pdp-sku-row"><span>Sizes: <b>' + escapeHtml(p.sizes.length ? p.sizes.join(', ') : 'One size') + '</b></span></div>\n' +
     (p.isPOA
@@ -333,7 +333,7 @@ function renderPage(p) {
     '<div class="pdp-section"><h2>TECHNICAL <span class="accent" style="color:var(--gold-text);">SPECIFICATIONS</span></h2>' +
     '<table class="spec-table"><tbody>' +
     '<tr><td>Material</td><td>' + escapeHtml(p.material) + '</td></tr>' +
-    '<tr><td>Product Category</td><td>' + escapeHtml(p.cat) + '</td></tr>' +
+    '<tr><td>Product Category</td><td>' + escapeHtml(p.category) + '</td></tr>' +
     '<tr><td>Available Sizes</td><td>' + escapeHtml(p.sizes.length ? p.sizes.join(', ') : 'One size') + '</td></tr>' +
     '<tr><td>Finish / Colour Options</td><td>' + escapeHtml(p.colours.join(', ')) + '</td></tr>' +
     '</tbody></table></div>\n' +
@@ -425,7 +425,7 @@ function poaCardHtml(p) {
     return '<span class="swatch" style="background:' + (LIB.SWATCH_HEX[c] || '#ccc') + ';" title="' + escapeAttr(c) + '"></span>';
   }).join('');
   return '<div class="pcard" data-slug="' + p.slug + '">' +
-    '<a class="pcard-img" href="' + detailHref + '" aria-label="View ' + escapeAttr(p.family) + '"><img src="' + img + '" alt="' + escapeAttr(p.family + ' — ' + p.material + ' ' + p.cat) + '" loading="lazy"><span class="pcard-stock"><i class="fa-solid fa-circle"></i> In Stock</span></a>' +
+    '<a class="pcard-img" href="' + detailHref + '" aria-label="View ' + escapeAttr(p.family) + '"><img src="' + img + '" alt="' + escapeAttr(p.family + ' — ' + p.material + ' ' + p.category) + '" loading="lazy"><span class="pcard-stock"><i class="fa-solid fa-circle"></i> In Stock</span></a>' +
     '<div class="pcard-body">' +
     '<h3><a href="' + detailHref + '">' + escapeHtml(p.family) + '</a></h3>' +
     '<p class="pcard-desc">' + escapeHtml(p.description) + '</p>' +

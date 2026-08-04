@@ -561,7 +561,13 @@ window.PRODUCT_CATALOG = [
       "label": "Straight Edge - 12mm - Powder Coated Black",
       "code": "SEA12BL",
       "price": 94.5
-     },
+     }
+    ],
+    "cat": "Tile Trims & Edges"
+   },
+   {
+    "family": "Straight Edge - 15mm - 2.5 metre lengths",
+    "variants": [
      {
       "label": "Straight Edge - 15mm - Anodised Polished Silver",
       "code": "SEA15A",
@@ -1204,7 +1210,7 @@ window.PRODUCT_CATALOG = [
       "price": 527.2
      },
      {
-      "label": "Square Edge 22.52mm",
+      "label": "Square Edge 22.5mm",
       "code": "QEB225",
       "price": 590.85
      }
