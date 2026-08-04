@@ -161,9 +161,28 @@ window.PRODUCT_INDEX_LIB = (function () {
     'Laminate Floor Chemicals': true
   };
 
+  // Explicit exceptions to the cat-based rule below, matching the exact
+  // product-to-category grouping used by Sure Strip (surestrip.co.za) —
+  // these "Stair Nosing"/"Metal Profiles" cat families are metal edge/ramp
+  // profiles or carpet-transition profiles respectively, not a fit for the
+  // bucket their internal "cat" would otherwise put them in.
+  var STAIR_NOSING_TO_METAL_FAMILIES = {
+    '45 Ramp Aluminium - 2.5 metre lengths': true,
+    'Tile In Step Aluminium - 2.5 metre lengths': true,
+    'Retro Fit Stair nosing Aluminium': true,
+    'Retro Fit Stair Nosing Anodised / Powder Coated': true
+  };
+  var METAL_TO_FLOOR_FAMILIES = {
+    'Carpet to Tile Aluminium': true,
+    'Cover Strip Aluminium': true,
+    'Cover Strip Anodised / Powder Coated': true
+  };
+
   function categoryFor(cat, material, family) {
     if (material === 'PVC') return CATEGORY_PVC;
     if (cat === 'Spacers' || ACCESSORY_FAMILIES[family]) return CATEGORY_INSTALL;
+    if (STAIR_NOSING_TO_METAL_FAMILIES[family]) return CATEGORY_METAL;
+    if (METAL_TO_FLOOR_FAMILIES[family]) return CATEGORY_FLOOR;
     if (cat === 'Flooring Profiles' || cat === 'Stair Nosing') return CATEGORY_FLOOR;
     return CATEGORY_METAL; // Tile Trims & Edges, Metal Profiles, Angle & Flat Bar / Movement Joints (non-PVC)
   }
