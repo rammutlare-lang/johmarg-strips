@@ -185,7 +185,7 @@ function swatchDots(colours) {
 }
 
 function renderPage(p) {
-  const catFilterHref = 'products?cat=' + encodeURIComponent(p.cat);
+  const catFilterHref = 'products?cat=' + encodeURIComponent(p.category);
   const catFilterUrl = 'https://www.johmargstrips.co.za/' + catFilterHref;
   const image = p.image || 'images/' + (CAT_FALLBACK_IMAGE[p.cat] || 'products-hero.jpg');
   const imageAbs = image.startsWith('images/') ? '../' + image : image;
@@ -260,7 +260,7 @@ function renderPage(p) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.johmargstrips.co.za/' },
       { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://www.johmargstrips.co.za/products' },
-      { '@type': 'ListItem', position: 3, name: p.cat, item: catFilterUrl },
+      { '@type': 'ListItem', position: 3, name: p.category, item: catFilterUrl },
       { '@type': 'ListItem', position: 4, name: p.family, item: canonical }
     ]
   };
@@ -280,7 +280,7 @@ function renderPage(p) {
     '<meta name="twitter:description" content="' + escapeAttr(metaDesc) + '">\n' +
     '<link rel="icon" type="image/x-icon" href="../favicon.ico">\n' +
     '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">\n' +
-    '<link rel="stylesheet" href="../css/style.css?v=11">\n' +
+    '<link rel="stylesheet" href="../css/style.css?v=13">\n' +
     '<script type="application/ld+json">' + JSON.stringify(jsonLd) + '</script>\n' +
     '<script type="application/ld+json">' + JSON.stringify(breadcrumbLd) + '</script>\n' +
     '</head>\n<body>\n' +
@@ -304,7 +304,7 @@ function renderPage(p) {
     '<main id="main"><section class="section-tight"><div class="container">\n' +
     '<nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a><span class="sep">/</span>' +
     '<a href="../products">Products</a><span class="sep">/</span>' +
-    '<a href="../' + catFilterHref + '">' + escapeHtml(p.cat) + '</a><span class="sep">/</span>' +
+    '<a href="../' + catFilterHref + '">' + escapeHtml(p.category) + '</a><span class="sep">/</span>' +
     '<span class="current">' + escapeHtml(p.family) + '</span></nav>\n' +
     '<div class="pdp-layout">\n' +
     '<div><div class="pdp-gallery-main"><img src="' + imageAbs + '" alt="' + escapeAttr(p.family + ' — ' + p.material + ' ' + p.cat) + '" loading="eager" fetchpriority="high"></div>' +
@@ -387,10 +387,10 @@ function renderPage(p) {
     '<p class="tag">FINISHING TOUCHES.<br>LASTING IMPRESSION.</p></div>' +
     '<div><h4>QUICK LINKS</h4><ul><li><a href="../">Home</a></li><li><a href="../about">About Us</a></li><li><a href="../products">Products</a></li>' +
     '<li><a href="../applications">Applications</a></li><li><a href="../gallery">Gallery</a></li><li><a href="../contact">Contact Us</a></li></ul></div>' +
-    '<div><h4>PRODUCTS</h4><ul><li><a href="../tile-trims">Tile Trims &amp; Edges</a></li><li><a href="../stair-nosing">Stair Nosing</a></li>' +
-    '<li><a href="../flooring-profiles">Flooring Profiles</a></li><li><a href="../metal-profiles">Metal Profiles</a></li>' +
-    '<li><a href="../pvc-profiles">PVC Profiles</a></li><li><a href="../movement-joints">Movement Joints</a></li>' +
-    '<li><a href="../spacers">Spacers</a></li><li><a href="../angle-flat-bar">Angle &amp; Flat Bar</a></li></ul></div>' +
+    '<div><h4>PRODUCTS</h4><ul><li><a href="../products?cat=Architectural%20Metal%20Profiles">Architectural Metal Profiles</a></li>' +
+    '<li><a href="../products?cat=Floor%20Transition%20%26%20Finishing%20Profiles">Floor Transition &amp; Finishing Profiles</a></li>' +
+    '<li><a href="../products?cat=PVC%20Finishing%20Profiles">PVC Finishing Profiles</a></li>' +
+    '<li><a href="../products?cat=Tile%20Installation%20Systems%20%26%20Accessories">Tile Installation Systems &amp; Accessories</a></li></ul></div>' +
     '<div><h4>CONTACT US</h4><ul class="footer-contact"><li><i class="fa-solid fa-phone"></i> +27 62 594 0168</li>' +
     '<li><i class="fa-solid fa-envelope"></i> johmargstrips@outlook.com</li><li><i class="fa-solid fa-globe"></i> Currently operating online</li></ul></div>' +
     '<div><h4>DOWNLOAD PRODUCT MANUAL</h4><p style="font-size:.85rem;">Browse our full range of products and solutions.</p>' +
@@ -400,7 +400,7 @@ function renderPage(p) {
     '<a href="../returns-policy">Returns Policy</a><a href="../responsible-disclosure">Responsible Disclosure</a><a href="../human-rights-statement">Human Rights Statement</a></div></div></footer>\n' +
 
     '<script src="../js/script.js?v=7"></script>\n' +
-    '<script>window.PDP_PRODUCT = ' + JSON.stringify({ uid: p.uid, cat: p.cat, materialGroup: p.materialGroup, family: p.family }) + ';</script>\n' +
+    '<script>window.PDP_PRODUCT = ' + JSON.stringify({ uid: p.uid, cat: p.cat, category: p.category, materialGroup: p.materialGroup, family: p.family }) + ';</script>\n' +
     '<script src="../js/product-detail.js?v=2"></script>\n' +
     '</body>\n</html>\n';
 }

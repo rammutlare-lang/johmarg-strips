@@ -64,14 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var quoteListBanner = document.getElementById('quote-list-banner');
   var quoteListField = document.getElementById('quote-list-field');
   var CATEGORY_CHECKBOX_IDS = {
-    'Tile Trims & Edges': 'p1',
-    'Stair Nosing': 'p2',
-    'Flooring Profiles': 'p3',
-    'Metal Profiles': 'p4',
-    'PVC Profiles': 'p5',
-    'Movement Joints': 'p6',
-    'Spacers': 'p8',
-    'Angle & Flat Bar': 'p9'
+    'Architectural Metal Profiles': 'p1',
+    'Floor Transition & Finishing Profiles': 'p2',
+    'PVC Finishing Profiles': 'p5',
+    'Tile Installation Systems & Accessories': 'p8'
   };
   function money(n) {
     return 'R' + n.toLocaleString('en-ZA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -93,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
     quoteListBanner.style.display = 'flex';
 
     var cats = {};
-    list.forEach(function (l) { cats[l.cat] = true; });
+    list.forEach(function (l) { cats[l.category || l.cat] = true; });
     Object.keys(cats).forEach(function (cat) {
       var id = CATEGORY_CHECKBOX_IDS[cat];
       var checkbox = id && document.getElementById(id);

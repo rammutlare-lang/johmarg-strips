@@ -9,15 +9,17 @@ const path = require('path');
 
 const root = path.join(__dirname, '..');
 
+// "cat" is the new (4-category) taxonomy target; "title" keeps the original
+// specific label people may have bookmarked, for the on-page message only.
 const REDIRECTS = [
-  { slug: 'tile-trims', cat: 'Tile Trims & Edges', title: 'Tile Trims & Edges' },
-  { slug: 'stair-nosing', cat: 'Stair Nosing', title: 'Stair Nosing' },
-  { slug: 'flooring-profiles', cat: 'Flooring Profiles', title: 'Flooring Profiles' },
-  { slug: 'metal-profiles', cat: 'Metal Profiles', title: 'Metal Profiles' },
-  { slug: 'pvc-profiles', cat: 'PVC Profiles', title: 'PVC Profiles' },
-  { slug: 'movement-joints', cat: 'Movement Joints', title: 'Movement Joints' },
-  { slug: 'spacers', cat: 'Spacers', title: 'Spacers' },
-  { slug: 'angle-flat-bar', cat: 'Angle & Flat Bar', title: 'Angle & Flat Bar' }
+  { slug: 'tile-trims', cat: 'Architectural Metal Profiles', title: 'Tile Trims & Edges' },
+  { slug: 'stair-nosing', cat: 'Floor Transition & Finishing Profiles', title: 'Stair Nosing' },
+  { slug: 'flooring-profiles', cat: 'Floor Transition & Finishing Profiles', title: 'Flooring Profiles' },
+  { slug: 'metal-profiles', cat: 'Architectural Metal Profiles', title: 'Metal Profiles' },
+  { slug: 'pvc-profiles', cat: 'PVC Finishing Profiles', title: 'PVC Profiles' },
+  { slug: 'movement-joints', cat: 'Architectural Metal Profiles', title: 'Movement Joints' },
+  { slug: 'spacers', cat: 'Tile Installation Systems & Accessories', title: 'Spacers' },
+  { slug: 'angle-flat-bar', cat: 'Architectural Metal Profiles', title: 'Angle & Flat Bar' }
 ];
 
 function escapeHtml(s) {
@@ -33,7 +35,7 @@ function renderStub(r) {
     '<meta name="robots" content="noindex, follow">\n' +
     '<link rel="canonical" href="' + canonical + '">\n' +
     '<meta http-equiv="refresh" content="0; url=' + target + '">\n' +
-    '<link rel="stylesheet" href="css/style.css?v=11">\n' +
+    '<link rel="stylesheet" href="css/style.css?v=13">\n' +
     '<script>window.location.replace(' + JSON.stringify(target) + ');</script>\n' +
     '</head>\n<body>\n' +
     '<div style="min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;font-family:\'Segoe UI\',Arial,Helvetica,sans-serif;">\n' +

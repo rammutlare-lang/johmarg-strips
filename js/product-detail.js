@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var lineId = meta.uid + '::' + variant.code;
     var existing = list.filter(function (l) { return l.lineId === lineId; })[0];
     if (existing) existing.qty = Math.min(999, existing.qty + qty);
-    else list.push({ lineId: lineId, cat: meta.cat, material: meta.materialGroup, family: meta.family, label: variant.label, code: variant.code, price: variant.price, qty: qty });
+    else list.push({ lineId: lineId, cat: meta.cat, category: meta.category, material: meta.materialGroup, family: meta.family, label: variant.label, code: variant.code, price: variant.price, qty: qty });
     saveQuoteList(list);
     renderQuoteList();
   }

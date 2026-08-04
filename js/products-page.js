@@ -26,25 +26,28 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   var FACETS = [
-    { key: 'cat', label: 'Product Category' },
+    { key: 'category', label: 'Product Category' },
     { key: 'material', label: 'Material' },
     { key: 'colour', label: 'Colour' },
     { key: 'size', label: 'Size (mm)' },
     { key: 'application', label: 'Application' }
   ];
 
-  var filters = { cat: new Set(), material: new Set(), colour: new Set(), size: new Set(), application: new Set() };
+  var filters = { category: new Set(), material: new Set(), colour: new Set(), size: new Set(), application: new Set() };
   var searchTerm = '';
   var sortKey = 'featured';
   var page = 1;
   var collapsedGroups = {};
 
   // ---------- Preselect from URL (?cat=&material=&search=) ----------
+  // URL param stays "cat" for link-compatibility (breadcrumbs, footer, PDP
+  // pages all already link with ?cat=<value>) even though the facet/filter
+  // key is "category" — it just now expects one of the 4 category names.
   var initialParams = new URLSearchParams(window.location.search);
-  ['cat', 'material'].forEach(function (key) {
-    var v = initialParams.get(key);
-    if (v) filters[key].add(v);
-  });
+  var initialCat = initialParams.get('cat');
+  if (initialCat) filters.category.add(initialCat);
+  var initialMaterial = initialParams.get('material');
+  if (initialMaterial) filters.material.add(initialMaterial);
   if (initialParams.get('search')) searchTerm = initialParams.get('search');
 
   function money(n) {
@@ -313,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var lineId = p.uid + '::' + variant.code;
     var existing = list.filter(function (l) { return l.lineId === lineId; })[0];
     if (existing) existing.qty = Math.min(999, existing.qty + qty);
-    else list.push({ lineId: lineId, cat: p.cat, material: p.materialGroup, family: p.family, label: variant.label, code: variant.code, price: variant.price, qty: qty });
+    else list.push({ lineId: lineId, cat: p.cat, category: p.category, material: p.materialGroup, family: p.family, label: variant.label, code: variant.code, price: variant.price, qty: qty });
     saveQuoteList(list);
     renderQuoteList();
     return list;

@@ -85,6 +85,7 @@ window.PRODUCT_INDEX_LIB = (function () {
     if (/stainless/i.test(family)) return 'Stainless Steel';
     if (/\bbrass\b/i.test(family)) return 'Brass';
     if (/\bpvc\b/i.test(family)) return 'PVC';
+    if (group === 'PVC') return 'PVC'; // catches items like "Flexible Internal Seal Strip" whose name omits "PVC" but whose material group is PVC
     if (group === 'Spacers') return 'Plastic';
     if (group === 'Vinyls') return 'Vinyl';
     return 'Aluminium'; // Aluminium, Anodised & Powder Coated, Carpet & Wood, Movement Joints, Angle & Flat Bar default
@@ -136,6 +137,37 @@ window.PRODUCT_INDEX_LIB = (function () {
     'Blue': '#2f4d7a', 'Fawn': '#c9a679', 'Tan': '#c19a6b', 'Mink': '#7a6a5a', 'Sage': '#8a9878'
   };
 
+  // The 4 shopper-facing categories (primary nav / filter / footer). "cat"
+  // above (the original 8 values) is kept as an internal sub-type — it still
+  // drives the per-category description, install guide, FAQ, and
+  // "Application" facet text, which stay just as specific as before.
+  var CATEGORY_METAL = 'Architectural Metal Profiles';
+  var CATEGORY_FLOOR = 'Floor Transition & Finishing Profiles';
+  var CATEGORY_PVC = 'PVC Finishing Profiles';
+  var CATEGORY_INSTALL = 'Tile Installation Systems & Accessories';
+  var CATEGORIES = [CATEGORY_METAL, CATEGORY_FLOOR, CATEGORY_PVC, CATEGORY_INSTALL];
+
+  // Families under "Flooring Profiles" that are installation accessories
+  // (underlay, floor protectors, cleaning chemicals, moisture barrier) rather
+  // than a floor-transition profile — grouped with Spacers instead.
+  var ACCESSORY_FAMILIES = {
+    'Laminate Floor Wedges': true,
+    'Underlay - 2mm x 1 metre x 80 Micron x 100% Virgin LDPE': true,
+    '100 metre Roll': true,
+    '25 metre Roll': true,
+    '10 metre Roll': true,
+    'SpillGuard': true,
+    'Felt Floor Protectors': true,
+    'Laminate Floor Chemicals': true
+  };
+
+  function categoryFor(cat, material, family) {
+    if (material === 'PVC') return CATEGORY_PVC;
+    if (cat === 'Spacers' || ACCESSORY_FAMILIES[family]) return CATEGORY_INSTALL;
+    if (cat === 'Flooring Profiles' || cat === 'Stair Nosing') return CATEGORY_FLOOR;
+    return CATEGORY_METAL; // Tile Trims & Edges, Metal Profiles, Angle & Flat Bar / Movement Joints (non-PVC)
+  }
+
   function build(PRODUCT_CATALOG, PRODUCT_IMAGES) {
     PRODUCT_IMAGES = PRODUCT_IMAGES || {};
     var out = [];
@@ -160,6 +192,7 @@ window.PRODUCT_INDEX_LIB = (function () {
           materialGroup: group.category,
           material: material,
           cat: prod.cat,
+          category: categoryFor(prod.cat, material, prod.family),
           application: APPLICATIONS[prod.cat] || prod.cat,
           sizes: parseSizes(prod.variants),
           colours: STANDARD_COLOURS[material] ? STANDARD_COLOURS[material].slice() : parseColours(prod.variants, material),
@@ -178,5 +211,5 @@ window.PRODUCT_INDEX_LIB = (function () {
     return out;
   }
 
-  return { build: build, APPLICATIONS: APPLICATIONS, SWATCH_HEX: SWATCH_HEX, slugify: slugify };
+  return { build: build, APPLICATIONS: APPLICATIONS, SWATCH_HEX: SWATCH_HEX, slugify: slugify, CATEGORIES: CATEGORIES };
 })();
