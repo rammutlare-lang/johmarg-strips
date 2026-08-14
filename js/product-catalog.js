@@ -346,40 +346,28 @@ window.PRODUCT_CATALOG = [
   "category": "Anodised & Powder Coated",
   "products": [
    {
-    "family": "Straight Edge - 5mm - 2.5 metre lengths",
+    "family": "Straight Edge Anodised / Powder Coated - 2.5 metre lengths",
     "variants": [
      {
       "label": "Straight Edge - 5mm - Anodised Polished Silver",
       "code": "SEA5A",
       "price": 78.1
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Straight Edge - 6mm - 2.5 metre lengths",
-    "variants": [
+     },
      {
       "label": "Straight Edge - 6mm - Anodised Polished Silver",
-      "code": "SEA8A",
+      "code": "SEA6A",
       "price": 81.75
      },
      {
       "label": "Straight Edge - 6mm - Anodised Matt Titanium",
-      "code": "SEA8MR",
+      "code": "SEA6MR",
       "price": 81.75
      },
      {
       "label": "Straight Edge - 6mm - Black",
-      "code": "SEA8SR",
+      "code": "SEA6SR",
       "price": 81.75
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Straight Edge - 8mm - 2.5 metre lengths",
-    "variants": [
+     },
      {
       "label": "Straight Edge - 8mm - Anodised Polished Silver",
       "code": "SEA8A",
@@ -399,13 +387,7 @@ window.PRODUCT_CATALOG = [
       "label": "Straight Edge - 8mm - Powder Coated Black",
       "code": "SEA8BL",
       "price": 90.85
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Straight Edge - 10mm - 2.5 metre lengths",
-    "variants": [
+     },
      {
       "label": "Straight Edge - 10mm - Anodised Polished Silver",
       "code": "SEA10A",
@@ -480,13 +462,7 @@ window.PRODUCT_CATALOG = [
       "label": "Straight Edge - 10mm - Powder Coated Black",
       "code": "SEA10BL",
       "price": 90.85
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Straight Edge - 12mm - 2.5 metre lengths",
-    "variants": [
+     },
      {
       "label": "Straight Edge - 12mm - Anodised Polished Silver",
       "code": "SEA12A",
@@ -561,13 +537,7 @@ window.PRODUCT_CATALOG = [
       "label": "Straight Edge - 12mm - Powder Coated Black",
       "code": "SEA12BL",
       "price": 94.5
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Straight Edge - 15mm - 2.5 metre lengths",
-    "variants": [
+     },
      {
       "label": "Straight Edge - 15mm - Anodised Polished Silver",
       "code": "SEA15A",
@@ -577,7 +547,7 @@ window.PRODUCT_CATALOG = [
     "cat": "Tile Trims & Edges"
    },
    {
-    "family": "Round Edge - 10mm - 2.5 metre lengths",
+    "family": "Round Edge Anodised / Powder Coated - 2.5 metre lengths",
     "variants": [
      {
       "label": "Round Edge - 10mm - Anodised Polished Silver",
@@ -598,13 +568,7 @@ window.PRODUCT_CATALOG = [
       "label": "Round Edge - 10mm - Anodised Matt Brass",
       "code": "REA10MBR",
       "price": 90.85
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Round Edge - 12mm - 2.5 metre lengths",
-    "variants": [
+     },
      {
       "label": "Round Edge - 12mm - Anodised Polished Silver",
       "code": "REA12A",
@@ -645,13 +609,7 @@ window.PRODUCT_CATALOG = [
       "label": "Square Edge - 10mm - Powder Coated Black",
       "code": "QEA10BL",
       "price": 121.75
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Square Edge - 12mm - 2.5 metre lengths",
-    "variants": [
+     },
      {
       "label": "Square Edge - 12mm - Anodised Polished Silver",
       "code": "QEA12A",
@@ -733,19 +691,13 @@ window.PRODUCT_CATALOG = [
     "cat": "Stair Nosing"
    },
    {
-    "family": "Listello with legs - 10mm - Anod Polished Silver",
+    "family": "Listello with legs Anodised / Powder Coated - 2.5 metre lengths",
     "variants": [
      {
       "label": "Listello with legs - 10mm x 10mm - Anod Polished Silver",
       "code": "LIS10A",
       "price": 99.95
-     }
-    ],
-    "cat": "Metal Profiles"
-   },
-   {
-    "family": "Listello with legs - 12mm - Anod Polished Silver",
-    "variants": [
+     },
      {
       "label": "Listello with legs - 10mm x 12mm - Anod Polished Silver",
       "code": "LIS12A",
@@ -755,7 +707,7 @@ window.PRODUCT_CATALOG = [
     "cat": "Metal Profiles"
    },
    {
-    "family": "Retro Listello - 10mm - 2.5 metre",
+    "family": "Pencil / Retro Listello Anodised - 2.5 metre lengths",
     "variants": [
      {
       "label": "Retro Listello - 8mm x 10mm - Anod Polished Silver",
@@ -776,13 +728,7 @@ window.PRODUCT_CATALOG = [
       "label": "Retro Listello - 8mm x 10mm - Matt Titanium",
       "code": "LESN10MT",
       "price": 72.65
-     }
-    ],
-    "cat": "Metal Profiles"
-   },
-   {
-    "family": "Retro Listello - 12mm - 2.5 metre",
-    "variants": [
+     },
      {
       "label": "Retro Listello - 10mm x 12mm - Anod Polished Silver",
       "code": "LESN12A",
@@ -792,13 +738,7 @@ window.PRODUCT_CATALOG = [
       "label": "Retro Listello - 10mm x 12mm - Shiny Titanium",
       "code": "LESN12SHT",
       "price": 85.4
-     }
-    ],
-    "cat": "Metal Profiles"
-   },
-   {
-    "family": "Retro Listello - 25mm - 2.5 metre",
-    "variants": [
+     },
      {
       "label": "Retro Listello - 10mm x 25mm - Anod Polished Silver",
       "code": "LESN25A",
