@@ -169,6 +169,10 @@ function escapeHtml(s) {
 }
 function escapeAttr(s) { return escapeHtml(s); }
 
+function materialLabel(p) {
+  return Array.isArray(p.material) ? p.material.join(' / ') : p.material;
+}
+
 function relatedProducts(p) {
   const sameCat = ALL.filter(function (x) { return x.cat === p.cat && x.slug !== p.slug; });
   const out = [];
@@ -185,17 +189,42 @@ function swatchDots(colours) {
 }
 
 function renderPage(p) {
+  const isMulti = Array.isArray(p.material);
   const catFilterHref = 'products?cat=' + encodeURIComponent(p.category);
   const catFilterUrl = 'https://www.johmargstrips.co.za/' + catFilterHref;
   const image = p.image || 'images/' + (CAT_FALLBACK_IMAGE[p.cat] || 'products-hero.jpg');
   const imageAbs = image.startsWith('images/') ? '../' + image : image;
   const canonical = 'https://www.johmargstrips.co.za/products/' + p.slug;
-  const title = p.family + ' | ' + p.material + ' ' + p.category + ' | Johmarg Strips';
+  const title = p.family + ' | ' + materialLabel(p) + ' ' + p.category + ' | Johmarg Strips';
   const metaDesc = (p.description + ' ' + (p.isPOA ? 'Price on application.' : 'From ' + money(p.minPrice) + ' excl. VAT.') + ' Sizes: ' + (p.sizes.length ? p.sizes.join(', ') : 'one size') + '.').slice(0, 300);
+
+  const firstMaterial = isMulti ? p.materialPrices[0] : null;
+
+  const materialTabsHtml = !isMulti ? '' :
+    '<div class="pdp-material-tabs" role="tablist" aria-label="Choose material">' +
+    p.materialPrices.map(function (mp, i) {
+      const priceText = mp.isPOA ? 'POA' : 'From ' + money(mp.minPrice);
+      return '<button type="button" class="pdp-material-tab' + (i === 0 ? ' active' : '') + '" data-material="' + escapeAttr(mp.material) + '" role="tab" aria-selected="' + (i === 0 ? 'true' : 'false') + '">' +
+        '<span class="tab-name">' + escapeHtml(mp.material) + '</span>' +
+        '<span class="tab-price">' + escapeHtml(priceText) + '</span>' +
+        '</button>';
+    }).join('') +
+    '</div>\n';
+
+  const materialSwitchData = !isMulti ? '' : JSON.stringify(p.materialPrices.reduce(function (acc, mp) {
+    acc[mp.material] = {
+      isPOA: mp.isPOA,
+      priceText: mp.isPOA ? '' : money(mp.minPrice),
+      sizes: mp.sizes.length ? mp.sizes.join(', ') : 'One size',
+      swatches: swatchDots(mp.colours)
+    };
+    return acc;
+  }, {}));
 
   const variantRows = p.variants.map(function (v) {
     const rowIsPOA = typeof v.price !== 'number';
-    return '<tr data-code="' + escapeAttr(v.code) + '" data-price="' + (rowIsPOA ? '' : v.price) + '" data-label="' + escapeAttr(v.label) + '">' +
+    const hidden = isMulti && v.material !== firstMaterial.material;
+    return '<tr' + (isMulti ? ' data-material="' + escapeAttr(v.material) + '"' : '') + (hidden ? ' class="pdp-row-hidden"' : '') + ' data-code="' + escapeAttr(v.code) + '" data-price="' + (rowIsPOA ? '' : v.price) + '" data-label="' + escapeAttr(v.label) + '">' +
       '<td>' + escapeHtml(v.label) + '</td>' +
       '<td>' + (rowIsPOA ? 'Price on application' : money(v.price)) + '</td>' +
       '<td>' + (rowIsPOA
@@ -221,7 +250,7 @@ function renderPage(p) {
     const rImg = r.image || 'images/' + (CAT_FALLBACK_IMAGE[r.cat] || 'products-hero.jpg');
     const rImgAbs = rImg.startsWith('images/') ? '../' + rImg : rImg;
     return '<div class="pcard" data-slug="' + r.slug + '">' +
-      '<a class="pcard-img" href="' + r.slug + '" aria-label="View ' + escapeAttr(r.family) + '"><img src="' + rImgAbs + '" alt="' + escapeAttr(r.family + ' — ' + r.material + ' ' + r.cat) + '" loading="lazy"></a>' +
+      '<a class="pcard-img" href="' + r.slug + '" aria-label="View ' + escapeAttr(r.family) + '"><img src="' + rImgAbs + '" alt="' + escapeAttr(r.family + ' — ' + materialLabel(r) + ' ' + r.cat) + '" loading="lazy"></a>' +
       '<div class="pcard-body">' +
       '<h3><a href="' + r.slug + '">' + escapeHtml(r.family) + '</a></h3>' +
       '<div class="pcard-price"><span class="amount">' + (r.isPOA ? 'Price on Application' : 'From ' + money(r.minPrice)) + '</span>' + (r.isPOA ? '' : '<span class="excl">excl. VAT</span>') + '</div>' +
@@ -235,7 +264,7 @@ function renderPage(p) {
     name: p.family,
     description: p.description,
     category: p.cat,
-    material: p.material,
+    material: materialLabel(p),
     image: 'https://www.johmargstrips.co.za/' + image,
     brand: { '@type': 'Brand', name: 'Johmarg Strips' },
     offers: p.isPOA ? {
@@ -307,19 +336,25 @@ function renderPage(p) {
     '<a href="../' + catFilterHref + '">' + escapeHtml(p.category) + '</a><span class="sep">/</span>' +
     '<span class="current">' + escapeHtml(p.family) + '</span></nav>\n' +
     '<div class="pdp-layout">\n' +
-    '<div><div class="pdp-gallery-main"><img src="' + imageAbs + '" alt="' + escapeAttr(p.family + ' — ' + p.material + ' ' + p.category) + '" loading="eager" fetchpriority="high"></div>' +
+    '<div><div class="pdp-gallery-main"><img src="' + imageAbs + '" alt="' + escapeAttr(p.family + ' — ' + materialLabel(p) + ' ' + p.category) + '" loading="eager" fetchpriority="high"></div>' +
     '<p class="pdp-gallery-note">Finish shown may vary slightly by colour option — see available finishes below.</p></div>\n' +
     '<div class="pdp-info">\n' +
-    '<span class="pdp-cat">' + escapeHtml(p.category) + ' &middot; ' + escapeHtml(p.material) + '</span>\n' +
+    '<span class="pdp-cat">' + escapeHtml(p.category) + ' &middot; ' + escapeHtml(materialLabel(p)) + '</span>\n' +
     '<h1>' + escapeHtml(p.family) + '</h1>\n' +
-    '<div class="pdp-sku-row"><span>Sizes: <b>' + escapeHtml(p.sizes.length ? p.sizes.join(', ') : 'One size') + '</b></span></div>\n' +
-    (p.isPOA
-      ? '<div class="pdp-price-block"><span class="amount" style="font-size:1.4rem;">Price on Application</span></div>\n' +
-        '<p style="font-size:.8rem;color:var(--text-muted);margin:0 0 4px;">Contact us for a tailored price.</p>\n'
-      : '<div class="pdp-price-block"><span class="amount">From ' + money(p.minPrice) + '</span><span class="excl" style="font-size:.85rem;color:var(--text-muted);">excl. VAT</span></div>\n') +
+    (isMulti
+      ? materialTabsHtml +
+        '<div class="pdp-sku-row"><span>Sizes: <b id="pdp-sizes-value">' + escapeHtml(firstMaterial.sizes.length ? firstMaterial.sizes.join(', ') : 'One size') + '</b></span></div>\n' +
+        (firstMaterial.isPOA
+          ? '<div class="pdp-price-block"><span class="amount" id="pdp-price-amount" style="font-size:1.4rem;">Price on Application</span></div>\n'
+          : '<div class="pdp-price-block"><span class="amount" id="pdp-price-amount">From ' + money(firstMaterial.minPrice) + '</span><span class="excl" style="font-size:.85rem;color:var(--text-muted);">excl. VAT</span></div>\n')
+      : '<div class="pdp-sku-row"><span>Sizes: <b>' + escapeHtml(p.sizes.length ? p.sizes.join(', ') : 'One size') + '</b></span></div>\n' +
+        (p.isPOA
+          ? '<div class="pdp-price-block"><span class="amount" style="font-size:1.4rem;">Price on Application</span></div>\n' +
+            '<p style="font-size:.8rem;color:var(--text-muted);margin:0 0 4px;">Contact us for a tailored price.</p>\n'
+          : '<div class="pdp-price-block"><span class="amount">From ' + money(p.minPrice) + '</span><span class="excl" style="font-size:.85rem;color:var(--text-muted);">excl. VAT</span></div>\n')) +
     '<div class="pdp-stock"><i class="fa-solid fa-circle"></i> In Stock</div>\n' +
     '<p class="pdp-desc">' + escapeHtml(p.description) + '</p>\n' +
-    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;"><span style="font-size:.8rem;font-weight:700;">Available Finishes:</span>' + swatchDots(p.colours) + '</div>\n' +
+    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;"><span style="font-size:.8rem;font-weight:700;">Available Finishes:</span><span id="pdp-colour-dots">' + swatchDots(isMulti ? firstMaterial.colours : p.colours) + '</span></div>\n' +
     '<div class="pdp-actions">' +
     (p.isPOA
       ? '<a href="../quote?product=' + encodeURIComponent(p.family) + '" class="btn btn-dark">REQUEST QUOTE</a>'
@@ -331,12 +366,19 @@ function renderPage(p) {
     '</div>\n</div>\n' +
 
     '<div class="pdp-section"><h2>TECHNICAL <span class="accent" style="color:var(--gold-text);">SPECIFICATIONS</span></h2>' +
-    '<table class="spec-table"><tbody>' +
-    '<tr><td>Material</td><td>' + escapeHtml(p.material) + '</td></tr>' +
+    (isMulti ? '<table class="spec-table"><tbody>' +
+      p.materialPrices.map(function (mp) {
+        return '<tr><td>' + escapeHtml(mp.material) + ' Starting Price</td><td>' + (mp.isPOA ? 'Price on application' : money(mp.minPrice) + ' &ndash; ' + money(mp.maxPrice)) + '</td></tr>' +
+          '<tr><td>' + escapeHtml(mp.material) + ' Available Sizes</td><td>' + escapeHtml(mp.sizes.length ? mp.sizes.join(', ') : 'One size') + '</td></tr>';
+      }).join('') +
+      '<tr><td>Product Category</td><td>' + escapeHtml(p.category) + '</td></tr>' +
+      '</tbody></table></div>\n'
+    : '<table class="spec-table"><tbody>' +
+    '<tr><td>Material</td><td>' + escapeHtml(materialLabel(p)) + '</td></tr>' +
     '<tr><td>Product Category</td><td>' + escapeHtml(p.category) + '</td></tr>' +
     '<tr><td>Available Sizes</td><td>' + escapeHtml(p.sizes.length ? p.sizes.join(', ') : 'One size') + '</td></tr>' +
     '<tr><td>Finish / Colour Options</td><td>' + escapeHtml(p.colours.join(', ')) + '</td></tr>' +
-    '</tbody></table></div>\n' +
+    '</tbody></table></div>\n') +
 
     '<div class="pdp-section"><h2>INSTALLATION <span class="accent" style="color:var(--gold-text);">GUIDE</span></h2>' +
     '<div class="pdp-install-steps">' + stepsHtml + '</div></div>\n' +
@@ -401,6 +443,27 @@ function renderPage(p) {
 
     '<script src="../js/script.js?v=7"></script>\n' +
     '<script>window.PDP_PRODUCT = ' + JSON.stringify({ uid: p.uid, cat: p.cat, category: p.category, materialGroup: p.materialGroup, family: p.family }) + ';</script>\n' +
+    (isMulti ? '<script>(function(){\n' +
+      'var DATA = ' + materialSwitchData + ';\n' +
+      'var tabs = document.querySelectorAll(".pdp-material-tab");\n' +
+      'var rows = document.querySelectorAll(".pdp-variant-table tbody tr");\n' +
+      'var priceEl = document.getElementById("pdp-price-amount");\n' +
+      'var sizesEl = document.getElementById("pdp-sizes-value");\n' +
+      'var swatchEl = document.getElementById("pdp-colour-dots");\n' +
+      'tabs.forEach(function(tab){\n' +
+      '  tab.addEventListener("click", function(){\n' +
+      '    tabs.forEach(function(t){ t.classList.remove("active"); t.setAttribute("aria-selected","false"); });\n' +
+      '    tab.classList.add("active"); tab.setAttribute("aria-selected","true");\n' +
+      '    var m = tab.getAttribute("data-material");\n' +
+      '    rows.forEach(function(r){ r.classList.toggle("pdp-row-hidden", r.getAttribute("data-material") !== m); });\n' +
+      '    var d = DATA[m];\n' +
+      '    if (!d) return;\n' +
+      '    if (priceEl) priceEl.textContent = d.isPOA ? "Price on Application" : "From " + d.priceText;\n' +
+      '    if (sizesEl) sizesEl.textContent = d.sizes;\n' +
+      '    if (swatchEl) swatchEl.innerHTML = d.swatches;\n' +
+      '  });\n' +
+      '});\n' +
+      '})();</script>\n' : '') +
     '<script src="../js/product-detail.js?v=2"></script>\n' +
     '</body>\n</html>\n';
 }
@@ -425,11 +488,11 @@ function poaCardHtml(p) {
     return '<span class="swatch" style="background:' + (LIB.SWATCH_HEX[c] || '#ccc') + ';" title="' + escapeAttr(c) + '"></span>';
   }).join('');
   return '<div class="pcard" data-slug="' + p.slug + '">' +
-    '<a class="pcard-img" href="' + detailHref + '" aria-label="View ' + escapeAttr(p.family) + '"><img src="' + img + '" alt="' + escapeAttr(p.family + ' — ' + p.material + ' ' + p.category) + '" loading="lazy"><span class="pcard-stock"><i class="fa-solid fa-circle"></i> In Stock</span></a>' +
+    '<a class="pcard-img" href="' + detailHref + '" aria-label="View ' + escapeAttr(p.family) + '"><img src="' + img + '" alt="' + escapeAttr(p.family + ' — ' + materialLabel(p) + ' ' + p.category) + '" loading="lazy"><span class="pcard-stock"><i class="fa-solid fa-circle"></i> In Stock</span></a>' +
     '<div class="pcard-body">' +
     '<h3><a href="' + detailHref + '">' + escapeHtml(p.family) + '</a></h3>' +
     '<p class="pcard-desc">' + escapeHtml(p.description) + '</p>' +
-    '<div class="pcard-meta"><span><b>Material:</b> ' + escapeHtml(p.material) + '</span><span><b>Sizes:</b> ' + escapeHtml(sizesText) + '</span></div>' +
+    '<div class="pcard-meta"><span><b>Material:</b> ' + escapeHtml(materialLabel(p)) + '</span><span><b>Sizes:</b> ' + escapeHtml(sizesText) + '</span></div>' +
     '<div class="pcard-swatches">' + swatches + '</div>' +
     (p.isPOA
       ? '<div class="pcard-price"><span class="amount" style="font-size:1.05rem;">Price on Application</span></div>' +
