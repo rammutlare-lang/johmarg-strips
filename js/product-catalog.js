@@ -3,57 +3,6 @@ window.PRODUCT_CATALOG = [
   "category": "Aluminium",
   "products": [
    {
-    "family": "Straight Edge Aluminium - 2.5 metre lengths",
-    "variants": [
-     {
-      "label": "Straight Edge - 4mm",
-      "code": "SEA4",
-      "price": 47.2
-     },
-     {
-      "label": "Straight Edge - 5mm",
-      "code": "SEA5",
-      "price": 49
-     },
-     {
-      "label": "Straight Edge - 6mm",
-      "code": "SEA6",
-      "price": 54.5
-     },
-     {
-      "label": "Straight Edge - 8mm",
-      "code": "SEA8",
-      "price": 49
-     },
-     {
-      "label": "Straight Edge - 10mm",
-      "code": "SEA10",
-      "price": 49
-     },
-     {
-      "label": "Straight Edge - 12mm",
-      "code": "SEA12",
-      "price": 52.65
-     },
-     {
-      "label": "Straight Edge - 15mm",
-      "code": "SEA15",
-      "price": 85.4
-     },
-     {
-      "label": "Straight Edge - 17mm",
-      "code": "SEA17",
-      "price": 96.3
-     },
-     {
-      "label": "Straight Edge - 22.5mm",
-      "code": "SEA225",
-      "price": 103.55
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
     "family": "Econo Straight Edge - 2.5 metre lengths",
     "variants": [
      {
@@ -65,27 +14,6 @@ window.PRODUCT_CATALOG = [
       "label": "Straight Edge - 12mm",
       "code": "ESEA12",
       "price": 45.4
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Round Edge Aluminium - 2.5 metre lengths",
-    "variants": [
-     {
-      "label": "Round Edge - 8mm",
-      "code": "REA8",
-      "price": 49
-     },
-     {
-      "label": "Round Edge - 10mm",
-      "code": "REA10",
-      "price": 49
-     },
-     {
-      "label": "Round Edge - 12mm",
-      "code": "REA12",
-      "price": 52.65
      }
     ],
     "cat": "Tile Trims & Edges"
@@ -117,37 +45,6 @@ window.PRODUCT_CATALOG = [
     "cat": "Stair Nosing"
    },
    {
-    "family": "Square Edge Aluminium",
-    "variants": [
-     {
-      "label": "Square Edge - 6mm - 2.5 metre lengths",
-      "code": "QEA6",
-      "price": 74.5
-     },
-     {
-      "label": "Square Edge - 8mm - 2.5 metre lengths",
-      "code": "QEA8",
-      "price": 76.3
-     },
-     {
-      "label": "Square Edge - 10mm - 1 metre lengths",
-      "code": "QEA10*1",
-      "price": 36.3
-     },
-     {
-      "label": "Square Edge - 10mm - 2.5 metre lengths",
-      "code": "QEA10",
-      "price": 79.95
-     },
-     {
-      "label": "Square Edge - 12mm - 2.5 metre lengths",
-      "code": "QEA12",
-      "price": 83.55
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
     "family": "Tile In Step Aluminium - 2.5 metre lengths",
     "variants": [
      {
@@ -162,22 +59,6 @@ window.PRODUCT_CATALOG = [
      }
     ],
     "cat": "Stair Nosing"
-   },
-   {
-    "family": "Tile In Corner Protector Aluminium - 2.5 metre lengths",
-    "variants": [
-     {
-      "label": "Tile In Corner Protector - 10mm",
-      "code": "TICPA10",
-      "price": 221.75
-     },
-     {
-      "label": "Tile In Corner Protector - 12mm",
-      "code": "TICPA12",
-      "price": 234.5
-     }
-    ],
-    "cat": "Tile Trims & Edges"
    },
    {
     "family": "Tile In Internal Corner Protector Aluminium - 12mm",
@@ -277,68 +158,6 @@ window.PRODUCT_CATALOG = [
      }
     ],
     "cat": "Stair Nosing"
-   },
-   {
-    "family": "Listello with legs Aluminium - 2.5 metre lengths",
-    "variants": [
-     {
-      "label": "Listello with legs - 10mm high and 10mm wide",
-      "code": "LIS10",
-      "price": 63.55
-     },
-     {
-      "label": "Listello with legs - 12mm high and 10mm wide",
-      "code": "LIS12",
-      "price": 65.4
-     },
-     {
-      "label": "Listello with legs - 10mm high and 30mm wide",
-      "code": "LIS30",
-      "price": 92.65
-     }
-    ],
-    "cat": "Metal Profiles"
-   },
-   {
-    "family": "Formable Edge Aluminium - 2.5 metre lengths",
-    "variants": [
-     {
-      "label": "Formable Edge - 5mm",
-      "code": "FEA5",
-      "price": 54.5
-     },
-     {
-      "label": "Formable Edge - 8mm",
-      "code": "FEA8",
-      "price": 54.5
-     },
-     {
-      "label": "Formable Edge - 10mm",
-      "code": "FEA10",
-      "price": 50.85
-     },
-     {
-      "label": "Formable Edge - 12mm",
-      "code": "FEA12",
-      "price": 54.5
-     },
-     {
-      "label": "Formable Edge - 15mm",
-      "code": "FEA15",
-      "price": 85.4
-     },
-     {
-      "label": "Formable Edge - 17mm",
-      "code": "FEA17",
-      "price": 89
-     },
-     {
-      "label": "Formable Edge - 22.5mm",
-      "code": "FEA225",
-      "price": 98.1
-     }
-    ],
-    "cat": "Tile Trims & Edges"
    }
   ]
  },
@@ -772,481 +591,11 @@ window.PRODUCT_CATALOG = [
  },
  {
   "category": "Stainless Steel",
-  "products": [
-   {
-    "family": "Straight Edge Stainless Steel - 2.5 metre lengths",
-    "variants": [
-     {
-      "label": "Straight Edge - 8mm (Grade 430)",
-      "code": "SES8P",
-      "price": 112.65
-     },
-     {
-      "label": "Straight Edge - 8mm (Grade 304)",
-      "code": "SES8",
-      "price": 190.85
-     },
-     {
-      "label": "Straight Edge - 10mm (Grade 430)",
-      "code": "SES10P",
-      "price": 112.65
-     },
-     {
-      "label": "Straight Edge - 10mm (Grade 304)",
-      "code": "SES10",
-      "price": 194.5
-     },
-     {
-      "label": "Straight Edge - 12mm (Grade 430)",
-      "code": "SES12P",
-      "price": 116.3
-     },
-     {
-      "label": "Straight Edge - 12mm (Grade 304)",
-      "code": "SES12",
-      "price": 198.1
-     },
-     {
-      "label": "Straight Edge - 15mm (Grade 430)",
-      "code": "SES15P",
-      "price": 129
-     },
-     {
-      "label": "Straight Edge - 15mm (Grade 304)",
-      "code": "SES15",
-      "price": 207.2
-     },
-     {
-      "label": "Straight Edge - 17mm (Grade 430)",
-      "code": "SES17P",
-      "price": 138.1
-     },
-     {
-      "label": "Straight Edge - 17mm (Grade 304)",
-      "code": "SES17",
-      "price": 216.3
-     },
-     {
-      "label": "Straight Edge - 22.5mm (Grade 430)",
-      "code": "SES225P",
-      "price": 143.55
-     },
-     {
-      "label": "Straight Edge - 22.5mm (Grade 304)",
-      "code": "SES225",
-      "price": 225.4
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Formable Edge Stainless Steel - 2.5 metre lengths",
-    "variants": [
-     {
-      "label": "Formable edge - 8mm (Grade 430)",
-      "code": "FES8P",
-      "price": 123.55
-     },
-     {
-      "label": "Formable edge - 8mm (Grade 304)",
-      "code": "FES8",
-      "price": 201.75
-     },
-     {
-      "label": "Formable edge - 10mm (Grade 430)",
-      "code": "FES10P",
-      "price": 127.2
-     },
-     {
-      "label": "Formable edge - 10mm (Grade 304)",
-      "code": "FES10",
-      "price": 205.4
-     },
-     {
-      "label": "Formable edge - 12mm (Grade 430)",
-      "code": "FES12P",
-      "price": 130.85
-     },
-     {
-      "label": "Formable edge - 12mm (Grade 304)",
-      "code": "FES12",
-      "price": 209
-     },
-     {
-      "label": "Formable edge - 15mm (Grade 430)",
-      "code": "FES15P",
-      "price": 145.4
-     },
-     {
-      "label": "Formable edge - 15mm (Grade 304)",
-      "code": "FES15",
-      "price": 223.55
-     },
-     {
-      "label": "Formable edge - 22.5mm (Grade 430)",
-      "code": "FES225P",
-      "price": 167.2
-     },
-     {
-      "label": "Formable edge - 22.5mm (Grade 304)",
-      "code": "FES225",
-      "price": 245.4
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Square Edge Stainless Steel - 2.5 metre lengths",
-    "variants": [
-     {
-      "label": "Square Edge - 8mm (Grade 430)",
-      "code": "QES8P",
-      "price": 119.95
-     },
-     {
-      "label": "Square Edge - 8mm (Grade 304)",
-      "code": "QES8",
-      "price": 207.2
-     },
-     {
-      "label": "Square Edge - 10mm (Grade 430)",
-      "code": "QES10P",
-      "price": 119.95
-     },
-     {
-      "label": "Square Edge - 10mm (Grade 304)",
-      "code": "QES10",
-      "price": 212.65
-     },
-     {
-      "label": "Square Edge - 12mm (Grade 430)",
-      "code": "QES12P",
-      "price": 123.55
-     },
-     {
-      "label": "Square Edge - 12mm (Grade 304)",
-      "code": "QES12",
-      "price": 218.1
-     },
-     {
-      "label": "Square Edge - 15mm (Grade 430)",
-      "code": "QES15P",
-      "price": 139.95
-     },
-     {
-      "label": "Square Edge - 15mm (Grade 304)",
-      "code": "QES15",
-      "price": 236.3
-     },
-     {
-      "label": "Square Edge - 22.5mm (Grade 430)",
-      "code": "QES225P",
-      "price": 152.65
-     },
-     {
-      "label": "Square Edge - 22.5mm (Grade 304)",
-      "code": "QES225",
-      "price": 259.95
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Round Edge Stainless Steel 2.5 metre lengths",
-    "variants": [
-     {
-      "label": "Round Edge - 10mm (Grade 430)",
-      "code": "RES10P",
-      "price": 136.3
-     },
-     {
-      "label": "Round Edge - 10mm (Grade 304)",
-      "code": "RES10",
-      "price": 223.55
-     },
-     {
-      "label": "Round Edge - 12mm (Grade 430)",
-      "code": "RES12P",
-      "price": 154.5
-     },
-     {
-      "label": "Round Edge - 12mm (Grade 304)",
-      "code": "RES12",
-      "price": 241.75
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Tile In Corner Protector Stainless Steel - 2.5 metre lengths",
-    "variants": [
-     {
-      "label": "50 x 50 x 12 (Grade 430)",
-      "code": "STIC5012P",
-      "price": 381.75
-     },
-     {
-      "label": "50 x 50 x 12 (Grade 304)",
-      "code": "STIC50 12",
-      "price": 592.65
-     },
-     {
-      "label": "50 x 50 x 10 (Grade 430)",
-      "code": "STIC5010P",
-      "price": 363.55
-     },
-     {
-      "label": "50 x 50 x 10 (Grade 304)",
-      "code": "STIC50 10",
-      "price": 538.1
-     },
-     {
-      "label": "30 x 30 x 12 (Grade 430)",
-      "code": "STIC3012P",
-      "price": 327.2
-     },
-     {
-      "label": "30 x 30 x 12 (Grade 304)",
-      "code": "STIC30 12",
-      "price": 483.55
-     },
-     {
-      "label": "30 x 30 x 10 (Grade 430)",
-      "code": "STIC3010P",
-      "price": 309
-     },
-     {
-      "label": "30 x 30 x 10 (Grade 304)",
-      "code": "STIC30 10",
-      "price": 430.85
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Retro Fit Corner Protector Stainless Steel - 2.5 metre lengths",
-    "variants": [
-     {
-      "label": "Retro - 50 x 50 (Grade 430)",
-      "code": "SRC50P",
-      "price": 214.5
-     },
-     {
-      "label": "Retro - 50 x 50 (Grade 304)",
-      "code": "SRC50",
-      "price": 343.55
-     },
-     {
-      "label": "Retro - 30 x 30 (Grade 430)",
-      "code": "SRC30P",
-      "price": 172.65
-     },
-     {
-      "label": "Retro - 30 x 30 (Grade 304)",
-      "code": "SRC30",
-      "price": 263.55
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Listello Stainless Steel - 2.5 metre lengths",
-    "variants": [
-     {
-      "label": "Listello - 20 x 10mm (Grade 430)",
-      "code": "LISS2010P",
-      "price": 181.75
-     },
-     {
-      "label": "Listello - 20 x 10mm (Grade 304)",
-      "code": "LIS S 10",
-      "price": 281.75
-     },
-     {
-      "label": "Listello - 20 x 12mm (Grade 430)",
-      "code": "LISS2012P",
-      "price": 199.95
-     },
-     {
-      "label": "Listello - 20 x 12mm (Grade 304)",
-      "code": "LIS S 12",
-      "price": 336.3
-     },
-     {
-      "label": "Listello - 30 x 10mm (Grade 430)",
-      "code": "LISS3010P",
-      "price": 272.65
-     },
-     {
-      "label": "Listello - 30 x 12mm (Grade 430)",
-      "code": "LISS3012P",
-      "price": 309
-     },
-     {
-      "label": "Tile In Internal Corner Stainless Steel - 2.5 metre lengths (Grade 430)",
-      "code": "SSIC2.5",
-      "price": 363.55
-     }
-    ],
-    "cat": "Metal Profiles"
-   }
-  ]
+  "products": []
  },
  {
   "category": "Brass",
-  "products": [
-   {
-    "family": "Straight Edge Brass - 2 metre lengths",
-    "variants": [
-     {
-      "label": "Brass - 8mm",
-      "code": "SEB8",
-      "price": 363.55
-     },
-     {
-      "label": "Brass - 10mm",
-      "code": "SEB10",
-      "price": 376.3
-     },
-     {
-      "label": "Brass - 12mm",
-      "code": "SEB12",
-      "price": 379.95
-     },
-     {
-      "label": "Brass - 15mm",
-      "code": "SEB15",
-      "price": 399.95
-     },
-     {
-      "label": "Brass - 22.5mm",
-      "code": "SEB225",
-      "price": 472.65
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Square Edge Brass - 2 metre lengths",
-    "variants": [
-     {
-      "label": "Square Edge 8mm",
-      "code": "QEB8",
-      "price": 481.75
-     },
-     {
-      "label": "Square Edge 10mm",
-      "code": "QEB10",
-      "price": 490.85
-     },
-     {
-      "label": "Square Edge 12mm",
-      "code": "QEB12",
-      "price": 499.95
-     },
-     {
-      "label": "Square Edge 15mm",
-      "code": "QEB15",
-      "price": 527.2
-     },
-     {
-      "label": "Square Edge 22.5mm",
-      "code": "QEB225",
-      "price": 590.85
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Round Edge Brass - 2 metre lengths",
-    "variants": [
-     {
-      "label": "Round Edge - 10mm",
-      "code": "REB10",
-      "price": 399.95
-     },
-     {
-      "label": "Round Edge - 12mm",
-      "code": "REB12",
-      "price": 418.1
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Tile in Corner Protector Brass - 2 metre lengths",
-    "variants": [
-     {
-      "label": "Tile in Corner protector - 30 x 30 x 10",
-      "code": "BTIC3010",
-      "price": 956.3
-     },
-     {
-      "label": "Tile in Corner protector - 30 x 30 x 12",
-      "code": "BTIC3012",
-      "price": 974.5
-     },
-     {
-      "label": "Tile in Corner protector - 50 x 50 x 10",
-      "code": "BTIC5010",
-      "price": 1307.2
-     },
-     {
-      "label": "Tile in Corner protector - 50 x 50 x 12",
-      "code": "BTIC5012",
-      "price": 1325.4
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Retro Fit Corner Protector Brass - 2 metre lengths",
-    "variants": [
-     {
-      "label": "Retro Fit - 30 x 30",
-      "code": "BRC30",
-      "price": 627.2
-     },
-     {
-      "label": "Retro Fit - 50 x 50",
-      "code": "BRC50",
-      "price": 1030.85
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   },
-   {
-    "family": "Formable Edge Brass - 2 metre lengths",
-    "variants": [
-     {
-      "label": "Formable Edge - 8mm",
-      "code": "FEB8",
-      "price": 372.65
-     },
-     {
-      "label": "Formable Edge - 10mm",
-      "code": "FEB10",
-      "price": 385.4
-     },
-     {
-      "label": "Formable Edge - 12mm",
-      "code": "FEB12",
-      "price": 389
-     },
-     {
-      "label": "Formable Edge - 15mm",
-      "code": "FEB15",
-      "price": 409
-     },
-     {
-      "label": "Formable Edge - 22.5mm",
-      "code": "FEB225",
-      "price": 481.75
-     }
-    ],
-    "cat": "Tile Trims & Edges"
-   }
-  ]
+  "products": []
  },
  {
   "category": "PVC",
@@ -2542,6 +1891,684 @@ window.PRODUCT_CATALOG = [
      }
     ],
     "cat": "Flooring Profiles"
+   }
+  ]
+ },
+ {
+  "category": "Multi-Material",
+  "multiMaterial": true,
+  "products": [
+   {
+    "family": "Straight Edge",
+    "cat": "Tile Trims & Edges",
+    "materials": [
+     {
+      "material": "Aluminium",
+      "variants": [
+       {
+        "label": "Straight Edge - 4mm",
+        "code": "SEA4",
+        "price": 47.2
+       },
+       {
+        "label": "Straight Edge - 5mm",
+        "code": "SEA5",
+        "price": 49
+       },
+       {
+        "label": "Straight Edge - 6mm",
+        "code": "SEA6",
+        "price": 54.5
+       },
+       {
+        "label": "Straight Edge - 8mm",
+        "code": "SEA8",
+        "price": 49
+       },
+       {
+        "label": "Straight Edge - 10mm",
+        "code": "SEA10",
+        "price": 49
+       },
+       {
+        "label": "Straight Edge - 12mm",
+        "code": "SEA12",
+        "price": 52.65
+       },
+       {
+        "label": "Straight Edge - 15mm",
+        "code": "SEA15",
+        "price": 85.4
+       },
+       {
+        "label": "Straight Edge - 17mm",
+        "code": "SEA17",
+        "price": 96.3
+       },
+       {
+        "label": "Straight Edge - 22.5mm",
+        "code": "SEA225",
+        "price": 103.55
+       }
+      ]
+     },
+     {
+      "material": "Brass",
+      "variants": [
+       {
+        "label": "Brass - 8mm",
+        "code": "SEB8",
+        "price": 363.55
+       },
+       {
+        "label": "Brass - 10mm",
+        "code": "SEB10",
+        "price": 376.3
+       },
+       {
+        "label": "Brass - 12mm",
+        "code": "SEB12",
+        "price": 379.95
+       },
+       {
+        "label": "Brass - 15mm",
+        "code": "SEB15",
+        "price": 399.95
+       },
+       {
+        "label": "Brass - 22.5mm",
+        "code": "SEB225",
+        "price": 472.65
+       }
+      ]
+     },
+     {
+      "material": "Stainless Steel",
+      "variants": [
+       {
+        "label": "Straight Edge - 8mm (Grade 430)",
+        "code": "SES8P",
+        "price": 112.65
+       },
+       {
+        "label": "Straight Edge - 8mm (Grade 304)",
+        "code": "SES8",
+        "price": 190.85
+       },
+       {
+        "label": "Straight Edge - 10mm (Grade 430)",
+        "code": "SES10P",
+        "price": 112.65
+       },
+       {
+        "label": "Straight Edge - 10mm (Grade 304)",
+        "code": "SES10",
+        "price": 194.5
+       },
+       {
+        "label": "Straight Edge - 12mm (Grade 430)",
+        "code": "SES12P",
+        "price": 116.3
+       },
+       {
+        "label": "Straight Edge - 12mm (Grade 304)",
+        "code": "SES12",
+        "price": 198.1
+       },
+       {
+        "label": "Straight Edge - 15mm (Grade 430)",
+        "code": "SES15P",
+        "price": 129
+       },
+       {
+        "label": "Straight Edge - 15mm (Grade 304)",
+        "code": "SES15",
+        "price": 207.2
+       },
+       {
+        "label": "Straight Edge - 17mm (Grade 430)",
+        "code": "SES17P",
+        "price": 138.1
+       },
+       {
+        "label": "Straight Edge - 17mm (Grade 304)",
+        "code": "SES17",
+        "price": 216.3
+       },
+       {
+        "label": "Straight Edge - 22.5mm (Grade 430)",
+        "code": "SES225P",
+        "price": 143.55
+       },
+       {
+        "label": "Straight Edge - 22.5mm (Grade 304)",
+        "code": "SES225",
+        "price": 225.4
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "family": "Round Edge",
+    "cat": "Tile Trims & Edges",
+    "materials": [
+     {
+      "material": "Aluminium",
+      "variants": [
+       {
+        "label": "Round Edge - 8mm",
+        "code": "REA8",
+        "price": 49
+       },
+       {
+        "label": "Round Edge - 10mm",
+        "code": "REA10",
+        "price": 49
+       },
+       {
+        "label": "Round Edge - 12mm",
+        "code": "REA12",
+        "price": 52.65
+       }
+      ]
+     },
+     {
+      "material": "Brass",
+      "variants": [
+       {
+        "label": "Round Edge - 10mm",
+        "code": "REB10",
+        "price": 399.95
+       },
+       {
+        "label": "Round Edge - 12mm",
+        "code": "REB12",
+        "price": 418.1
+       }
+      ]
+     },
+     {
+      "material": "Stainless Steel",
+      "variants": [
+       {
+        "label": "Round Edge - 10mm (Grade 430)",
+        "code": "RES10P",
+        "price": 136.3
+       },
+       {
+        "label": "Round Edge - 10mm (Grade 304)",
+        "code": "RES10",
+        "price": 223.55
+       },
+       {
+        "label": "Round Edge - 12mm (Grade 430)",
+        "code": "RES12P",
+        "price": 154.5
+       },
+       {
+        "label": "Round Edge - 12mm (Grade 304)",
+        "code": "RES12",
+        "price": 241.75
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "family": "Square Edge",
+    "cat": "Tile Trims & Edges",
+    "materials": [
+     {
+      "material": "Aluminium",
+      "variants": [
+       {
+        "label": "Square Edge - 6mm - 2.5 metre lengths",
+        "code": "QEA6",
+        "price": 74.5
+       },
+       {
+        "label": "Square Edge - 8mm - 2.5 metre lengths",
+        "code": "QEA8",
+        "price": 76.3
+       },
+       {
+        "label": "Square Edge - 10mm - 1 metre lengths",
+        "code": "QEA10*1",
+        "price": 36.3
+       },
+       {
+        "label": "Square Edge - 10mm - 2.5 metre lengths",
+        "code": "QEA10",
+        "price": 79.95
+       },
+       {
+        "label": "Square Edge - 12mm - 2.5 metre lengths",
+        "code": "QEA12",
+        "price": 83.55
+       }
+      ]
+     },
+     {
+      "material": "Brass",
+      "variants": [
+       {
+        "label": "Square Edge 8mm",
+        "code": "QEB8",
+        "price": 481.75
+       },
+       {
+        "label": "Square Edge 10mm",
+        "code": "QEB10",
+        "price": 490.85
+       },
+       {
+        "label": "Square Edge 12mm",
+        "code": "QEB12",
+        "price": 499.95
+       },
+       {
+        "label": "Square Edge 15mm",
+        "code": "QEB15",
+        "price": 527.2
+       },
+       {
+        "label": "Square Edge 22.5mm",
+        "code": "QEB225",
+        "price": 590.85
+       }
+      ]
+     },
+     {
+      "material": "Stainless Steel",
+      "variants": [
+       {
+        "label": "Square Edge - 8mm (Grade 430)",
+        "code": "QES8P",
+        "price": 119.95
+       },
+       {
+        "label": "Square Edge - 8mm (Grade 304)",
+        "code": "QES8",
+        "price": 207.2
+       },
+       {
+        "label": "Square Edge - 10mm (Grade 430)",
+        "code": "QES10P",
+        "price": 119.95
+       },
+       {
+        "label": "Square Edge - 10mm (Grade 304)",
+        "code": "QES10",
+        "price": 212.65
+       },
+       {
+        "label": "Square Edge - 12mm (Grade 430)",
+        "code": "QES12P",
+        "price": 123.55
+       },
+       {
+        "label": "Square Edge - 12mm (Grade 304)",
+        "code": "QES12",
+        "price": 218.1
+       },
+       {
+        "label": "Square Edge - 15mm (Grade 430)",
+        "code": "QES15P",
+        "price": 139.95
+       },
+       {
+        "label": "Square Edge - 15mm (Grade 304)",
+        "code": "QES15",
+        "price": 236.3
+       },
+       {
+        "label": "Square Edge - 22.5mm (Grade 430)",
+        "code": "QES225P",
+        "price": 152.65
+       },
+       {
+        "label": "Square Edge - 22.5mm (Grade 304)",
+        "code": "QES225",
+        "price": 259.95
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "family": "Formable Edge",
+    "cat": "Tile Trims & Edges",
+    "materials": [
+     {
+      "material": "Aluminium",
+      "variants": [
+       {
+        "label": "Formable Edge - 5mm",
+        "code": "FEA5",
+        "price": 54.5
+       },
+       {
+        "label": "Formable Edge - 8mm",
+        "code": "FEA8",
+        "price": 54.5
+       },
+       {
+        "label": "Formable Edge - 10mm",
+        "code": "FEA10",
+        "price": 50.85
+       },
+       {
+        "label": "Formable Edge - 12mm",
+        "code": "FEA12",
+        "price": 54.5
+       },
+       {
+        "label": "Formable Edge - 15mm",
+        "code": "FEA15",
+        "price": 85.4
+       },
+       {
+        "label": "Formable Edge - 17mm",
+        "code": "FEA17",
+        "price": 89
+       },
+       {
+        "label": "Formable Edge - 22.5mm",
+        "code": "FEA225",
+        "price": 98.1
+       }
+      ]
+     },
+     {
+      "material": "Brass",
+      "variants": [
+       {
+        "label": "Formable Edge - 8mm",
+        "code": "FEB8",
+        "price": 372.65
+       },
+       {
+        "label": "Formable Edge - 10mm",
+        "code": "FEB10",
+        "price": 385.4
+       },
+       {
+        "label": "Formable Edge - 12mm",
+        "code": "FEB12",
+        "price": 389
+       },
+       {
+        "label": "Formable Edge - 15mm",
+        "code": "FEB15",
+        "price": 409
+       },
+       {
+        "label": "Formable Edge - 22.5mm",
+        "code": "FEB225",
+        "price": 481.75
+       }
+      ]
+     },
+     {
+      "material": "Stainless Steel",
+      "variants": [
+       {
+        "label": "Formable edge - 8mm (Grade 430)",
+        "code": "FES8P",
+        "price": 123.55
+       },
+       {
+        "label": "Formable edge - 8mm (Grade 304)",
+        "code": "FES8",
+        "price": 201.75
+       },
+       {
+        "label": "Formable edge - 10mm (Grade 430)",
+        "code": "FES10P",
+        "price": 127.2
+       },
+       {
+        "label": "Formable edge - 10mm (Grade 304)",
+        "code": "FES10",
+        "price": 205.4
+       },
+       {
+        "label": "Formable edge - 12mm (Grade 430)",
+        "code": "FES12P",
+        "price": 130.85
+       },
+       {
+        "label": "Formable edge - 12mm (Grade 304)",
+        "code": "FES12",
+        "price": 209
+       },
+       {
+        "label": "Formable edge - 15mm (Grade 430)",
+        "code": "FES15P",
+        "price": 145.4
+       },
+       {
+        "label": "Formable edge - 15mm (Grade 304)",
+        "code": "FES15",
+        "price": 223.55
+       },
+       {
+        "label": "Formable edge - 22.5mm (Grade 430)",
+        "code": "FES225P",
+        "price": 167.2
+       },
+       {
+        "label": "Formable edge - 22.5mm (Grade 304)",
+        "code": "FES225",
+        "price": 245.4
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "family": "Tile In Corner Protector",
+    "cat": "Tile Trims & Edges",
+    "materials": [
+     {
+      "material": "Aluminium",
+      "variants": [
+       {
+        "label": "Tile In Corner Protector - 10mm",
+        "code": "TICPA10",
+        "price": 221.75
+       },
+       {
+        "label": "Tile In Corner Protector - 12mm",
+        "code": "TICPA12",
+        "price": 234.5
+       }
+      ]
+     },
+     {
+      "material": "Brass",
+      "variants": [
+       {
+        "label": "Tile in Corner protector - 30 x 30 x 10",
+        "code": "BTIC3010",
+        "price": 956.3
+       },
+       {
+        "label": "Tile in Corner protector - 30 x 30 x 12",
+        "code": "BTIC3012",
+        "price": 974.5
+       },
+       {
+        "label": "Tile in Corner protector - 50 x 50 x 10",
+        "code": "BTIC5010",
+        "price": 1307.2
+       },
+       {
+        "label": "Tile in Corner protector - 50 x 50 x 12",
+        "code": "BTIC5012",
+        "price": 1325.4
+       }
+      ]
+     },
+     {
+      "material": "Stainless Steel",
+      "variants": [
+       {
+        "label": "50 x 50 x 12 (Grade 430)",
+        "code": "STIC5012P",
+        "price": 381.75
+       },
+       {
+        "label": "50 x 50 x 12 (Grade 304)",
+        "code": "STIC50 12",
+        "price": 592.65
+       },
+       {
+        "label": "50 x 50 x 10 (Grade 430)",
+        "code": "STIC5010P",
+        "price": 363.55
+       },
+       {
+        "label": "50 x 50 x 10 (Grade 304)",
+        "code": "STIC50 10",
+        "price": 538.1
+       },
+       {
+        "label": "30 x 30 x 12 (Grade 430)",
+        "code": "STIC3012P",
+        "price": 327.2
+       },
+       {
+        "label": "30 x 30 x 12 (Grade 304)",
+        "code": "STIC30 12",
+        "price": 483.55
+       },
+       {
+        "label": "30 x 30 x 10 (Grade 430)",
+        "code": "STIC3010P",
+        "price": 309
+       },
+       {
+        "label": "30 x 30 x 10 (Grade 304)",
+        "code": "STIC30 10",
+        "price": 430.85
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "family": "Retro Fit Corner Protector",
+    "cat": "Tile Trims & Edges",
+    "materials": [
+     {
+      "material": "Brass",
+      "variants": [
+       {
+        "label": "Retro Fit - 30 x 30",
+        "code": "BRC30",
+        "price": 627.2
+       },
+       {
+        "label": "Retro Fit - 50 x 50",
+        "code": "BRC50",
+        "price": 1030.85
+       }
+      ]
+     },
+     {
+      "material": "Stainless Steel",
+      "variants": [
+       {
+        "label": "Retro - 50 x 50 (Grade 430)",
+        "code": "SRC50P",
+        "price": 214.5
+       },
+       {
+        "label": "Retro - 50 x 50 (Grade 304)",
+        "code": "SRC50",
+        "price": 343.55
+       },
+       {
+        "label": "Retro - 30 x 30 (Grade 430)",
+        "code": "SRC30P",
+        "price": 172.65
+       },
+       {
+        "label": "Retro - 30 x 30 (Grade 304)",
+        "code": "SRC30",
+        "price": 263.55
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "family": "Listello",
+    "cat": "Metal Profiles",
+    "materials": [
+     {
+      "material": "Aluminium",
+      "variants": [
+       {
+        "label": "Listello with legs - 10mm high and 10mm wide",
+        "code": "LIS10",
+        "price": 63.55
+       },
+       {
+        "label": "Listello with legs - 12mm high and 10mm wide",
+        "code": "LIS12",
+        "price": 65.4
+       },
+       {
+        "label": "Listello with legs - 10mm high and 30mm wide",
+        "code": "LIS30",
+        "price": 92.65
+       }
+      ]
+     },
+     {
+      "material": "Stainless Steel",
+      "variants": [
+       {
+        "label": "Listello - 20 x 10mm (Grade 430)",
+        "code": "LISS2010P",
+        "price": 181.75
+       },
+       {
+        "label": "Listello - 20 x 10mm (Grade 304)",
+        "code": "LIS S 10",
+        "price": 281.75
+       },
+       {
+        "label": "Listello - 20 x 12mm (Grade 430)",
+        "code": "LISS2012P",
+        "price": 199.95
+       },
+       {
+        "label": "Listello - 20 x 12mm (Grade 304)",
+        "code": "LIS S 12",
+        "price": 336.3
+       },
+       {
+        "label": "Listello - 30 x 10mm (Grade 430)",
+        "code": "LISS3010P",
+        "price": 272.65
+       },
+       {
+        "label": "Listello - 30 x 12mm (Grade 430)",
+        "code": "LISS3012P",
+        "price": 309
+       },
+       {
+        "label": "Tile In Internal Corner Stainless Steel - 2.5 metre lengths (Grade 430)",
+        "code": "SSIC2.5",
+        "price": 363.55
+       }
+      ]
+     }
+    ]
    }
   ]
  }

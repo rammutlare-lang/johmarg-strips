@@ -57,9 +57,14 @@ document.addEventListener('DOMContentLoaded', function () {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
+  function materialLabel(p) {
+    return Array.isArray(p.material) ? p.material.join(' / ') : p.material;
+  }
+
   function valuesFor(p, key) {
     if (key === 'colour') return p.colours;
     if (key === 'size') return p.sizes;
+    if (key === 'material') return Array.isArray(p.material) ? p.material : [p.material];
     return [p[key]];
   }
 
@@ -215,13 +220,13 @@ document.addEventListener('DOMContentLoaded', function () {
     return '' +
       '<div class="pcard" data-slug="' + p.slug + '">' +
       '  <a class="pcard-img" href="' + detailHref + '" aria-label="View ' + escapeHtml(p.family) + '">' +
-      '    <img src="' + img + '" alt="' + escapeHtml(p.family + ' — ' + p.material + ' ' + p.category) + '" loading="lazy">' +
+      '    <img src="' + img + '" alt="' + escapeHtml(p.family + ' — ' + materialLabel(p) + ' ' + p.category) + '" loading="lazy">' +
       '    <span class="pcard-stock"><i class="fa-solid fa-circle"></i> In Stock</span>' +
       '  </a>' +
       '  <div class="pcard-body">' +
       '    <h3><a href="' + detailHref + '">' + escapeHtml(p.family) + '</a></h3>' +
       '    <p class="pcard-desc">' + escapeHtml(p.description) + '</p>' +
-      '    <div class="pcard-meta"><span><b>Material:</b> ' + escapeHtml(p.material) + '</span><span><b>Sizes:</b> ' + escapeHtml(sizesText) + '</span></div>' +
+      '    <div class="pcard-meta"><span><b>Material:</b> ' + escapeHtml(materialLabel(p)) + '</span><span><b>Sizes:</b> ' + escapeHtml(sizesText) + '</span></div>' +
       '    <div class="pcard-swatches">' + swatches + more + '</div>' +
       (p.isPOA
         ? '    <div class="pcard-price"><span class="amount" style="font-size:1.05rem;">Price on Application</span></div>' +
@@ -316,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var lineId = p.uid + '::' + variant.code;
     var existing = list.filter(function (l) { return l.lineId === lineId; })[0];
     if (existing) existing.qty = Math.min(999, existing.qty + qty);
-    else list.push({ lineId: lineId, cat: p.cat, category: p.category, material: p.materialGroup, family: p.family, label: variant.label, code: variant.code, price: variant.price, qty: qty });
+    else list.push({ lineId: lineId, cat: p.cat, category: p.category, material: variant.material || p.materialGroup, family: p.family, label: variant.label, code: variant.code, price: variant.price, qty: qty });
     saveQuoteList(list);
     renderQuoteList();
     return list;

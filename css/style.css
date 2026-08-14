@@ -704,6 +704,15 @@ body.cart-open .cart-overlay{opacity:1;pointer-events:auto;}
 .pdp-variant-table th{text-align:left;padding:8px 10px;background:var(--gray-bg);font-size:.72rem;text-transform:uppercase;letter-spacing:.4px;color:var(--text-muted);}
 .pdp-variant-table td{padding:9px 10px;border-bottom:1px solid var(--gray-line);}
 .pdp-variant-table tr:last-child td{border-bottom:none;}
+.pdp-variant-table tr.pdp-row-hidden{display:none;}
+
+.pdp-material-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
+.pdp-material-tab{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 16px;border:1.5px solid var(--gray-line);border-radius:8px;background:#fff;cursor:pointer;font-family:inherit;text-align:left;}
+.pdp-material-tab .tab-name{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--text-dark);}
+.pdp-material-tab .tab-price{font-size:.85rem;font-weight:700;color:var(--text-muted);}
+.pdp-material-tab.active{border-color:var(--gold-text);background:var(--gray-bg);}
+.pdp-material-tab.active .tab-price{color:var(--gold-text);}
+.pdp-material-tab:hover{border-color:var(--gold-text);}
 
 .pdp-section{margin-top:56px;}
 .pdp-section h2{font-size:1.3rem;margin-bottom:18px;}

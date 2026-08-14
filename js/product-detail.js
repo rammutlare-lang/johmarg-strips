@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
-  function firstRow() { return table.querySelector('tbody tr'); }
+  function firstRow() { return table.querySelector('tbody tr:not(.pdp-row-hidden)') || table.querySelector('tbody tr'); }
   function rowData(tr) {
-    return { code: tr.getAttribute('data-code'), price: parseFloat(tr.getAttribute('data-price')), label: tr.getAttribute('data-label') };
+    return { code: tr.getAttribute('data-code'), price: parseFloat(tr.getAttribute('data-price')), label: tr.getAttribute('data-label'), material: tr.getAttribute('data-material') };
   }
 
   function loadQuoteList() {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var lineId = meta.uid + '::' + variant.code;
     var existing = list.filter(function (l) { return l.lineId === lineId; })[0];
     if (existing) existing.qty = Math.min(999, existing.qty + qty);
-    else list.push({ lineId: lineId, cat: meta.cat, category: meta.category, material: meta.materialGroup, family: meta.family, label: variant.label, code: variant.code, price: variant.price, qty: qty });
+    else list.push({ lineId: lineId, cat: meta.cat, category: meta.category, material: variant.material || meta.materialGroup, family: meta.family, label: variant.label, code: variant.code, price: variant.price, qty: qty });
     saveQuoteList(list);
     renderQuoteList();
   }

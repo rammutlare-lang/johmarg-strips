@@ -186,11 +186,83 @@ window.PRODUCT_INDEX_LIB = (function () {
     return CATEGORY_METAL; // Tile Trims & Edges, Metal Profiles, Angle & Flat Bar / Movement Joints (non-PVC)
   }
 
+  function parseColoursMulti(taggedVariants) {
+    var seen = {};
+    taggedVariants.forEach(function (v) {
+      var matched = false;
+      for (var i = 0; i < COLOUR_PATTERNS.length; i++) {
+        if (COLOUR_PATTERNS[i][0].test(v.label)) {
+          COLOUR_PATTERNS[i][1].forEach(function (c) { seen[c] = true; });
+          matched = true;
+          break;
+        }
+      }
+      if (!matched) defaultColour(v.material).forEach(function (c) { seen[c] = true; });
+    });
+    return Object.keys(seen);
+  }
+
   function build(PRODUCT_CATALOG, PRODUCT_IMAGES) {
     PRODUCT_IMAGES = PRODUCT_IMAGES || {};
     var out = [];
     var seenSlugs = {};
     PRODUCT_CATALOG.forEach(function (group) {
+      if (group.multiMaterial) {
+        group.products.forEach(function (prod) {
+          var materials = prod.materials.map(function (m) { return m.material; });
+          var uid = group.category + '||' + prod.family;
+          var baseSlug = slugify(prod.family);
+          var slug = baseSlug, n = 2;
+          while (seenSlugs[slug]) { slug = baseSlug + '-' + n; n++; }
+          seenSlugs[slug] = true;
+
+          var allVariants = [];
+          prod.materials.forEach(function (m) {
+            m.variants.forEach(function (v) {
+              allVariants.push({ label: v.label, code: v.code, price: v.price, material: m.material });
+            });
+          });
+          var numericPrices = allVariants.map(function (v) { return v.price; }).filter(function (p) { return typeof p === 'number'; });
+          var isPOA = numericPrices.length === 0;
+          var codes = allVariants.map(function (v) { return v.code; }).filter(Boolean);
+
+          var materialPrices = prod.materials.map(function (m) {
+            var prices = m.variants.map(function (v) { return v.price; }).filter(function (p) { return typeof p === 'number'; });
+            return {
+              material: m.material,
+              isPOA: prices.length === 0,
+              minPrice: prices.length ? Math.min.apply(null, prices) : null,
+              maxPrice: prices.length ? Math.max.apply(null, prices) : null,
+              sizes: parseSizes(m.variants),
+              colours: STANDARD_COLOURS[m.material] ? STANDARD_COLOURS[m.material].slice() : parseColours(m.variants, m.material)
+            };
+          });
+
+          out.push({
+            uid: uid,
+            slug: slug,
+            family: prod.family,
+            materialGroup: group.category,
+            material: materials,
+            materialPrices: materialPrices,
+            cat: prod.cat,
+            category: categoryFor(prod.cat, materials[0], prod.family),
+            application: APPLICATIONS[prod.cat] || prod.cat,
+            sizes: parseSizes(allVariants),
+            colours: parseColoursMulti(allVariants),
+            isPOA: isPOA,
+            minPrice: isPOA ? null : Math.min.apply(null, numericPrices),
+            maxPrice: isPOA ? null : Math.max.apply(null, numericPrices),
+            variants: allVariants,
+            primaryCode: codes[0] || '',
+            codeCount: codes.length,
+            image: PRODUCT_IMAGES[uid] || '',
+            description: shortDescription(prod.cat, materials.join(' / ')),
+            sortIndex: out.length
+          });
+        });
+        return;
+      }
       group.products.forEach(function (prod) {
         var material = materialFor(group.category, prod.family);
         var uid = group.category + '||' + prod.family;
