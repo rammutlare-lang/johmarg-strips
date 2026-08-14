@@ -664,6 +664,8 @@ body.cart-open .cart-overlay{opacity:1;pointer-events:auto;}
 .pcard-swatches{display:flex;align-items:center;gap:5px;}
 .pcard-swatches .swatch{width:13px;height:13px;border-radius:50%;border:1px solid rgba(0,0,0,.2);flex:none;}
 .pcard-swatches .swatch-more{font-size:.68rem;color:var(--text-muted);}
+.pcard-material-select{width:100%;padding:8px 10px;margin-top:6px;border:1.5px solid var(--gray-line);border-radius:6px;font-size:.78rem;font-family:inherit;background:#fff;color:var(--text-dark);}
+.pcard-material-select:focus{border-color:var(--gold-text);outline:none;}
 .pcard-price{display:flex;align-items:baseline;gap:8px;margin-top:auto;padding-top:6px;}
 .pcard-price .amount{font-size:1.25rem;font-weight:800;color:var(--black);font-variant-numeric:tabular-nums;}
 .pcard-price .excl{font-size:.7rem;color:var(--text-muted);}

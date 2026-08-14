@@ -221,6 +221,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }).join('');
     var more = p.colours.length > 5 ? '<span class="swatch-more">+' + (p.colours.length - 5) + '</span>' : '';
     var detailHref = 'products/' + p.slug;
+    var isMulti = Array.isArray(p.material);
+
+    var materialSelectHtml = !isMulti ? '' :
+      '    <select class="pcard-material-select" data-slug="' + p.slug + '" aria-label="Choose material for ' + escapeHtml(p.family) + '">' +
+      p.materialPrices.map(function (mp) {
+        var priceText = mp.isPOA ? 'POA' : 'From ' + money(mp.minPrice);
+        return '<option value="' + escapeHtml(mp.material) + '">' + escapeHtml(mp.material) + ' — ' + escapeHtml(priceText) + '</option>';
+      }).join('') +
+      '    </select>';
 
     return '' +
       '<div class="pcard" data-slug="' + p.slug + '">' +
@@ -233,6 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
       '    <p class="pcard-desc">' + escapeHtml(p.description) + '</p>' +
       '    <div class="pcard-meta"><span><b>Material:</b> ' + escapeHtml(materialLabel(p)) + '</span><span><b>Sizes:</b> ' + escapeHtml(sizesText) + '</span></div>' +
       '    <div class="pcard-swatches">' + swatches + more + '</div>' +
+      materialSelectHtml +
       (p.isPOA
         ? '    <div class="pcard-price"><span class="amount" style="font-size:1.05rem;">Price on Application</span></div>' +
           '    <p style="font-size:.7rem;color:var(--text-muted);margin:0;">Contact us for a tailored price.</p>' +
@@ -320,8 +330,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   function saveQuoteList(list) { localStorage.setItem(QUOTE_KEY, JSON.stringify(list)); }
 
-  function addToQuote(p, qty) {
-    var variant = p.variants[0];
+  function addToQuote(p, qty, material) {
+    var variant = material ? p.variants.filter(function (v) { return v.material === material; })[0] || p.variants[0] : p.variants[0];
     var list = loadQuoteList();
     var lineId = p.uid + '::' + variant.code;
     var existing = list.filter(function (l) { return l.lineId === lineId; })[0];
@@ -407,12 +417,30 @@ document.addEventListener('DOMContentLoaded', function () {
     window.location.href = 'quote?from=quotelist';
   });
 
+  function selectedMaterial(slug) {
+    var sel = grid.querySelector('.pcard-material-select[data-slug="' + slug + '"]');
+    return sel ? sel.value : null;
+  }
+
+  grid.addEventListener('change', function (e) {
+    var sel = e.target.closest('.pcard-material-select');
+    if (!sel) return;
+    var p = ALL.filter(function (x) { return x.slug === sel.getAttribute('data-slug'); })[0];
+    if (!p || !p.materialPrices) return;
+    var mp = p.materialPrices.filter(function (m) { return m.material === sel.value; })[0];
+    if (!mp) return;
+    var card = sel.closest('.pcard');
+    var amountEl = card && card.querySelector('.pcard-price .amount');
+    if (amountEl) amountEl.textContent = mp.isPOA ? 'Price on Application' : 'From ' + money(mp.minPrice);
+  });
+
   grid.addEventListener('click', function (e) {
     var addBtn = e.target.closest('.pcard-add-btn');
     if (addBtn) {
-      var p = ALL.filter(function (x) { return x.slug === addBtn.getAttribute('data-slug'); })[0];
+      var slug = addBtn.getAttribute('data-slug');
+      var p = ALL.filter(function (x) { return x.slug === slug; })[0];
       if (!p) return;
-      addToQuote(p, 1);
+      addToQuote(p, 1, selectedMaterial(slug));
       openQuote();
       addBtn.textContent = 'ADDED ✓';
       setTimeout(function () { addBtn.textContent = 'ADD TO QUOTE'; }, 1200);
@@ -420,9 +448,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     var quoteBtn = e.target.closest('.pcard-quote-btn');
     if (quoteBtn) {
-      var pr = ALL.filter(function (x) { return x.slug === quoteBtn.getAttribute('data-slug'); })[0];
+      var qSlug = quoteBtn.getAttribute('data-slug');
+      var pr = ALL.filter(function (x) { return x.slug === qSlug; })[0];
       if (!pr) return;
-      addToQuote(pr, 1);
+      addToQuote(pr, 1, selectedMaterial(qSlug));
       window.location.href = 'quote?from=quotelist';
     }
   });

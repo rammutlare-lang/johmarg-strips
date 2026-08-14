@@ -309,7 +309,7 @@ function renderPage(p) {
     '<meta name="twitter:description" content="' + escapeAttr(metaDesc) + '">\n' +
     '<link rel="icon" type="image/x-icon" href="../favicon.ico">\n' +
     '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">\n' +
-    '<link rel="stylesheet" href="../css/style.css?v=14">\n' +
+    '<link rel="stylesheet" href="../css/style.css?v=15">\n' +
     '<script type="application/ld+json">' + JSON.stringify(jsonLd) + '</script>\n' +
     '<script type="application/ld+json">' + JSON.stringify(breadcrumbLd) + '</script>\n' +
     '</head>\n<body>\n' +
@@ -464,7 +464,7 @@ function renderPage(p) {
       '  });\n' +
       '});\n' +
       '})();</script>\n' : '') +
-    '<script src="../js/product-detail.js?v=2"></script>\n' +
+    '<script src="../js/product-detail.js?v=3"></script>\n' +
     '</body>\n</html>\n';
 }
 
@@ -484,9 +484,17 @@ function poaCardHtml(p) {
   const img = p.image || 'images/' + (CAT_FALLBACK_IMAGE[p.cat] || 'products-hero.jpg');
   const sizesText = p.sizes.length ? p.sizes.join(', ') : 'One size';
   const detailHref = 'products/' + p.slug;
+  const isMulti = Array.isArray(p.material);
   const swatches = p.colours.slice(0, 5).map(function (c) {
     return '<span class="swatch" style="background:' + (LIB.SWATCH_HEX[c] || '#ccc') + ';" title="' + escapeAttr(c) + '"></span>';
   }).join('');
+  const materialSelectHtml = !isMulti ? '' :
+    '<select class="pcard-material-select" data-slug="' + p.slug + '" aria-label="Choose material for ' + escapeAttr(p.family) + '">' +
+    p.materialPrices.map(function (mp) {
+      const priceText = mp.isPOA ? 'POA' : 'From ' + money(mp.minPrice);
+      return '<option value="' + escapeAttr(mp.material) + '">' + escapeHtml(mp.material) + ' — ' + escapeHtml(priceText) + '</option>';
+    }).join('') +
+    '</select>';
   return '<div class="pcard" data-slug="' + p.slug + '">' +
     '<a class="pcard-img" href="' + detailHref + '" aria-label="View ' + escapeAttr(p.family) + '"><img src="' + img + '" alt="' + escapeAttr(p.family + ' — ' + materialLabel(p) + ' ' + p.category) + '" loading="lazy"><span class="pcard-stock"><i class="fa-solid fa-circle"></i> In Stock</span></a>' +
     '<div class="pcard-body">' +
@@ -494,6 +502,7 @@ function poaCardHtml(p) {
     '<p class="pcard-desc">' + escapeHtml(p.description) + '</p>' +
     '<div class="pcard-meta"><span><b>Material:</b> ' + escapeHtml(materialLabel(p)) + '</span><span><b>Sizes:</b> ' + escapeHtml(sizesText) + '</span></div>' +
     '<div class="pcard-swatches">' + swatches + '</div>' +
+    materialSelectHtml +
     (p.isPOA
       ? '<div class="pcard-price"><span class="amount" style="font-size:1.05rem;">Price on Application</span></div>' +
         '<div class="pcard-actions"><a href="quote?product=' + encodeURIComponent(p.family) + '" class="btn btn-dark" style="width:100%;justify-content:center;">REQUEST QUOTE</a></div>'
