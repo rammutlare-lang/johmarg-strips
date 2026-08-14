@@ -89,9 +89,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  function categoryPriority(category) {
+    var i = LIB.CATEGORIES.indexOf(category);
+    return i === -1 ? LIB.CATEGORIES.length : i;
+  }
+
   function sortProducts(list) {
     var out = list.slice();
-    if (sortKey === 'featured') out.sort(function (a, b) { return a.sortIndex - b.sortIndex; });
+    if (sortKey === 'featured') out.sort(function (a, b) { return categoryPriority(a.category) - categoryPriority(b.category) || a.sortIndex - b.sortIndex; });
     else if (sortKey === 'newest') out.sort(function (a, b) { return b.sortIndex - a.sortIndex; });
     else if (sortKey === 'name') out.sort(function (a, b) { return a.family.localeCompare(b.family); });
     else if (sortKey === 'price') out.sort(function (a, b) { return (a.isPOA ? Infinity : a.minPrice) - (b.isPOA ? Infinity : b.minPrice); });

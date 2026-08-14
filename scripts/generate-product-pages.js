@@ -502,8 +502,13 @@ function poaCardHtml(p) {
     '</div></div>';
 }
 
+function categoryPriority(category) {
+  const i = LIB.CATEGORIES.indexOf(category);
+  return i === -1 ? LIB.CATEGORIES.length : i;
+}
+
 const PAGE_SIZE = 15; // matches js/products-page.js — multiple of 3 so rows come out even
-const firstPage = ALL.slice().sort(function (a, b) { return a.sortIndex - b.sortIndex; }).slice(0, PAGE_SIZE);
+const firstPage = ALL.slice().sort(function (a, b) { return categoryPriority(a.category) - categoryPriority(b.category) || a.sortIndex - b.sortIndex; }).slice(0, PAGE_SIZE);
 const gridHtml = firstPage.map(poaCardHtml).join('');
 
 const productsHtmlPath = path.join(root, 'products.html');
