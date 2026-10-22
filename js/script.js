@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Live form submit -> POSTs to FormSubmit.co (johmargstrips@outlook.com), no backend required
+  // Live form submit -> POSTs to FormSubmit.co (info@johmargstrips.co.za), no backend required
   document.querySelectorAll('form[data-ajax-form]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();

@@ -318,7 +318,7 @@ function renderPage(p) {
     '<span><i class="fa-solid fa-location-dot"></i> Proudly South African</span>' +
     '<span><i class="fa-solid fa-circle-check"></i> Trusted Since 2023</span></div>' +
     '<div class="topbar-right"><a href="tel:+27625940168"><i class="fa-solid fa-phone"></i> +27 62 594 0168</a>' +
-    '<a href="mailto:johmargstrips@outlook.com"><i class="fa-solid fa-envelope"></i> johmargstrips@outlook.com</a>' +
+    '<a href="mailto:info@johmargstrips.co.za"><i class="fa-solid fa-envelope"></i> info@johmargstrips.co.za</a>' +
     '<div class="topbar-social">' +
     '<a href="https://wa.me/27625940168" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>' +
     '<a href="https://web.facebook.com/profile.php?id=61572966972900" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>' +
@@ -400,7 +400,7 @@ function renderPage(p) {
 
     '<div class="pdp-section" style="max-width:640px;"><h2>ENQUIRE ABOUT THIS <span class="accent" style="color:var(--gold-text);">PRODUCT</span></h2>' +
     '<div class="form-card">' +
-    '<form id="pdp-enquiry-form" data-ajax-form data-success-msg="Thank you for your enquiry! Our team will be in touch shortly." action="https://formsubmit.co/johmargstrips@outlook.com" method="POST" enctype="multipart/form-data">' +
+    '<form id="pdp-enquiry-form" data-ajax-form data-success-msg="Thank you for your enquiry! Our team will be in touch shortly." action="https://formsubmit.co/info@johmargstrips.co.za" method="POST" enctype="multipart/form-data">' +
     '<input type="hidden" name="_subject" value="Product enquiry: ' + escapeAttr(p.family) + '">' +
     '<input type="hidden" name="_template" value="table">' +
     '<input type="hidden" name="_captcha" value="false">' +
@@ -434,7 +434,7 @@ function renderPage(p) {
     '<li><a href="../products?cat=PVC%20Finishing%20Profiles">PVC Finishing Profiles</a></li>' +
     '<li><a href="../products?cat=Tile%20Installation%20Systems%20%26%20Accessories">Tile Installation Systems &amp; Accessories</a></li></ul></div>' +
     '<div><h4>CONTACT US</h4><ul class="footer-contact"><li><i class="fa-solid fa-phone"></i> +27 62 594 0168</li>' +
-    '<li><i class="fa-solid fa-envelope"></i> johmargstrips@outlook.com</li><li><i class="fa-solid fa-globe"></i> Currently operating online</li></ul></div>' +
+    '<li><i class="fa-solid fa-envelope"></i> info@johmargstrips.co.za</li><li><i class="fa-solid fa-globe"></i> Currently operating online</li></ul></div>' +
     '<div><h4>DOWNLOAD PRODUCT MANUAL</h4><p style="font-size:.85rem;">Browse our full range of products and solutions.</p>' +
     '<a href="../downloads/JS_Product_Manual.pdf" class="footer-download" download="JS Product Manual.pdf"><i class="fa-solid fa-download"></i> DOWNLOAD PDF</a></div></div>' +
     '<div class="container footer-bottom"><span>&copy; 2026 Johmarg Strips. All Rights Reserved.</span>' +
