@@ -776,3 +776,27 @@ body.cart-open .cart-overlay{opacity:1;pointer-events:auto;}
 .trade-value-item p{margin:0;font-size:.78rem;color:var(--text-muted);line-height:1.5;}
 @media(max-width:860px){.trade-value-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:520px){.trade-value-grid{grid-template-columns:1fr;}}
+
+/* ===== SITE-NOTICE:START — temporary notice banner; delete this block + the
+   <!-- SITE-NOTICE:START/END --> markup in every page once no longer needed ===== */
+.site-notice-banner{
+  background:var(--black);
+  color:#eaeaea;
+  border-bottom:2px solid var(--gold);
+  font-size:.8rem;
+  line-height:1.5;
+  text-align:center;
+}
+.site-notice-banner .container{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding-top:9px;padding-bottom:9px;
+}
+.site-notice-banner i{color:var(--gold);flex:none;}
+.site-notice-banner a{color:var(--gold);font-weight:700;text-decoration:underline;}
+.site-notice-banner a:hover{color:var(--gold-dark);}
+@media(max-width:700px){
+  .site-notice-banner{font-size:.74rem;}
+  .site-notice-banner .container{padding:8px 16px;text-align:center;align-items:flex-start;}
+  .site-notice-banner i{margin-top:3px;}
+}
+/* ===== SITE-NOTICE:END ===== */

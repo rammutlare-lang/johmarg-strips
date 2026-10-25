@@ -309,11 +309,17 @@ function renderPage(p) {
     '<meta name="twitter:description" content="' + escapeAttr(metaDesc) + '">\n' +
     '<link rel="icon" type="image/x-icon" href="../favicon.ico">\n' +
     '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">\n' +
-    '<link rel="stylesheet" href="../css/style.css?v=15">\n' +
+    '<link rel="stylesheet" href="../css/style.css?v=16">\n' +
     '<script type="application/ld+json">' + JSON.stringify(jsonLd) + '</script>\n' +
     '<script type="application/ld+json">' + JSON.stringify(breadcrumbLd) + '</script>\n' +
     '</head>\n<body>\n' +
     '<a href="#main" class="skip-link">Skip to main content</a>\n' +
+    // SITE-NOTICE:START — delete this block (and the matching ".site-notice-banner" CSS block in css/style.css) once the phone line is restored
+    '<div class="site-notice-banner" role="status"><div class="container">' +
+    '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>' +
+    '<span>NOTICE: Our telephone line and WhatsApp are temporarily unavailable. Please contact us via <a href="mailto:info@johmargstrips.co.za">email</a> or submit your enquiry through our <a href="/contact">Contact Form</a>. We apologise for any inconvenience and appreciate your understanding.</span>' +
+    '</div></div>\n' +
+    // SITE-NOTICE:END
     '<div class="topbar"><div class="container"><div class="topbar-left">' +
     '<span><i class="fa-solid fa-location-dot"></i> Proudly South African</span>' +
     '<span><i class="fa-solid fa-circle-check"></i> Trusted Since 2023</span></div>' +
